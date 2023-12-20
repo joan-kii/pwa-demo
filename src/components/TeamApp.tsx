@@ -1,8 +1,12 @@
 import Topbar from './Topbar'
+import SideBarTeam from './SideBarTeam'
 
 function TeamApp() {
   return (
-    <Topbar />
+    <>
+      <Topbar />
+      <SideBarTeam />
+    </>
   )
 }
 

@@ -1,4 +1,4 @@
-import { Fragment } from 'react'
+import { useState, Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
@@ -11,16 +11,34 @@ const user = {
   email: 'ignatius@example.com',
   imageUrl: ignatius
 }
-const navigation = [
+// Seguir aquí
+const [navigation, setNavigation] = useState<{
+  name: string;
+  href: string;
+  current: boolean;
+}[]>([
   { name: 'Recientes', href: '#', current: true },
   { name: 'Pendientes', href: '#', current: false },
   { name: 'Nueva Intervención', href: '#', current: false }
-]
+])
+
 const userNavigation = [
-  { name: 'Tu cuenta', href: '#' },
-  { name: 'Configuracion', href: '#' },
+  { name: 'Mi cuenta', href: '#' },
+  { name: 'Ajustes', href: '#' },
   { name: 'Cerrar sesión', href: '#' },
 ]
+
+function handleNavigation(name: string) {
+  return navigation.forEach((key) => {
+    if (key.name === name) {
+      key.current = true
+    } else {
+      key.current = false
+    }
+  })
+}
+console.log(navigation);
+
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
@@ -38,7 +56,7 @@ function Topbar() {
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
                       <img
-                        className="h-12 w-12"
+                        className="h-14 w-14"
                         src={logo}
                         alt="Fixloud"
                       />
@@ -49,6 +67,7 @@ function Topbar() {
                           <a
                             key={item.name}
                             href={item.href}
+                            onClick={() => handleNavigation(item.name)}
                             className={classNames(
                               item.current
                                 ? 'bg-gray-900 text-white'
@@ -67,7 +86,7 @@ function Topbar() {
                     <div className="ml-4 flex items-center md:ml-6">
                       <button
                         type="button"
-                        className="relative rounded-full bg-white-800 p-1 text-gray-800 hover:ring-2 focus:outline-none focus:ring-gray-800"
+                        className="relative rounded-full bg-white-800 p-1 text-gray-800 hover:ring-2 hover:ring-gray-800 focus:outline-none focus:ring-gray-800"
                       >
                         <span className="absolute -inset-1.5" />
                         <span className="sr-only">Notificaciones</span>
