@@ -11,16 +11,6 @@ const user = {
   email: 'ignatius@example.com',
   imageUrl: ignatius
 }
-// Seguir aquí
-const [navigation, setNavigation] = useState<{
-  name: string;
-  href: string;
-  current: boolean;
-}[]>([
-  { name: 'Recientes', href: '#', current: true },
-  { name: 'Pendientes', href: '#', current: false },
-  { name: 'Nueva Intervención', href: '#', current: false }
-])
 
 const userNavigation = [
   { name: 'Mi cuenta', href: '#' },
@@ -28,23 +18,27 @@ const userNavigation = [
   { name: 'Cerrar sesión', href: '#' },
 ]
 
-function handleNavigation(name: string) {
-  return navigation.forEach((key) => {
-    if (key.name === name) {
-      key.current = true
-    } else {
-      key.current = false
-    }
-  })
-}
-console.log(navigation);
-
-
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
 function Topbar() {
+  const [navigation, setNavigation] = useState<{
+    name: string;
+    current: boolean;
+  }[]>([
+    { name: 'Recientes', current: true },
+    { name: 'Pendientes', current: false },
+    { name: 'Nueva Intervención', current: false }
+  ])
+
+  function handleNavigation(name: string) {
+    setNavigation(navigation.map((obj) => {
+      obj.current = obj.name === name ? true : false
+      return obj
+    }))
+  }
+
   return (
     <>
       <div className="min-h-full">
@@ -64,9 +58,8 @@ function Topbar() {
                     <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
                         {navigation.map((item) => (
-                          <a
+                          <button
                             key={item.name}
-                            href={item.href}
                             onClick={() => handleNavigation(item.name)}
                             className={classNames(
                               item.current
@@ -77,7 +70,7 @@ function Topbar() {
                             aria-current={item.current ? 'page' : undefined}
                           >
                             {item.name}
-                          </a>
+                          </button>
                         ))}
                       </div>
                     </div>
@@ -153,7 +146,6 @@ function Topbar() {
                     <Disclosure.Button
                       key={item.name}
                       as="a"
-                      href={item.href}
                       className={classNames(
                         item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                         'block rounded-md px-3 py-2 text-base font-medium'
