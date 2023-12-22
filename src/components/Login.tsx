@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import logo from '../assets/fixloud-removebg.png'
-import { users } from '../utils/users'
+import { userAccess } from '../utils/users'
 
 function Login() {
   const [username, setUsername] = useState('')
@@ -11,9 +11,9 @@ function Login() {
 
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault()
-    if (password === users.password && username === users.teammate) {
+    if (password === userAccess.password && username === userAccess.teammate) {
       navigate('/team')
-    } else if (password === users.password && username === users.manager) {
+    } else if (password === userAccess.password && username === userAccess.manager) {
       navigate('/manager')
     }
 
