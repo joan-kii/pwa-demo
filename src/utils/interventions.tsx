@@ -9,9 +9,10 @@ export const interventions: Intervention[] = [
     text: 'Nos comunica el operador de producción que no puede iniciar la secuencia de trabajo.\
       Se observa que la columna no alcanza la posicion de trabajo.\
       Según el operador esto ha ocurrido otras veces, y se solucionó ajustando el final de carrera,\
-      tal y como hemos leído aquí y aquí.\
+      tal y como hemos leído aquí y aquí //// BACKLINKS ////.\
       El final de carrera no tiene signos de haberse desplazado accidentalmente, por lo que decidimos buscar otras explicaciones.\
-      Se observa que el tubo de salida choca con la tubería de agua que pasa justo por encima tal y como se observa en la imagen\
+      Se observa que el tubo de salida choca con la tubería de agua que pasa justo por encima tal y como se observa en la imagen.\
+      //// IMAGEN ////\
       Se ajusta el sensor inductivo de posición superior para evitar que la bóveda suba demasiado y choque con la tubería al subir.',
     pending: false,
     date: '22/12/2023 11:33',
@@ -31,12 +32,13 @@ export const interventions: Intervention[] = [
         author: 'Juan Juarez',
         date: '23/12/2023 08:15',
         text: 'Este era el motivo por el que los operadores se quejaban de que la bóveda no encajaba en la base.\
-          En esta intervención se mencionaba este problema. Fernando, quizás sería buena idea actualizar dicha intervención.',
+          En esta intervención //// BACKLINK //// se mencionaba este problema.\
+          Fernando, quizás sería buena idea actualizar dicha intervención.',
         votes: 1,
         managerPraise: true,
         comments: [
           {
-            _id: 3,
+            _id: 2,
             author: 'Fernando Fernández',
             date: '23/12/2023 09:42',
             text: 'Cierto. Paso el aviso.'
@@ -52,6 +54,7 @@ export const interventions: Intervention[] = [
     description: 'El motor de la arrastradora 3 dispara por sobreesfuerzo.',
     text: 'Según el jefe de línea, la arrastradora 3 tiene un problema de sincronización y pierde velocidad.\
       Se comprueba que ha disparado el convertidor por sobreesfuerzo. Como ya se informó en esta intervención,\
+      //// BACKLINK ////\
       el eje trasero de la arrastradora sigue desalineado. Se rearma convertidor para que puedan trabajar, pero\
       queda pendiente de reparar por mantenimiento mecánico.',
     pending: true,
@@ -60,7 +63,7 @@ export const interventions: Intervention[] = [
     votes: 0,
     comments: [
       {
-        _id: 0,
+        _id: 3,
         author: 'Fernando Fernández',
         date: '19/12/2023 17:12',
         text: 'Aghh... Vuelvo a pasar el aviso.'
@@ -100,38 +103,152 @@ export const interventions: Intervention[] = [
     description: 'Máquina 2 no alcanza temperatura objetivo.',
     text: 'Nos avisan los operadores de producción que han detectado menos temperatura en los últimos procesos.\
       No se detecta ninguna anomalía, por lo que se decide subir el Set Point de temperatura en 20ºC. Queda pendiente\
-      de aprobación por parte de producción.',
-    pending: true,
+      de aprobación por parte de producción.\
+      //// EDITADO ////\
+      En esta intervención //// BACKLINK //// realizada por el compañero Sergio Semper se explica el motivo por el que\
+      no alcanzaban la temperatura objetivo. Se reestablece SP original.',
+    pending: false,
     date: '15/12/2023 07:55',
-    managerPraise: false,
-    votes: 1,
-    // Seguir aquí
+    managerPraise: true,
+    edited: true,
+    editionDate: '23/12/2023 16:40',
+    votes: 3,
     comments: [
       {
-        _id: 0,
+        _id: 4,
+        author: 'Fernando Fernández',
+        date: '23/12/2023 09:45',
+        text: 'Dani, edita la intervención para que refleje lo ocurrido con el tubo de salida. Esta es la intervención\
+          //// BACKLINK //// en la que se explica lo ocurrido.',
+        comments: [
+          {
+            _id: 5,
+            author: 'Daniel Dante',
+            date: '23/12/2023 16:44',
+            text: 'Hecho!'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    _id: 5,
+    author: 'Santiago Sánchez',
+    keywords: ['trafo 2', 'refrigeración', 'válvula', 'posicionador', 'trafo 1', 'trafo 2'],
+    description: 'Ajuste posicionador de la válvula de refrigeración del transformador.',
+    text: 'Ante las dudas expresadas por algunos compañeros sobre el ajuste del posicionador\
+      de la válvula de refrigeración del trafo, se decide grabar un video en el que se explica\
+      cómo hacerlo. Si alguien necesita alguna aclaración más, por favor hacédmelo saber.\
+      //// VÍDEO ////',
+    pending: false,
+    date: '15/10/2023 12:48',
+    managerPraise: true,
+    votes: 8,
+    comments: [
+      {
+        _id: 6,
         author: 'Rafael Ramos',
-        date: '22/12/2023 18:56',
-        text: 'Ese era el problema. No tenía sentido que se hubiera desplazado el final de carrera. Bravo!',
+        date: '16/10/2023 13:02',
+        text: 'Yo siempre me equivocaba en el paso 3. Estad atentos a lo que hace Santi en el minuto 3.15.\
+          Que no os pase lo que tantas veces me ha pasado...',
         votes: 0,
         managerPraise: false
       },
       {
-        _id: 1,
-        author: 'Juan Juarez',
-        date: '23/12/2023 08:15',
-        text: 'Este era el motivo por el que los operadores se quejaban de que la bóveda no encajaba en la base.\
-          En esta intervención se mencionaba este problema. Fernando, quizás sería buena idea actualizar dicha intervención.',
-        votes: 1,
+        _id: 7,
+        author: 'Antonio Antúnez',
+        date: '16/10/2023 16:51',
+        text: 'Santi, si no me equivoco, este ajuste es el mismo en todos los trafos, no?',
+        votes: 2,
         managerPraise: true,
         comments: [
           {
-            _id: 3,
-            author: 'Fernando Fernández',
-            date: '23/12/2023 09:42',
-            text: 'Cierto. Paso el aviso.'
+            _id: 8,
+            author: 'Santiago Sánchez',
+            date: '16/10/2023 20:56',
+            text: 'Yo no he ajustado nunca los otros posicionadores. Por lo que no estoy 100% seguro.',
+            votes: 0,
+            managerPraise: false
           }
         ]
       },
+      {
+        _id: 9,
+        author: 'Fernando Fernández',
+        date: '17/10/2023 07:15',
+        text: 'Magníficamente explicado. Sirva este tutorial como referencia para el ajuste de todos los\
+          posicionadores de las válvulas de refrigeración de los 3 trafos, ya que, como dice Antonio,\
+          son idénticos. Santi, porfa, añade las palabras clave "trafo 1" y "trafo 3". Muy buen trabajo,\
+          Santiago. Bien hecho!!!',
+        comments: [
+          {
+            _id: 10,
+            author: 'Santiago Sánchez',
+            date: '17/10/2023 19:01',
+            text: 'Añadidas, jefe!',
+            votes: 0,
+            managerPraise: true
+          }
+        ]
+      }
     ]
   },
+  {
+    _id: 6,
+    author: 'Juan Juarez',
+    keywords: ['caudalímetro', 'gas', 'principal', 'ubicación'],
+    description: 'Señal anómala del caudalímetro general de fábrica.',
+    text: 'Nos avisan desde el Departamento de Suministros de que en los últimos meses han detectado un\
+      consumo excesivo de gas según el dato que tenemos en fábrica pero no en el consumo facturado,\
+      por lo que con toda seguridad, se debe a un mal fucionamiento de nuestro equipo.\
+      Como no hay ninguna intervención registrada sobre dicho caudalímetro, se realiza una investigación\
+      para localizarlo, ya que no tenemos ni idea de dónde está instalado. Después de un buen rato buscando\
+      se localiza el instrumento en esta ubicación: //// COORDENADAS ////. No se realiza niguna comprobación\
+      más por atender otras prioridades.',
+    pending: true,
+    date: '26/11/2023 21:38',
+    managerPraise: false,
+    votes: 0,
+    comments: [
+      {
+        _id: 11,
+        author: 'Fernando Fernández',
+        date: '27/11/2023 07:02',
+        text: 'Madre mía, ni sabía que eso estaba ahí. Lo añado a la lista de trabajos pendientes.'
+      }
+    ]
+  },
+  {
+    _id: 7,
+    author: 'Sergio Semper',
+    keywords: ['máquina 1', 'maniobra', 'giro brazo', 'planos', 'relé'],
+    description: 'No gira brazo superior.',
+    text: 'El operador nos informa de que no gira el brazo superior. Se comprueba que el relé de la maniobra\
+      no funciona. Se busca repuesto pero no se encuentra al tratarse de un relé obsoleto. Se monta un relé de\
+      24VDC y se comprueba correcto funcionamiento.',
+    pending: true,
+    date: '12/11/2023 10:50',
+    managerPraise: false,
+    votes: 0,
+    comments: [
+      {
+        _id: 12,
+        author: 'Fernando Fernández',
+        date: '12/11/2023 11:37',
+        text: 'Sergio, vamos a cambiar todos los relés a 24VDC. Deja la intervención en pendiente y la\
+          añadiré a la lista de trabajos pendientes. He actualizado los planos. Aquí os los paso:\
+          //// ARCHIVO ////',
+        comments: [
+          {
+            _id: 10,
+            author: 'Sergio Semper',
+            date: '13/11/2023 06:36',
+            text: 'Pendiente la he dejado.',
+            votes: 0,
+            managerPraise: false
+          }
+        ]
+      }
+    ]
+  }
 ]

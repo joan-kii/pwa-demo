@@ -8,7 +8,9 @@ export interface Intervention {
   date: string,
   managerPraise: boolean,
   comments?: Comment[],
-  votes: number
+  votes: number,
+  edited?: boolean,
+  editionDate?: string
 }
 
 export interface Comment {
@@ -35,6 +37,8 @@ export interface User {
   inactiveCompanies?: Company[], 
   hasBeenTeammate: boolean,
   hasBeenManager: boolean,
+  interventionsVoted?: Intervention[],
+  commentsVoted?: Comment[],
 }
 
 export interface Company {
