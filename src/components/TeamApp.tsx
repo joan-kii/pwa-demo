@@ -1,11 +1,18 @@
-import Topbar from './Topbar'
+import { useState } from 'react'
+
+import SearchHeader from './SearchHeader'
 import SideBarTeam from './SideBarTeam'
+import MainLayout from './MainLayout'
+import { Layout } from '../utils/types'
 
 function TeamApp() {
+  const [layout, setLayout] = useState<Layout>('recent')
+
   return (
     <>
-      <Topbar />
-      <SideBarTeam />
+      <SearchHeader />
+      <SideBarTeam layout={layout} setLayout={setLayout} />
+      <MainLayout layout={layout} />
     </>
   )
 }

@@ -72,3 +72,5 @@ export interface Manager {
   comments: number,
   interventionsApproved: number
 }
+
+export type Layout = 'recent' | 'pending' | 'new' | 'team'
