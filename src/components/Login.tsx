@@ -12,7 +12,7 @@ function Login() {
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault()
     if (password === userAccess.password && username === userAccess.teammate) {
-      navigate('/team')
+      navigate('/team/recientes')
     } else if (password === userAccess.password && username === userAccess.manager) {
       navigate('/manager')
     }

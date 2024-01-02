@@ -1,23 +1,32 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from 'react-router-dom'
+import { useRoutes } from 'react-router-dom'
 
 import Login from './components/Login'
 import TeamApp from './components/TeamApp'
-import ManagerApp from './components/ManagerApp'
+import InterventionsList from './components/InterventionsList'
 
 function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/team" element={<TeamApp />} />
-        <Route path="/manager" element={<ManagerApp />} />
-      </Routes>
-    </Router>
-  )
+  const routes = useRoutes([
+    {
+      path: '/',
+      element: <Login />
+    },
+    {
+      path: '/team/*',
+      element: <TeamApp />,
+      children: [
+        {
+          path: 'recientes',
+          element: <InterventionsList />,
+        },
+        { 
+          path: 'pendientes', 
+          element: <InterventionsList /> 
+        },
+      ],
+    },
+  ])
+
+  return routes
 }
 
 export default App

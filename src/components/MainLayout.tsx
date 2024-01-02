@@ -1,13 +1,15 @@
-import { Layout } from '../utils/types'
+import { Outlet } from 'react-router-dom'
 
-function MainLayout({ layout }: { layout: Layout }) {
+import NavigationButton from './NavigationButton'
+
+function MainLayout() {
   return (
-    <div className="container pl-64">
-      {layout === 'recent' && <div>Recientes</div>}
-      {layout === 'pending' && <div>Pendientes</div>}
-      {layout === 'new' && <div>Nueva Intervención</div>}
-      {layout === 'team' && <div>Equipo</div>}
-    </div>
+    <>
+      <div className="container pl-64">
+        <NavigationButton />
+        <Outlet />
+      </div>
+    </>
   )
 }
 

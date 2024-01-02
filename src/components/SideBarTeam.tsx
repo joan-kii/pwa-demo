@@ -1,23 +1,32 @@
 import { Dispatch, SetStateAction } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import { Layout } from '../utils/types'
 
 function SideBar({ layout, setLayout }: { layout: Layout, setLayout: Dispatch<SetStateAction<Layout>>}) {
+  const navigate = useNavigate()
 
   function handleNavigation(name: string) {
 
     switch(name) {
       case 'Pendientes':
         setLayout('pending')
+        navigate('/team/pendientes')
         break
       case 'Nueva Intervención':
         setLayout('new')
+        navigate('/team/nueva')
         break
       case 'Equipo':
         setLayout('team')
+        navigate('/team/team')
+        break
+      case 'Recientes':
+        setLayout('recent')
+        navigate('/team/recientes')
         break
       default:
-        setLayout('recent')
+        setLayout('none')
     }
   }
 

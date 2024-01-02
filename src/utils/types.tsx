@@ -73,4 +73,4 @@ export interface Manager {
   interventionsApproved: number
 }
 
-export type Layout = 'recent' | 'pending' | 'new' | 'team'
+export type Layout = 'recent' | 'pending' | 'new' | 'team' | 'none'
