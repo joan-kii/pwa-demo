@@ -1,21 +1,22 @@
-import { Dispatch, SetStateAction } from 'react'
+import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { Layout } from '../utils/types'
+import { Context } from '../utils/context'
 
-function SideBar({ layout, setLayout }: { layout: Layout, setLayout: Dispatch<SetStateAction<Layout>>}) {
+function SideBar() {
   const navigate = useNavigate()
+  const { layout, setLayout } = useContext(Context)
 
   function handleNavigation(name: string) {
 
     switch(name) {
       case 'Pendientes':
         setLayout('pending')
-        navigate('/team/pendientes')
+        navigate('/team/intervencion/pendientes')
         break
       case 'Nueva Intervención':
         setLayout('new')
-        navigate('/team/nueva')
+        navigate('/team/intervencion/nueva')
         break
       case 'Equipo':
         setLayout('team')
@@ -23,7 +24,7 @@ function SideBar({ layout, setLayout }: { layout: Layout, setLayout: Dispatch<Se
         break
       case 'Recientes':
         setLayout('recent')
-        navigate('/team/recientes')
+        navigate('/team/intervencion/recientes')
         break
       default:
         setLayout('none')
@@ -31,7 +32,7 @@ function SideBar({ layout, setLayout }: { layout: Layout, setLayout: Dispatch<Se
   }
 
   return (
-    <>
+    <div className="absolute top-32">
       <button data-drawer-target="separator-sidebar" data-drawer-toggle="separator-sidebar" aria-controls="separator-sidebar" type="button" className="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
         <span className="sr-only">Abrir menú</span>
         <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -144,7 +145,7 @@ function SideBar({ layout, setLayout }: { layout: Layout, setLayout: Dispatch<Se
           </ul>
         </div>
       </aside>
-    </>
+    </div>
   )
 }
 

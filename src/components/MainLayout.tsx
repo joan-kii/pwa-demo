@@ -5,7 +5,7 @@ import NavigationButton from './NavigationButton'
 function MainLayout() {
   return (
     <>
-      <div className="container pl-64">
+      <div className="absolute top-32 container pl-64">
         <NavigationButton />
         <Outlet />
       </div>

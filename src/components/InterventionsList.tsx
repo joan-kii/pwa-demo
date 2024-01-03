@@ -1,6 +1,17 @@
+import { useContext } from 'react'
+
+import InterventionItem from './InterventionItem'
+import { interventions } from '../utils/interventions'
+import { Context } from '../utils/context'
+
 function InterventionsList() {
+  const { layout }= useContext(Context)
+  console.log(layout);
+  
   return (
-    <div>InterventionsList</div>
+    <>
+      {interventions.map((intervention) => <InterventionItem {...intervention} key={intervention._id} />)}
+    </>
   )
 }
 
