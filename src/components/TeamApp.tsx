@@ -6,8 +6,10 @@ function TeamApp() {
   return (
     <div className="relative">
       <SearchHeader />
-      <SideBarTeam />
-      <MainLayout />
+      <main className="flex flex-row">
+        <SideBarTeam />
+        <MainLayout />
+      </main>
     </div>
   )
 }

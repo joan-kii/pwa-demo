@@ -16,6 +16,7 @@ export const interventions: Intervention[] = [
       Se ajusta el sensor inductivo de posición superior para evitar que la bóveda suba demasiado y choque con la tubería al subir.',
     pending: false,
     date: '22/12/2023 11:33',
+    fakeDate: 8,
     managerPraise: true,
     votes: 6,
     comments: [
@@ -59,6 +60,7 @@ export const interventions: Intervention[] = [
       queda pendiente de reparar por mantenimiento mecánico.',
     pending: true,
     date: '19/12/2023 17:02',
+    fakeDate: 7,
     managerPraise: false,
     votes: 0,
     comments: [
@@ -79,6 +81,7 @@ export const interventions: Intervention[] = [
       correcto funcionamiento.',
     pending: false,
     date: '18/12/2023 10:45',
+    fakeDate: 6,
     managerPraise: false,
     votes: 0,
   },
@@ -93,6 +96,7 @@ export const interventions: Intervention[] = [
       final de carrera.',
     pending: false,
     date: '17/12/2023 19:22',
+    fakeDate: 5,
     managerPraise: false,
     votes: 0,
   },
@@ -109,6 +113,7 @@ export const interventions: Intervention[] = [
       no alcanzaban la temperatura objetivo. Se reestablece SP original.',
     pending: false,
     date: '15/12/2023 07:55',
+    fakeDate: 4,
     managerPraise: true,
     edited: true,
     editionDate: '23/12/2023 16:40',
@@ -142,6 +147,7 @@ export const interventions: Intervention[] = [
       //// VÍDEO ////',
     pending: false,
     date: '15/10/2023 12:48',
+    fakeDate: 1,
     managerPraise: true,
     votes: 8,
     comments: [
@@ -207,6 +213,7 @@ export const interventions: Intervention[] = [
       más por atender otras prioridades.',
     pending: true,
     date: '26/11/2023 21:38',
+    fakeDate: 3,
     managerPraise: false,
     votes: 0,
     comments: [
@@ -228,6 +235,7 @@ export const interventions: Intervention[] = [
       24VDC y se comprueba correcto funcionamiento.',
     pending: true,
     date: '12/11/2023 10:50',
+    fakeDate: 2, 
     managerPraise: false,
     votes: 0,
     comments: [

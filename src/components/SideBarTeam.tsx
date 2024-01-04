@@ -12,11 +12,11 @@ function SideBar() {
     switch(name) {
       case 'Pendientes':
         setLayout('pending')
-        navigate('/team/intervencion/pendientes')
+        navigate('/team/intervention/pending')
         break
       case 'Nueva Intervención':
         setLayout('new')
-        navigate('/team/intervencion/nueva')
+        navigate('/team/intervention/new')
         break
       case 'Equipo':
         setLayout('team')
@@ -24,7 +24,7 @@ function SideBar() {
         break
       case 'Recientes':
         setLayout('recent')
-        navigate('/team/intervencion/recientes')
+        navigate('/team/intervention/recent')
         break
       default:
         setLayout('none')
@@ -32,7 +32,7 @@ function SideBar() {
   }
 
   return (
-    <div className="absolute top-32">
+    <div className="fixed">
       <button data-drawer-target="separator-sidebar" data-drawer-toggle="separator-sidebar" aria-controls="separator-sidebar" type="button" className="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
         <span className="sr-only">Abrir menú</span>
         <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -40,7 +40,7 @@ function SideBar() {
         </svg>
       </button>
 
-      <aside id="separator-sidebar" className="fixed left-0 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+      <aside id="separator-sidebar" className="left-0 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
         <div className="h-full px-3 py-4  border-r border-gray-200 overflow-y-auto">
           <ul className="space-y-2 font-medium">
             <li className={`border-b-2 ${layout === 'recent' ? 'border-gray-700' : 'border-white'}`}>

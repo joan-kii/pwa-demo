@@ -27,7 +27,7 @@ function SearchHeader() {
     setKeywordList([])
   }
   return (
-    <header className="bg-white fixed top-0 left-0 right-0 z-10 shadow">
+    <header className="bg-white sticky top-0 left-0 right-0 z-10 shadow">
       <div className="flex mx-auto px-4 py-6 justify-between items-center sm:px-6 lg:px-8">
         <div className="flex-shrink-0">
           <img

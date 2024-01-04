@@ -6,6 +6,7 @@ export interface Intervention {
   text: string,
   pending: boolean,
   date: string,
+  fakeDate: number,
   managerPraise: boolean,
   comments?: Comment[],
   votes: number,

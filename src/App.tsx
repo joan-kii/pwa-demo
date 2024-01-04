@@ -15,11 +15,11 @@ function App() {
       element: <TeamApp />,
       children: [
         {
-          path: 'intervencion/recientes',
+          path: 'intervention/recent',
           element: <InterventionsList />,
         },
         { 
-          path: 'intervencion/pendientes', 
+          path: 'intervention/pending', 
           element: <InterventionsList/> 
         },
       ],
