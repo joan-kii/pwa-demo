@@ -26,7 +26,8 @@ export const interventions: Intervention[] = [
         date: '22/12/2023 18:56',
         text: 'Ese era el problema. No tenía sentido que se hubiera desplazado el final de carrera. Bravo!',
         votes: 0,
-        managerPraise: false
+        managerPraise: false,
+        comments: []
       },
       {
         _id: 1,
@@ -42,7 +43,10 @@ export const interventions: Intervention[] = [
             _id: 2,
             author: 'Fernando Fernández',
             date: '23/12/2023 09:42',
-            text: 'Cierto. Paso el aviso.'
+            text: 'Cierto. Paso el aviso.',
+            votes: 0,
+            managerPraise: false,
+            comments: []
           }
         ]
       },
@@ -68,7 +72,10 @@ export const interventions: Intervention[] = [
         _id: 3,
         author: 'Fernando Fernández',
         date: '19/12/2023 17:12',
-        text: 'Aghh... Vuelvo a pasar el aviso.'
+        text: 'Aghh... Vuelvo a pasar el aviso.',
+        votes: 0,
+        managerPraise: false,
+        comments: []
       }
     ]
   },
@@ -84,6 +91,7 @@ export const interventions: Intervention[] = [
     fakeDate: 6,
     managerPraise: false,
     votes: 0,
+    comments: []
   },
   {
     _id: 3,
@@ -99,6 +107,7 @@ export const interventions: Intervention[] = [
     fakeDate: 5,
     managerPraise: false,
     votes: 0,
+    comments: []
   },
   {
     _id: 4,
@@ -125,12 +134,17 @@ export const interventions: Intervention[] = [
         date: '23/12/2023 09:45',
         text: 'Dani, edita la intervención para que refleje lo ocurrido con el tubo de salida. Esta es la intervención\
           //// BACKLINK //// en la que se explica lo ocurrido.',
+        votes: 0,
+        managerPraise: false,
         comments: [
           {
             _id: 5,
             author: 'Daniel Dante',
             date: '23/12/2023 16:44',
-            text: 'Hecho!'
+            text: 'Hecho!',
+            votes: 0,
+            managerPraise: false,
+            comments: []
           }
         ]
       }
@@ -158,7 +172,8 @@ export const interventions: Intervention[] = [
         text: 'Yo siempre me equivocaba en el paso 3. Estad atentos a lo que hace Santi en el minuto 3.15.\
           Que no os pase lo que tantas veces me ha pasado...',
         votes: 0,
-        managerPraise: false
+        managerPraise: false,
+        comments:[]
       },
       {
         _id: 7,
@@ -174,7 +189,8 @@ export const interventions: Intervention[] = [
             date: '16/10/2023 20:56',
             text: 'Yo no he ajustado nunca los otros posicionadores. Por lo que no estoy 100% seguro.',
             votes: 0,
-            managerPraise: false
+            managerPraise: false,
+            comments: []
           }
         ]
       },
@@ -186,6 +202,8 @@ export const interventions: Intervention[] = [
           posicionadores de las válvulas de refrigeración de los 3 trafos, ya que, como dice Antonio,\
           son idénticos. Santi, porfa, añade las palabras clave "trafo 1" y "trafo 3". Muy buen trabajo,\
           Santiago. Bien hecho!!!',
+        votes: 0,
+        managerPraise: false,
         comments: [
           {
             _id: 10,
@@ -193,7 +211,8 @@ export const interventions: Intervention[] = [
             date: '17/10/2023 19:01',
             text: 'Añadidas, jefe!',
             votes: 0,
-            managerPraise: true
+            managerPraise: true,
+            comments: []
           }
         ]
       }
@@ -221,7 +240,10 @@ export const interventions: Intervention[] = [
         _id: 11,
         author: 'Fernando Fernández',
         date: '27/11/2023 07:02',
-        text: 'Madre mía, ni sabía que eso estaba ahí. Lo añado a la lista de trabajos pendientes.'
+        text: 'Madre mía, ni sabía que eso estaba ahí. Lo añado a la lista de trabajos pendientes.',
+        votes: 0,
+        managerPraise: false,
+        comments: []
       }
     ]
   },
@@ -246,6 +268,8 @@ export const interventions: Intervention[] = [
         text: 'Sergio, vamos a cambiar todos los relés a 24VDC. Deja la intervención en pendiente y la\
           añadiré a la lista de trabajos pendientes. He actualizado los planos. Aquí os los paso:\
           //// ARCHIVO ////',
+        votes: 0,
+        managerPraise: false,
         comments: [
           {
             _id: 10,
@@ -253,7 +277,8 @@ export const interventions: Intervention[] = [
             date: '13/11/2023 06:36',
             text: 'Pendiente la he dejado.',
             votes: 0,
-            managerPraise: false
+            managerPraise: false,
+            comments: []
           }
         ]
       }

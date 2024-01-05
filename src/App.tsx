@@ -1,32 +1,21 @@
-import { useRoutes } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
 import Login from './components/Login'
 import TeamApp from './components/TeamApp'
 import InterventionsList from './components/InterventionsList'
+import InterventionItem from './components/InterventionItem'
 
 function App() {
-  const routes = useRoutes([
-    {
-      path: '/',
-      element: <Login />
-    },
-    {
-      path: '/team/*',
-      element: <TeamApp />,
-      children: [
-        {
-          path: 'intervention/recent',
-          element: <InterventionsList />,
-        },
-        { 
-          path: 'intervention/pending', 
-          element: <InterventionsList/> 
-        },
-      ],
-    },
-  ])
-
-  return routes
+  return (
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/team/*" element={<TeamApp />}>
+        <Route path="intervention/recent" element={<InterventionsList />} />
+        <Route path="intervention/pending" element={<InterventionsList />} />
+        <Route path="interventions/:id" element={<InterventionItem />} />
+      </Route>
+    </Routes>
+  )
 }
 
 export default App

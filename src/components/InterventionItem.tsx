@@ -1,18 +1,12 @@
 import { Intervention } from '../utils/types'
+import CommentItem from './CommentItem'
+import VotesItem from './VotesItem'
 
 function InterventionItem(intervention: Intervention) {
   return (
-    <div className="container flex mx-auto my-5 p-5 w-2/3 bg-gray-50 border-solid border-2 border-gray rounded shadow">
-      <div>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 6.75 12 3m0 0 3.75 3.75M12 3v18" />
-        </svg>
-        <span>{intervention.votes}</span>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 17.25 12 21m0 0-3.75-3.75M12 21V3" />
-        </svg>
-      </div>
-      <div className="flex flex-col">
+    <div className="container flex mx-auto my-5 w-2/3 bg-gray-50 border-solid border-2 border-gray rounded shadow">
+      <VotesItem votes={intervention.votes} />
+      <div className="flex flex-col p-3">
         <div className="flex">
           <p>{intervention.author}</p>
           <span>{intervention.date}</span>
@@ -29,7 +23,7 @@ function InterventionItem(intervention: Intervention) {
         </div>
         <div>
           {intervention.comments?.map((comment) => {
-            return <p>{comment.text}</p>
+            return <CommentItem {...comment} key={comment._id} />
           })}
         </div>
         <div>

@@ -8,7 +8,7 @@ export interface Intervention {
   date: string,
   fakeDate: number,
   managerPraise: boolean,
-  comments?: Comment[],
+  comments: Comment[],
   votes: number,
   edited?: boolean,
   editionDate?: string
@@ -19,9 +19,9 @@ export interface Comment {
   author: string,
   date: string,
   text: string,
-  votes?: number,
+  votes: number,
   managerPraise?: boolean,
-  comments?: Comment[]
+  comments: Comment[]
 }
 
 export interface User {
