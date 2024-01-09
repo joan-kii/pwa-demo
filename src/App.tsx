@@ -12,7 +12,7 @@ function App() {
       <Route path="/team/*" element={<TeamApp />}>
         <Route path="intervention/recent" element={<InterventionsList />} />
         <Route path="intervention/pending" element={<InterventionsList />} />
-        <Route path="interventions/:id" element={<InterventionItem />} />
+        <Route path="intervention/:interventionId" element={<InterventionItem />} />
       </Route>
     </Routes>
   )
