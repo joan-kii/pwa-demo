@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { BellIcon } from '@heroicons/react/24/outline'
 
-import logo from '../assets/android-chrome-512x512.png'
-import ignatius from '../assets/ignatius_mini.png'
+import logo from '../../assets/android-chrome-512x512.png'
+import ignatius from '../../assets/ignatius_mini.png'
 
 const user = {
   name: 'Ignatius',

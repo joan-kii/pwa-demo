@@ -1,7 +1,7 @@
 import { useNavigate, Link } from 'react-router-dom'
 
-import { Intervention } from '../utils/types'
-import copyToClipboard from '../utils/helpers'
+import { Intervention } from '../../utils/types'
+import copyToClipboard from '../../utils/helpers'
 import InterventionHeader from './InterventionHeader'
 import InterventionKeywords from './InterventionKeywords'
 import InterventionPending from './InterventionPending'

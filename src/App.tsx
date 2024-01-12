@@ -1,9 +1,9 @@
 import { Routes, Route } from 'react-router-dom'
 
-import Login from './components/Login'
-import TeamApp from './components/TeamApp'
-import InterventionsList from './components/InterventionsList'
-import InterventionItem from './components/InterventionItem'
+import Login from './components/LayoutComponents/Login'
+import TeamApp from './components/LayoutComponents/TeamApp'
+import InterventionsList from './components/LayoutComponents/InterventionsList'
+import InterventionItem from './components/InterventionComponents/InterventionItem'
 
 function App() {
   return (

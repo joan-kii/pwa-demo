@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom'
 
-import NavigationButton from './NavigationButton'
+import NavigationButton from '../UtilsComponents/NavigationButton'
 
 function MainLayout() {
   return (

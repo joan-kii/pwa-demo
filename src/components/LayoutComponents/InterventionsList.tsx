@@ -1,9 +1,9 @@
 import { useContext, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
-import InterventionResume from './InterventionResume'
-import { interventions } from '../utils/interventions'
-import { Context } from '../utils/context'
+import InterventionResume from '../InterventionComponents/InterventionResume'
+import { interventions } from '../../utils/interventions'
+import { Context } from '../../utils/context'
 
 function InterventionsList() {
   const { layout, setLayout }= useContext(Context)

@@ -1,14 +1,15 @@
 import { useContext } from 'react'
 import { useParams } from 'react-router-dom'
 
-import CommentItem from './CommentItem'
+import CommentItem from '../CommentComponents/CommentItem'
 import InterventionHeader from './InterventionHeader'
 import InterventionKeywords from './InterventionKeywords'
 import InterventionPending from './InterventionPending'
-import InterventionPraise from './InterventionPraise'
-import VotesItem from './VotesItem'
-import { Context } from '../utils/context'
-import copyToClipboard from '../utils/helpers'
+import InterventionPraise from '../UtilsComponents/ManagerPraise'
+import VotesItem from '../UtilsComponents/VotesItem'
+import CommentForm from '../CommentComponents/CommentForm'
+import { Context } from '../../utils/context'
+import copyToClipboard from '../../utils/helpers'
 
 function InterventionItem() {
   const { setLayout, interventions } = useContext(Context)
@@ -31,7 +32,7 @@ function InterventionItem() {
               </button>
             </div>
           </div>
-          <div className="container flex mx-auto py-2 w-2/3 border-solid border-2 border-gray rounded-b shadow">
+          <div className="container flex mx-auto mb-5 py-2 w-2/3 border-solid border-2 border-gray rounded-b shadow">
             <VotesItem votes={intervention.votes} />
             <div className="flex flex-col p-3">
               <InterventionHeader {...intervention} />
@@ -49,6 +50,9 @@ function InterventionItem() {
                 {intervention.pending &&
                   <InterventionPending />
                 }
+              </div>
+              <div className="my-4 divide-y-2">
+                <CommentForm />
               </div>
               <div>
                 {intervention.comments?.map((comment) => {

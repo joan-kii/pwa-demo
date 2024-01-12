@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import logo from '../assets/fixloud-removebg.png'
-import { userAccess } from '../utils/users'
+import logo from '../../assets/fixloud-removebg.png'
+import { userAccess } from '../../utils/users'
 
 function Login() {
   const [username, setUsername] = useState('')

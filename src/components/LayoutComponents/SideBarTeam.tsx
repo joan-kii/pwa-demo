@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { Context } from '../utils/context'
+import { Context } from '../../utils/context'
 
 function SideBar() {
   const navigate = useNavigate()

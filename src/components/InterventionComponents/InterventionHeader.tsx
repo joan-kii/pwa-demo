@@ -1,4 +1,4 @@
-import { Intervention } from '../utils/types'
+import { Intervention } from '../../utils/types'
 
 function InterventionHeader(intervention: Intervention) {
   return (
