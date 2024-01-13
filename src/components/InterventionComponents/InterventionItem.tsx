@@ -1,13 +1,13 @@
 import { useContext } from 'react'
 import { useParams } from 'react-router-dom'
 
-import CommentItem from '../CommentComponents/CommentItem'
 import InterventionHeader from './InterventionHeader'
 import InterventionKeywords from './InterventionKeywords'
 import InterventionPending from './InterventionPending'
 import InterventionPraise from '../UtilsComponents/ManagerPraise'
 import VotesItem from '../UtilsComponents/VotesItem'
 import CommentForm from '../CommentComponents/CommentForm'
+import CommentsList from '../LayoutComponents/CommentsList'
 import { Context } from '../../utils/context'
 import copyToClipboard from '../../utils/helpers'
 
@@ -41,7 +41,7 @@ function InterventionItem() {
               </div>
               <div className="m-3 text-slate-800">
                 <h3 className="py-2 text-lg font-semibold ">{intervention.description}</h3>
-                <p className="py-3 px-5 text-justify">{intervention.text}</p>
+                <p className="w-full py-3 px-5 text-justify">{intervention.text}</p>
               </div>
               <div className="flex justify-around">
                 {intervention.managerPraise &&
@@ -54,11 +54,7 @@ function InterventionItem() {
               <div className="my-4 divide-y-2">
                 <CommentForm />
               </div>
-              <div>
-                {intervention.comments?.map((comment) => {
-                  return <CommentItem {...comment} key={comment._id} />
-                })}
-              </div>
+              <CommentsList {...intervention}/>
             </div>
           </div>
         </>

@@ -18,7 +18,7 @@ function InterventionsList() {
   }, [path])
   
   return (
-    <>
+    <div className="mb-5">
       {layout === 'recent' && recentInterventionsList.map((intervention) => {
           return <InterventionResume {...intervention} key={intervention._id} />
         })
@@ -27,7 +27,7 @@ function InterventionsList() {
           return <InterventionResume {...intervention} key={intervention._id} />
         })
       }
-    </>
+    </div>
   )
 }
 
