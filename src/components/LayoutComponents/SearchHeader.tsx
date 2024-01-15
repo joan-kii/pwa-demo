@@ -3,6 +3,7 @@ import { BellIcon } from '@heroicons/react/24/outline'
 
 import logo from '../../assets/android-chrome-512x512.png'
 import ignatius from '../../assets/ignatius_mini.png'
+import TabsHeader from './TabsHeader'
 
 const user = {
   name: 'Ignatius',
@@ -28,7 +29,7 @@ function SearchHeader() {
   }
   return (
     <header className="bg-white sticky top-0 left-0 right-0 z-10 shadow">
-      <div className="flex mx-auto px-4 py-6 justify-between items-center sm:px-6 lg:px-8">
+      <div className="flex mx-auto px-4 pt-6 justify-between items-center sm:px-6 lg:px-8">
         <div className="flex-shrink-0">
           <img
             className="h-16 w-16"
@@ -101,6 +102,7 @@ function SearchHeader() {
           </div>
         </div>
       </div>
+      <TabsHeader />
     </header>
   )
 }
