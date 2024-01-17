@@ -1,9 +1,8 @@
 import { useState } from 'react'
-import { BellIcon } from '@heroicons/react/24/outline'
 
+import { BellIcon } from '@heroicons/react/24/outline'
 import logo from '../../assets/android-chrome-512x512.png'
 import ignatius from '../../assets/ignatius_mini.png'
-import TabsHeader from './TabsHeader'
 
 const user = {
   name: 'Ignatius',
@@ -14,7 +13,7 @@ const user = {
 function SearchHeader() {
   const [keyword, setKeyword] = useState('')
   const [keywordList, setKeywordList] = useState<string[]>([])
-
+  
   const handleKeywordSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault()
     setKeywordList(keywordList.concat(keyword))
@@ -27,9 +26,9 @@ function SearchHeader() {
     
     setKeywordList([])
   }
+
   return (
-    <header className="bg-white sticky top-0 left-0 right-0 z-10 shadow">
-      <div className="flex mx-auto px-4 pt-6 justify-between items-center sm:px-6 lg:px-8">
+    <div className="flex mx-auto px-4 pt-6 justify-between items-center sm:px-6 lg:px-8">
         <div className="flex-shrink-0">
           <img
             className="h-16 w-16"
@@ -102,8 +101,6 @@ function SearchHeader() {
           </div>
         </div>
       </div>
-      <TabsHeader />
-    </header>
   )
 }
 

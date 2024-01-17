@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
 import InterventionHeader from './InterventionHeader'
@@ -15,8 +15,9 @@ function InterventionItem() {
   const { setLayout, interventions } = useContext(Context)
   const { interventionId } = useParams()
   const intervention = interventions.find((intervention) => intervention._id === Number(interventionId))
-  setLayout('none')
 
+  useEffect(() => {setLayout('none')}, [setLayout])
+  
   return (
     <>
       {intervention &&

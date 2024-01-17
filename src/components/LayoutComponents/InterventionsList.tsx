@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
-import InterventionResume from '../InterventionComponents/InterventionResume'
+import InterventionSummary from '../InterventionComponents/InterventionSummary'
 import { interventions } from '../../utils/interventions'
 import { Context } from '../../utils/context'
 
@@ -20,11 +20,11 @@ function InterventionsList() {
   return (
     <div className="mb-5">
       {layout === 'recent' && recentInterventionsList.map((intervention) => {
-          return <InterventionResume {...intervention} key={intervention._id} />
+          return <InterventionSummary {...intervention} key={intervention._id} />
         })
       }
       {layout === 'pending' && pendingInterventionsList.map((intervention) => {
-          return <InterventionResume {...intervention} key={intervention._id} />
+          return <InterventionSummary {...intervention} key={intervention._id} />
         })
       }
     </div>

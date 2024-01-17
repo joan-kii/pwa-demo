@@ -6,7 +6,7 @@ import InterventionHeader from './InterventionHeader'
 import InterventionKeywords from './InterventionKeywords'
 import InterventionPending from './InterventionPending'
 
-function InterventionResume(intervention: Intervention) {
+function InterventionSummary(intervention: Intervention) {
   const navigate = useNavigate()
 
   const countComments = (comments: Comment[], count: number): number => {
@@ -72,4 +72,4 @@ function InterventionResume(intervention: Intervention) {
   )
 }
 
-export default InterventionResume
+export default InterventionSummary
