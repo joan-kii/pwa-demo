@@ -6,7 +6,7 @@ function TeamApp() {
   return (
     <div className="relative">
       <TopBar />
-      <main className="flex flex-row">
+      <main className="flex flex-row overflow-y-auto">
         <SideBarTeam />
         <MainLayout />
       </main>

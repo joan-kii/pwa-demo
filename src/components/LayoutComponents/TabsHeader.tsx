@@ -15,11 +15,11 @@ function TabsHeader() {
         break
       case 'new':
         setLayout(name)
-        navigate('/team/intervention/new')
+        navigate('/team/new')
         break
       case 'chats':
         setLayout(name)
-        navigate('/chats')
+        navigate('/team/chats')
         break
       default:
         setLayout('none')
