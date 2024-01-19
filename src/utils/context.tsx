@@ -4,7 +4,7 @@ import { Intervention, Layout } from './types'
 import { interventions } from './interventions'
 
 type defaultValueType = {
-  layout: Layout,
+  layout: Layout
   setLayout: React.Dispatch<React.SetStateAction<Layout>>
   interventions: Intervention[]
 }
@@ -18,7 +18,9 @@ const Context = createContext(defaultValue)
 
 function ContextProvider({ children }: { children: ReactNode }) {
   const [layout, setLayout] = useState<Layout>('recent')
-  const value = { layout, setLayout, interventions }
+  const value = {
+    layout, setLayout, interventions
+  }
   
   return (
     <Context.Provider value={value}>

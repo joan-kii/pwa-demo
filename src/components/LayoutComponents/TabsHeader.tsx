@@ -2,28 +2,15 @@ import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { Context } from '../../utils/context'
+import { Layout } from '../../utils/types'
 
 function TabsHeader() {
   const { layout, setLayout } = useContext(Context)
   const navigate = useNavigate()
 
-  function handleNavigation(name: string) {
-    switch(name) {
-      case 'recent':
-        setLayout(name)
-        navigate('/team/intervention/recent')
-        break
-      case 'new':
-        setLayout(name)
-        navigate('/team/new')
-        break
-      case 'chats':
-        setLayout(name)
-        navigate('/team/chats')
-        break
-      default:
-        setLayout('none')
-    }
+  function handleNavigation(name: Layout) {
+    setLayout(name)
+    navigate('/team/intervention/recent')
   }
   
   return (
@@ -40,7 +27,7 @@ function TabsHeader() {
         </li>
         <li
           className={`flex items-center w-1/3 justify-center rounded-t-lg hover:text-gray-600 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 border-b-2 hover:cursor-pointer ${layout === 'new' ? 'border-gray-700' : 'border-white'}`}
-          onClick={() => handleNavigation('new')}
+          onClick={() => setLayout('new')}
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-gray-500">
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
@@ -49,7 +36,7 @@ function TabsHeader() {
         </li>
         <li
           className={`flex items-center w-1/3 justify-center rounded-t-lg hover:text-gray-600 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 border-b-2 hover:cursor-pointer ${layout === 'chats' ? 'border-gray-700' : 'border-white'}`}
-          onClick={() => handleNavigation('chats')}
+          onClick={() => setLayout('chats')}
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-gray-500">
             <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 0 1 .778-.332 48.294 48.294 0 0 0 5.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />

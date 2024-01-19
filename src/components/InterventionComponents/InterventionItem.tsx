@@ -16,7 +16,7 @@ function InterventionItem() {
   const { interventionId } = useParams()
   const intervention = interventions.find((intervention) => intervention._id === Number(interventionId))
 
-  useEffect(() => {setLayout('none')}, [setLayout])
+  useEffect(() => {setLayout('intervention')}, [setLayout])
   
   return (
     <>

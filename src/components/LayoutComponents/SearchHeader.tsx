@@ -22,8 +22,6 @@ function SearchHeader() {
 
   const handleKeywordListSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault()
-    console.log(keywordList);
-    
     setKeywordList([])
   }
 
