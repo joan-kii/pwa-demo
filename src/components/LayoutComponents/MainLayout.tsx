@@ -8,8 +8,7 @@ import InterventionForm from './InterventionForm'
 
 function MainLayout() {
   const { layout } = useContext(Context)
-  console.log(layout);
-  
+
   return (
     <>
       <div className="container pl-64">

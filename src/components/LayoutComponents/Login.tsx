@@ -1,19 +1,23 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import logo from '../../assets/fixloud-removebg.png'
-import { userAccess } from '../../utils/users'
+import { Context } from '../../utils/context'
+import { teammate, manager } from '../../utils/users'
 
 function Login() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const { setActiveUser } = useContext(Context)
   const navigate = useNavigate()
 
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault()
-    if (password === userAccess.password && username === userAccess.teammate) {
-      navigate('/team/intervention/recent')
-    } else if (password === userAccess.password && username === userAccess.manager) {
+    if (password === teammate.user.password && username === teammate.user.username) {
+      setActiveUser(teammate)
+      navigate('/team/intervention/recent', { replace: true })
+    } else if (password === manager.user.password && username === manager.user.username) {
+      setActiveUser(manager)
       navigate('/manager')
     }
 

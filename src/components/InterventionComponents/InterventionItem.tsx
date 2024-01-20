@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import InterventionHeader from './InterventionHeader'
 import InterventionKeywords from './InterventionKeywords'
 import InterventionPending from './InterventionPending'
-import InterventionPraise from '../UtilsComponents/ManagerPraise'
+import InterventionApprove from '../UtilsComponents/ManagerApprove'
 import VotesItem from '../UtilsComponents/VotesItem'
 import CommentForm from '../CommentComponents/CommentForm'
 import CommentsList from '../LayoutComponents/CommentsList'
@@ -45,8 +45,8 @@ function InterventionItem() {
                 <p className="w-full py-3 px-5 text-justify">{intervention.text}</p>
               </div>
               <div className="flex justify-around">
-                {intervention.managerPraise &&
-                  <InterventionPraise />
+                {intervention.managerApprove &&
+                  <InterventionApprove />
                 }
                 {intervention.pending &&
                   <InterventionPending />

@@ -7,7 +7,7 @@ export interface Intervention {
   pending: boolean,
   date: string,
   fakeDate: number,
-  managerPraise: boolean,
+  managerApprove: boolean,
   comments: Comment[],
   votes: number,
   edited?: boolean,
@@ -20,58 +20,62 @@ export interface Comment {
   date: string,
   text: string,
   votes: number,
-  managerPraise?: boolean,
+  managerApprove: boolean,
   comments: Comment[]
 }
 
 export interface User {
-  _id?: number,
+  _id: number,
   name: string,
+  username: string,
+  password: string,
   lastName: string,
   startDate: string,
   email: string,
   image: string,
-  rol: Teammate | Manager,
-  manager?: Manager,
-  teammate?: Teammate,
+  rol: string,
   activeCompanies: Company[],
-  inactiveCompanies?: Company[], 
+  inactiveCompanies: Company[], 
   hasBeenTeammate: boolean,
   hasBeenManager: boolean,
-  interventionsVoted?: Intervention[],
-  commentsVoted?: Comment[],
+  interventions: number,
+  comments: number,
+  interventionsVotes: number,
+  commentsVotes: number,
+  votesGiven: number,
 }
 
 export interface Company {
-  _id?: number,
+  _id: number,
   name: string,
   logo: string,
-  startDate: number,
+  startDate: string,
   email: string,
   activeTeammateList: Teammate[],
   activeManagerList: Manager[],
-  inactiveTeammateList?: Teammate[],
-  inactiveManagerList?: Manager[],
+  inactiveTeammateList: Teammate[],
+  inactiveManagerList: Manager[],
 }
 
 export interface Teammate {
-  _id?: number,
+  _id: number,
   user: User,
-  startDate: number,
-  interventions: number,
-  comments: number,
+  companyStartDate: string,
+  companyInterventions: number,
+  companyComments: number,
   votesReceived: number,
   votesGiven: number,
-  managerInterventionsApproved: number,
-  managerCommentsApproved: number,
+  interventionsApproved: number,
+  commentsApproved: number,
 }
 
 export interface Manager {
-  _id?: number,
+  _id: number,
   user: User,
-  startDate: number,
-  comments: number,
-  interventionsApproved: number
+  companyStartDate: string,
+  companyComments: number,
+  companyInterventionsApproved: number
+  companyCommentsApproved: number
 }
 
 export type Layout = 'recent' | 'pending' | 'new' | 'team' | 'chats' | 'intervention' | 'none'

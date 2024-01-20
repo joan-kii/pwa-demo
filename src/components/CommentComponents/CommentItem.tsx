@@ -1,7 +1,7 @@
 import { Comment } from '../../utils/types'
 import VotesItem from '../UtilsComponents/VotesItem'
 import CommentForm from '../CommentComponents/CommentForm'
-import ManagerPraise from '../UtilsComponents/ManagerPraise'
+import ManagerApprove from '../UtilsComponents/ManagerApprove'
 import InterventionHeader from '../InterventionComponents/InterventionHeader'
 import CommentsList from '../LayoutComponents/CommentsList'
 
@@ -16,7 +16,7 @@ function CommentItem(comment: Comment) {
         </div>
         <CommentsList {...comment} />
         <div className="flex justify-around">
-          {comment.managerPraise && <ManagerPraise />}
+          {comment.managerApprove && <ManagerApprove />}
         </div>
         <div className="my-4 divide-y-2">
           <CommentForm />

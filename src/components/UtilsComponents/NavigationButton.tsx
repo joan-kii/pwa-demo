@@ -4,26 +4,25 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import { Context } from '../../utils/context'
 
 function NavigationButton() {
-  const { layout, setLayout }= useContext(Context)
+  const { setLayout }= useContext(Context)
   const navigate = useNavigate()
   const location = useLocation()
 
-  useEffect(() => {}, [layout])
-  
-  const goBack = () => {
-    navigate(-1)
-    const path = location.pathname.split('/').at(-1)
+  const path = location.pathname.split('/').at(-1)
+
+  useEffect(() => {
     if (path === 'recent' || path === 'pending' || path === 'intervention') {
       setLayout(path)
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [path])
+  
+  const goBack = () => {
+    navigate(-1)
   }
 
   const goForward = () => {
     navigate(+1)
-    const path = location.pathname.split('/').at(-1)
-    if (path === 'recent' || path === 'pending' || path === 'intervention') {
-      setLayout(path)
-    }
   }
 
   return (

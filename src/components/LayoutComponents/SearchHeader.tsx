@@ -1,16 +1,11 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 
 import { BellIcon } from '@heroicons/react/24/outline'
 import logo from '../../assets/android-chrome-512x512.png'
-import ignatius from '../../assets/ignatius_mini.png'
-
-const user = {
-  name: 'Ignatius',
-  email: 'ignatius@example.com',
-  imageUrl: ignatius
-}
+import { Context } from '../../utils/context'
 
 function SearchHeader() {
+  const { activeUser } = useContext(Context)
   const [keyword, setKeyword] = useState('')
   const [keywordList, setKeywordList] = useState<string[]>([])
   
@@ -24,7 +19,7 @@ function SearchHeader() {
     event.preventDefault()
     setKeywordList([])
   }
-
+  
   return (
     <div className="flex mx-auto px-4 pt-6 justify-between items-center sm:px-6 lg:px-8">
         <div className="flex-shrink-0">
@@ -93,7 +88,7 @@ function SearchHeader() {
           <div className="border-gray-700 pb-3 pt-4">
             <div className="flex items-center px-5">
               <div className="flex-shrink-0">
-                <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt="" />
+                <img className="h-10 w-10 rounded-full" src={activeUser.user.image} alt="" />
               </div>
             </div>
           </div>

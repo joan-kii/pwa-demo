@@ -17,7 +17,7 @@ export const interventions: Intervention[] = [
     pending: false,
     date: '22/12/2023 11:33',
     fakeDate: 8,
-    managerPraise: true,
+    managerApprove: true,
     votes: 6,
     comments: [
       {
@@ -26,7 +26,7 @@ export const interventions: Intervention[] = [
         date: '22/12/2023 18:56',
         text: 'Ese era el problema. No tenía sentido que se hubiera desplazado el final de carrera. Bravo!',
         votes: 0,
-        managerPraise: false,
+        managerApprove: false,
         comments: []
       },
       {
@@ -37,7 +37,7 @@ export const interventions: Intervention[] = [
           En esta intervención //// BACKLINK //// se mencionaba este problema.\
           Fernando, quizás sería buena idea actualizar dicha intervención.',
         votes: 1,
-        managerPraise: true,
+        managerApprove: true,
         comments: [
           {
             _id: 2,
@@ -45,7 +45,7 @@ export const interventions: Intervention[] = [
             date: '23/12/2023 09:42',
             text: 'Cierto. Paso el aviso.',
             votes: 0,
-            managerPraise: false,
+            managerApprove: false,
             comments: []
           }
         ]
@@ -65,7 +65,7 @@ export const interventions: Intervention[] = [
     pending: true,
     date: '19/12/2023 17:02',
     fakeDate: 7,
-    managerPraise: false,
+    managerApprove: false,
     votes: 0,
     comments: [
       {
@@ -74,7 +74,7 @@ export const interventions: Intervention[] = [
         date: '19/12/2023 17:12',
         text: 'Aghh... Vuelvo a pasar el aviso.',
         votes: 0,
-        managerPraise: false,
+        managerApprove: false,
         comments: []
       }
     ]
@@ -89,7 +89,7 @@ export const interventions: Intervention[] = [
     pending: false,
     date: '18/12/2023 10:45',
     fakeDate: 6,
-    managerPraise: false,
+    managerApprove: false,
     votes: 0,
     comments: []
   },
@@ -105,7 +105,7 @@ export const interventions: Intervention[] = [
     pending: false,
     date: '17/12/2023 19:22',
     fakeDate: 5,
-    managerPraise: false,
+    managerApprove: false,
     votes: 0,
     comments: []
   },
@@ -123,7 +123,7 @@ export const interventions: Intervention[] = [
     pending: false,
     date: '15/12/2023 07:55',
     fakeDate: 4,
-    managerPraise: true,
+    managerApprove: true,
     edited: true,
     editionDate: '23/12/2023 16:40',
     votes: 3,
@@ -135,7 +135,7 @@ export const interventions: Intervention[] = [
         text: 'Dani, edita la intervención para que refleje lo ocurrido con el tubo de salida. Esta es la intervención\
           //// BACKLINK //// en la que se explica lo ocurrido.',
         votes: 0,
-        managerPraise: false,
+        managerApprove: false,
         comments: [
           {
             _id: 5,
@@ -143,7 +143,7 @@ export const interventions: Intervention[] = [
             date: '23/12/2023 16:44',
             text: 'Hecho!',
             votes: 0,
-            managerPraise: false,
+            managerApprove: false,
             comments: []
           }
         ]
@@ -162,7 +162,7 @@ export const interventions: Intervention[] = [
     pending: false,
     date: '15/10/2023 12:48',
     fakeDate: 1,
-    managerPraise: true,
+    managerApprove: true,
     votes: 8,
     comments: [
       {
@@ -172,7 +172,7 @@ export const interventions: Intervention[] = [
         text: 'Yo siempre me equivocaba en el paso 3. Estad atentos a lo que hace Santi en el minuto 3.15.\
           Que no os pase lo que tantas veces me ha pasado...',
         votes: 0,
-        managerPraise: false,
+        managerApprove: false,
         comments:[]
       },
       {
@@ -181,7 +181,7 @@ export const interventions: Intervention[] = [
         date: '16/10/2023 16:51',
         text: 'Santi, si no me equivoco, este ajuste es el mismo en todos los trafos, no?',
         votes: 2,
-        managerPraise: true,
+        managerApprove: true,
         comments: [
           {
             _id: 8,
@@ -189,7 +189,7 @@ export const interventions: Intervention[] = [
             date: '16/10/2023 20:56',
             text: 'Yo no he ajustado nunca los otros posicionadores. Por lo que no estoy 100% seguro.',
             votes: 0,
-            managerPraise: false,
+            managerApprove: false,
             comments: []
           }
         ]
@@ -203,7 +203,7 @@ export const interventions: Intervention[] = [
           son idénticos. Santi, porfa, añade las palabras clave "trafo 1" y "trafo 3". Muy buen trabajo,\
           Santiago. Bien hecho!!!',
         votes: 0,
-        managerPraise: false,
+        managerApprove: false,
         comments: [
           {
             _id: 10,
@@ -211,7 +211,7 @@ export const interventions: Intervention[] = [
             date: '17/10/2023 19:01',
             text: 'Añadidas, jefe!',
             votes: 0,
-            managerPraise: true,
+            managerApprove: true,
             comments: []
           }
         ]
@@ -233,7 +233,7 @@ export const interventions: Intervention[] = [
     pending: true,
     date: '26/11/2023 21:38',
     fakeDate: 3,
-    managerPraise: false,
+    managerApprove: false,
     votes: 0,
     comments: [
       {
@@ -242,7 +242,7 @@ export const interventions: Intervention[] = [
         date: '27/11/2023 07:02',
         text: 'Madre mía, ni sabía que eso estaba ahí. Lo añado a la lista de trabajos pendientes.',
         votes: 0,
-        managerPraise: false,
+        managerApprove: false,
         comments: []
       }
     ]
@@ -258,7 +258,7 @@ export const interventions: Intervention[] = [
     pending: true,
     date: '12/11/2023 10:50',
     fakeDate: 2, 
-    managerPraise: false,
+    managerApprove: false,
     votes: 0,
     comments: [
       {
@@ -269,7 +269,7 @@ export const interventions: Intervention[] = [
           añadiré a la lista de trabajos pendientes. He actualizado los planos. Aquí os los paso:\
           //// ARCHIVO ////',
         votes: 0,
-        managerPraise: false,
+        managerApprove: false,
         comments: [
           {
             _id: 10,
@@ -277,7 +277,7 @@ export const interventions: Intervention[] = [
             date: '13/11/2023 06:36',
             text: 'Pendiente la he dejado.',
             votes: 0,
-            managerPraise: false,
+            managerApprove: false,
             comments: []
           }
         ]
