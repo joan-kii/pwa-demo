@@ -13,8 +13,9 @@ function MainLayout() {
     <>
       <div className="container pl-64">
         {(layout === 'recent' || layout === 'pending' || layout === 'intervention') && <NavigationButton />}
-        {layout === 'chats' ? <ChatsLayout /> : <Outlet />}
-        {layout === 'new' ? <InterventionForm /> : <Outlet />}
+        {layout === 'chats' && <ChatsLayout />}
+        {layout === 'new' && <InterventionForm />}
+        {(layout !== 'new' && layout !== 'chats') && <Outlet />}
       </div>
     </>
   )

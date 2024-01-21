@@ -3,7 +3,7 @@ import { Intervention }from './types'
 export const interventions: Intervention[] = [
   {
     _id: 0,
-    author: 'Sergio Semper',
+    author: 'Sergio Samper',
     keywords: ['bóveda', 'máquina 2', 'posición de trabajo'],
     description: 'El giro de la bóveda de la máquina 2 no alcanca la posición de trabajo',
     text: 'Nos comunica el operador de producción que no puede iniciar la secuencia de trabajo.\
@@ -249,7 +249,7 @@ export const interventions: Intervention[] = [
   },
   {
     _id: 7,
-    author: 'Sergio Semper',
+    author: 'Sergio Samper',
     keywords: ['máquina 1', 'maniobra', 'giro brazo', 'planos', 'relé'],
     description: 'No gira brazo superior.',
     text: 'El operador nos informa de que no gira el brazo superior. Se comprueba que el relé de la maniobra\
@@ -273,7 +273,7 @@ export const interventions: Intervention[] = [
         comments: [
           {
             _id: 10,
-            author: 'Sergio Semper',
+            author: 'Sergio Samper',
             date: '13/11/2023 06:36',
             text: 'Pendiente la he dejado.',
             votes: 0,
