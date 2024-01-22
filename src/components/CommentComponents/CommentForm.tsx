@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import GenericButton from '../UtilsComponents/GenericButton'
 
 function CommentForm() {
   const [showForm, setShowForm] = useState(false)
@@ -17,10 +18,8 @@ function CommentForm() {
             <label htmlFor="comment" className="sr-only">Tu comentario</label>
             <textarea id="comment" rows={3} className="w-full py-2 text-sm text-gray-900 bg-white dark:bg-gray-800 !outline-none dark:text-white dark:placeholder-gray-400" placeholder="Escribir comentario..." required></textarea>
           </div>
-          <div className="flex items-center justify-between px-3 py-2 border-t dark:border-gray-600">
-            <button type="submit" className="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-gray-800 rounded-lg border border-gray-800 hover:bg-gray-600 disabled:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
-              Añadir comentario
-            </button>
+          <div className="flex items-center justify-end px-3 py-2 border-t dark:border-gray-600">
+            <GenericButton text="Añadir comentario" />
           </div>
         </div>
       </form>

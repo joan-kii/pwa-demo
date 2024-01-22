@@ -1,8 +1,9 @@
 import { useState, useContext } from 'react'
-
 import { BellIcon } from '@heroicons/react/24/outline'
+
 import logo from '../../assets/android-chrome-512x512.png'
 import { Context } from '../../utils/context'
+import GenericButton from '../UtilsComponents/GenericButton'
 
 function SearchHeader() {
   const { activeUser } = useContext(Context)
@@ -49,9 +50,7 @@ function SearchHeader() {
                 required 
               />
             </div>
-            <button type="submit" className="p-2 ms-2 text-sm font-medium text-white bg-gray-800 rounded-lg border border-gray-800 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
-              <span>Añadir</span>
-            </button>
+            <GenericButton text="Añadir" />
           </form>
           <form onSubmit={handleKeywordListSubmit} className="flex w-3/5 items-center">   
             <div className="relative ml-4 w-full">
@@ -71,9 +70,7 @@ function SearchHeader() {
                 required
               />
             </div>
-            <button type="submit" className="p-2 ms-2 text-sm font-medium text-white bg-gray-800 rounded-lg border border-gray-800 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
-              <span>Buscar</span>
-            </button>
+            <GenericButton text="Buscar" />
           </form>
         </div>
         <div className="ml-4 flex justify-end items-center md:ml-6">

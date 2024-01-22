@@ -1,46 +1,15 @@
-import { useState } from 'react'
+import InterventionFormQuote from '../InterventionFormComponents/InterventionFormQuote'
+import InterventionFormKeywordsInput from '../InterventionFormComponents/InterventionFormKeywordsInput'
 
 function InterventionForm() {
-  const [keyword, setKeyword] = useState('')
 
   return (
-    <form className="container flex flex-col mx-auto my-5 p-2 w-2/3 bg-gray-50 border-solid border-2 border-gray rounded-lg shadow">
-      <div className="mx-auto space-y-12">
-        <div className="border-b border-gray-900/10 pb-12">
-          
-          <figure className="max-w-screen-md mx-auto my-6 text-center">
-            <svg className="w-5 h-5 mx-auto my-2 text-gray-400 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
-              <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"/>
-            </svg>
-            <blockquote>
-              <p className="text-base italic font-medium text-gray-600 dark:text-white">"Alguien inteligente aprende de la experiencia de los demás."</p>
-            </blockquote>
-            <figcaption className="flex items-center justify-center mt-2 space-x-3 rtl:space-x-reverse">
-              <div className="flex items-center">
-                <cite className="pe-3 font-medium text-base text-gray-900 dark:text-white">Voltaire</cite>
-              </div>
-            </figcaption>
-          </figure>
-
-          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-            <div className="sm:col-span-4">
-            <label htmlFor="add-keyword" className="sr-only">Añadir palabra clave</label>
-              <div className="absolute inset-y-0 start-0 flex items-center ps-1.5 pointer-events-none">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-4 h-4 text-gray-500">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 8.25h15m-16.5 7.5h15m-1.8-13.5-3.9 19.5m-2.1-19.5-3.9 19.5" />
-                </svg>
-              </div>
-              <input
-                type="text"
-                id="add-keyword"
-                value={keyword}
-                onChange={({ target }) => {setKeyword(target.value)}}
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-8 p-2  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Añadir palabra clave"
-                required 
-              />
-            </div>
-
+    <form className="container flex flex-col mx-auto my-5 w-2/3 bg-gray-50 border-solid border-2 border-gray rounded-lg shadow">
+      <div className="mx-auto">
+        <div className="border-b border-gray-900/10">
+          <InterventionFormQuote />
+          <div className="mt-10 p-5 bg-white border-solid border-2 border-gray rounded-lg">
+            <InterventionFormKeywordsInput />
             <div className="col-span-full">
               <label htmlFor="about" className="block text-sm font-medium leading-6 text-gray-900">
                 About
