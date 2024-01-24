@@ -1,5 +1,5 @@
-import InterventionFormQuote from '../InterventionFormComponents/InterventionFormQuote'
-import InterventionFormKeywordsInput from '../InterventionFormComponents/InterventionFormKeywordsInput'
+import Quote from '../InterventionFormComponents/Quote'
+import KeywordsInput from '../InterventionFormComponents/KeywordsInput'
 
 function InterventionForm() {
 
@@ -7,9 +7,9 @@ function InterventionForm() {
     <form className="container flex flex-col mx-auto my-5 w-2/3 bg-gray-50 border-solid border-2 border-gray rounded-lg shadow">
       <div className="mx-auto">
         <div className="border-b border-gray-900/10">
-          <InterventionFormQuote />
+          <Quote />
           <div className="mt-10 p-5 bg-white border-solid border-2 border-gray rounded-lg">
-            <InterventionFormKeywordsInput />
+            <KeywordsInput />
             <div className="col-span-full">
               <label htmlFor="about" className="block text-sm font-medium leading-6 text-gray-900">
                 About

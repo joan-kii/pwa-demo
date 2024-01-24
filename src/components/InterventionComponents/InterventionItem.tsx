@@ -55,7 +55,7 @@ function InterventionItem() {
               </div>
               {intervention.author === 'Sergio Samper' &&
                 <div className="mr-6 flex justify-end">
-                  <GenericButton text="Editar Intervención" />
+                  <GenericButton text="Editar Intervención" type="button" />
                 </div>
               }
               <div className="my-4 divide-y-2">

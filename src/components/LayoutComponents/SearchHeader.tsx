@@ -7,7 +7,7 @@ import GenericButton from '../UtilsComponents/GenericButton'
 
 function SearchHeader() {
   const { activeUser } = useContext(Context)
-  const [keyword, setKeyword] = useState('')
+  const [keyword, setKeyword] = useState<string>('')
   const [keywordList, setKeywordList] = useState<string[]>([])
   
   const handleKeywordSubmit = (event: { preventDefault: () => void }) => {
@@ -50,7 +50,7 @@ function SearchHeader() {
                 required 
               />
             </div>
-            <GenericButton text="Añadir" />
+            <GenericButton text="Añadir" type="submit" />
           </form>
           <form onSubmit={handleKeywordListSubmit} className="flex w-3/5 items-center">   
             <div className="relative ml-4 w-full">
@@ -70,7 +70,7 @@ function SearchHeader() {
                 required
               />
             </div>
-            <GenericButton text="Buscar" />
+            <GenericButton text="Buscar" type="submit" />
           </form>
         </div>
         <div className="ml-4 flex justify-end items-center md:ml-6">
