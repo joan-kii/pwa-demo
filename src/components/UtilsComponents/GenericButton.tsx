@@ -1,8 +1,9 @@
 function GenericButton({
-  text, type, handleClick}: {
+  text, type, handleClick
+}: {
     text: string, 
     type: 'submit' | 'reset' | 'button',
-    handleClick: function() {},
+    handleClick: (item: any) => void,
   }) {
   return (
     <button

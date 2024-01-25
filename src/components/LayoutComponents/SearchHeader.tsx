@@ -32,7 +32,7 @@ function SearchHeader() {
         </div>
         <div className="flex w-1/2 items-center">
           <h6 className="font-bold tracking-tight text-gray-900">Búsqueda:</h6>
-          <form onSubmit={handleKeywordSubmit} className="flex w-2/5 items-center">   
+          <form className="flex w-2/5 items-center">   
             <div className="relative ml-4 w-full">
               <label htmlFor="add-keyword" className="sr-only">Añadir palabra clave</label>
               <div className="absolute inset-y-0 start-0 flex items-center ps-1.5 pointer-events-none">
@@ -50,9 +50,9 @@ function SearchHeader() {
                 required 
               />
             </div>
-            <GenericButton text="Añadir" type="submit" />
+            <GenericButton text="Añadir" type="button" handleClick={handleKeywordSubmit}/>
           </form>
-          <form onSubmit={handleKeywordListSubmit} className="flex w-3/5 items-center">   
+          <form className="flex w-3/5 items-center">   
             <div className="relative ml-4 w-full">
               <label htmlFor="search-keywordList" className="sr-only">Buscar</label>
               <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -70,7 +70,7 @@ function SearchHeader() {
                 required
               />
             </div>
-            <GenericButton text="Buscar" type="submit" />
+            <GenericButton text="Buscar" type="button" handleClick={handleKeywordListSubmit}/>
           </form>
         </div>
         <div className="ml-4 flex justify-end items-center md:ml-6">
