@@ -1,9 +1,12 @@
-function TextInput({label, text, rows}: {label: string, text: string, rows: number}) {
+function TextInput({ label, text, rows, children }: { label: string, text: string, rows: number, children: React.ReactNode }) {
   return (
-    <div className="mt-6 w-full flex flex-col border-t-2 border-gray-300">
-      <label htmlFor="about" className="mt-4 ml-2 font-light">
-        {label}
-      </label>
+    <div className="mt-6 pt-5 w-full flex flex-col border-t-2 border-gray-300">
+      <div className="mx-2 mt-4 flex justify-between">
+        <label htmlFor="about" className="font-light">
+          {label}
+        </label>
+        {children}
+      </div>
       <div className="mt-2">
         <textarea
           id="description"
