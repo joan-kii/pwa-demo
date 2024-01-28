@@ -15,7 +15,7 @@ export const interventions: Intervention[] = [
       //// IMAGEN ////\
       Se ajusta el sensor inductivo de posición superior para evitar que la bóveda suba demasiado y choque con la tubería al subir.',
     pending: false,
-    date: '22/12/2023 11:33',
+    date: '22/12/2023 11:33:45',
     fakeDate: 8,
     managerApprove: true,
     votes: 6,
@@ -23,7 +23,7 @@ export const interventions: Intervention[] = [
       {
         _id: 0,
         author: 'Rafael Ramos',
-        date: '22/12/2023 18:56',
+        date: '22/12/2023 18:56:23',
         text: 'Ese era el problema. No tenía sentido que se hubiera desplazado el final de carrera. Bravo!',
         votes: 0,
         managerApprove: false,
@@ -32,7 +32,7 @@ export const interventions: Intervention[] = [
       {
         _id: 1,
         author: 'Juan Juarez',
-        date: '23/12/2023 08:15',
+        date: '23/12/2023 08:15:45',
         text: 'Este era el motivo por el que los operadores se quejaban de que la bóveda no encajaba en la base.\
           En esta intervención //// BACKLINK //// se mencionaba este problema.\
           Fernando, quizás sería buena idea actualizar dicha intervención.',
@@ -42,7 +42,7 @@ export const interventions: Intervention[] = [
           {
             _id: 2,
             author: 'Fernando Fernández',
-            date: '23/12/2023 09:42',
+            date: '23/12/2023 09:42:21',
             text: 'Cierto. Paso el aviso.',
             votes: 0,
             managerApprove: false,
@@ -63,7 +63,7 @@ export const interventions: Intervention[] = [
       el eje trasero de la arrastradora sigue desalineado. Se rearma convertidor para que puedan trabajar, pero\
       queda pendiente de reparar por mantenimiento mecánico.',
     pending: true,
-    date: '19/12/2023 17:02',
+    date: '19/12/2023 17:02:27',
     fakeDate: 7,
     managerApprove: false,
     votes: 0,
@@ -71,7 +71,7 @@ export const interventions: Intervention[] = [
       {
         _id: 3,
         author: 'Fernando Fernández',
-        date: '19/12/2023 17:12',
+        date: '19/12/2023 17:12:59',
         text: 'Aghh... Vuelvo a pasar el aviso.',
         votes: 0,
         managerApprove: false,
@@ -87,7 +87,7 @@ export const interventions: Intervention[] = [
     text: 'La bóveda no llega a la posición de trabajo. Se ajusta final de carrera y se comprueba\
       correcto funcionamiento.',
     pending: false,
-    date: '18/12/2023 10:45',
+    date: '18/12/2023 10:45:23',
     fakeDate: 6,
     managerApprove: false,
     votes: 0,
@@ -103,7 +103,7 @@ export const interventions: Intervention[] = [
       El brazo de la columna de giro no llega a activar el final de carrera, por lo que se ajusta dicho\
       final de carrera.',
     pending: false,
-    date: '17/12/2023 19:22',
+    date: '17/12/2023 19:22:48',
     fakeDate: 5,
     managerApprove: false,
     votes: 0,
@@ -121,17 +121,17 @@ export const interventions: Intervention[] = [
       En esta intervención //// BACKLINK //// realizada por el compañero Sergio Semper se explica el motivo por el que\
       no alcanzaban la temperatura objetivo. Se reestablece SP original.',
     pending: false,
-    date: '15/12/2023 07:55',
+    date: '15/12/2023 07:55:51',
     fakeDate: 4,
     managerApprove: true,
     edited: true,
-    editionDate: '23/12/2023 16:40',
+    editionDate: '23/12/2023 16:40:25',
     votes: 3,
     comments: [
       {
         _id: 4,
         author: 'Fernando Fernández',
-        date: '23/12/2023 09:45',
+        date: '23/12/2023 09:45:47',
         text: 'Dani, edita la intervención para que refleje lo ocurrido con el tubo de salida. Esta es la intervención\
           //// BACKLINK //// en la que se explica lo ocurrido.',
         votes: 0,
@@ -140,7 +140,7 @@ export const interventions: Intervention[] = [
           {
             _id: 5,
             author: 'Daniel Dante',
-            date: '23/12/2023 16:44',
+            date: '23/12/2023 16:44:02',
             text: 'Hecho!',
             votes: 0,
             managerApprove: false,
@@ -160,7 +160,7 @@ export const interventions: Intervention[] = [
       cómo hacerlo. Si alguien necesita alguna aclaración más, por favor hacédmelo saber.\
       //// VÍDEO ////',
     pending: false,
-    date: '15/10/2023 12:48',
+    date: '15/10/2023 12:48:03',
     fakeDate: 1,
     managerApprove: true,
     votes: 8,
@@ -168,7 +168,7 @@ export const interventions: Intervention[] = [
       {
         _id: 6,
         author: 'Rafael Ramos',
-        date: '16/10/2023 13:02',
+        date: '16/10/2023 13:02:58',
         text: 'Yo siempre me equivocaba en el paso 3. Estad atentos a lo que hace Santi en el minuto 3.15.\
           Que no os pase lo que tantas veces me ha pasado...',
         votes: 0,
@@ -178,7 +178,7 @@ export const interventions: Intervention[] = [
       {
         _id: 7,
         author: 'Antonio Antúnez',
-        date: '16/10/2023 16:51',
+        date: '16/10/2023 16:51:37',
         text: 'Santi, si no me equivoco, este ajuste es el mismo en todos los trafos, no?',
         votes: 2,
         managerApprove: true,
@@ -186,7 +186,7 @@ export const interventions: Intervention[] = [
           {
             _id: 8,
             author: 'Santiago Sánchez',
-            date: '16/10/2023 20:56',
+            date: '16/10/2023 20:56:56',
             text: 'Yo no he ajustado nunca los otros posicionadores. Por lo que no estoy 100% seguro.',
             votes: 0,
             managerApprove: false,
@@ -197,7 +197,7 @@ export const interventions: Intervention[] = [
       {
         _id: 9,
         author: 'Fernando Fernández',
-        date: '17/10/2023 07:15',
+        date: '17/10/2023 07:15:41',
         text: 'Magníficamente explicado. Sirva este tutorial como referencia para el ajuste de todos los\
           posicionadores de las válvulas de refrigeración de los 3 trafos, ya que, como dice Antonio,\
           son idénticos. Santi, porfa, añade las palabras clave "trafo 1" y "trafo 3". Muy buen trabajo,\
@@ -208,7 +208,7 @@ export const interventions: Intervention[] = [
           {
             _id: 10,
             author: 'Santiago Sánchez',
-            date: '17/10/2023 19:01',
+            date: '17/10/2023 19:01:36',
             text: 'Añadidas, jefe!',
             votes: 0,
             managerApprove: true,
@@ -231,7 +231,7 @@ export const interventions: Intervention[] = [
       se localiza el instrumento en esta ubicación: //// COORDENADAS ////. No se realiza niguna comprobación\
       más por atender otras prioridades.',
     pending: true,
-    date: '26/11/2023 21:38',
+    date: '26/11/2023 21:38:51',
     fakeDate: 3,
     managerApprove: false,
     votes: 0,
@@ -239,7 +239,7 @@ export const interventions: Intervention[] = [
       {
         _id: 11,
         author: 'Fernando Fernández',
-        date: '27/11/2023 07:02',
+        date: '27/11/2023 07:02:12',
         text: 'Madre mía, ni sabía que eso estaba ahí. Lo añado a la lista de trabajos pendientes.',
         votes: 0,
         managerApprove: false,
@@ -256,7 +256,7 @@ export const interventions: Intervention[] = [
       no funciona. Se busca repuesto pero no se encuentra al tratarse de un relé obsoleto. Se monta un relé de\
       24VDC y se comprueba correcto funcionamiento.',
     pending: true,
-    date: '12/11/2023 10:50',
+    date: '12/11/2023 10:50:36',
     fakeDate: 2, 
     managerApprove: false,
     votes: 0,
@@ -264,7 +264,7 @@ export const interventions: Intervention[] = [
       {
         _id: 12,
         author: 'Fernando Fernández',
-        date: '12/11/2023 11:37',
+        date: '12/11/2023 11:37:51',
         text: 'Sergio, vamos a cambiar todos los relés a 24VDC. Deja la intervención en pendiente y la\
           añadiré a la lista de trabajos pendientes. He actualizado los planos. Aquí os los paso:\
           //// ARCHIVO ////',
@@ -274,7 +274,7 @@ export const interventions: Intervention[] = [
           {
             _id: 10,
             author: 'Sergio Samper',
-            date: '13/11/2023 06:36',
+            date: '13/11/2023 06:36:58',
             text: 'Pendiente la he dejado.',
             votes: 0,
             managerApprove: false,

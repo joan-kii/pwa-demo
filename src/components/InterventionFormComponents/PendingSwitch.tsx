@@ -1,9 +1,8 @@
-import { useState } from 'react'
-
 import BulbSuggestion from './BulbSuggestion'
 
-function PendingSwitch() {
-  const [isPending, setIsPending] = useState<boolean>(true)
+function PendingSwitch({ isPending, setIsPending }:
+  { isPending: boolean, setIsPending: React.Dispatch<React.SetStateAction<boolean>>}
+  ) {
 
   return (
     <div className="mt-6 pt-8 flex items-center border-t-2 border-gray-300">

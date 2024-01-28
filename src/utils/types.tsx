@@ -1,5 +1,5 @@
 export interface Intervention {
-  _id?: number,
+  _id: number,
   author: string,
   keywords: string[],
   description: string,
@@ -15,7 +15,7 @@ export interface Intervention {
 }
 
 export interface Comment {
-  _id?: number,
+  _id: number,
   author: string,
   date: string,
   text: string,

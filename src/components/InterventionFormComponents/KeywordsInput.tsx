@@ -1,30 +1,33 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import GenericButton from '../UtilsComponents/GenericButton'
 import BulbSuggestion from './BulbSuggestion'
 import KeywordTag from './KeywordTag'
 
-function KeywordsInput() {
+function KeywordsInput({ keywordsList, setKeywordsList }:
+  { keywordsList: string[],
+    setKeywordsList: React.Dispatch<React.SetStateAction<string[]>>
+  }) {
+    
   const [keywords, setKeywords] = useState<string>('')
-  const [keywordList, setKeywordList] = useState<string[]>([])
   const [hasMinKeywords, setHasMinKeywords] = useState<boolean>(false)
 
   useEffect(() => {
-    if (keywordList.length > 2) {
+    if (keywordsList.length > 2) {
       setHasMinKeywords(true)
     } else {
       setHasMinKeywords(false)
     }
-  }, [keywordList])
+  }, [keywordsList])
 
   const handleKeywords = (event: { preventDefault: () => void }) => {
     event.preventDefault()
-    setKeywordList(keywordList.concat(keywords.split(', ')))
+    setKeywordsList(keywordsList.concat(keywords.split(', ')))
     setKeywords('')
   }
   
   const removeKeyword = (text: string) => {
-    setKeywordList(keywordList.filter((keyword) => keyword !== text))
+    setKeywordsList(keywordsList.filter((keyword) => keyword !== text))
   }
   
   return (
@@ -43,8 +46,8 @@ function KeywordsInput() {
         required 
       />
       <div className="flex justify- items-center">
-        {keywordList.length > 0 ?
-          keywordList.map((keyword, idx) => <KeywordTag text={keyword} key={idx} handleRemove={removeKeyword} />) :
+        {keywordsList.length > 0 ?
+          keywordsList.map((keyword, idx) => <KeywordTag text={keyword} key={idx} handleRemove={removeKeyword} />) :
           <p className="text-sm font-light">p. ej.: máquina 1, rodillo entrada, buje</p>
         }
       </div>
