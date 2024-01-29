@@ -12,7 +12,7 @@ import { Intervention } from '../../utils/types'
 import { Context} from '../../utils/context'
 
 function InterventionForm() {
-  const { interventions, activeUser, setLayout } = useContext(Context)
+  const { interventions, activeUser, setLayout, clipboard } = useContext(Context)
   const [keywordsList, setKeywordsList] = useState<string[]>([])
   const [description, setDescription] = useState<string>('')
   const [text, setText] = useState<string>('')
@@ -25,7 +25,7 @@ function InterventionForm() {
     description,
     text,
     pending: isPending,
-    date: new Date().toLocaleString('es-SP', { timeZone: 'UTC' }),
+    date: new Date().toLocaleString('es-ES', { timeZone: 'UTC' }),
     fakeDate: interventions.length + 1,
     managerApprove: false,
     comments: [],
@@ -36,7 +36,6 @@ function InterventionForm() {
   
   const submitForm = () => {
     interventions.push(newIntervention)
-    console.log('new intervention')
     setLayout('recent')
   }
 
@@ -45,12 +44,13 @@ function InterventionForm() {
     setDescription('')
     setText('')
     setIsPending(true)
-    console.log('intervention canceled');
   }
 
   const saveDraft = () => {
     console.log('draft saved');
   }
+
+  document.addEventListener('paste', () => {console.log(clipboard)})
 
   return (
     <div className="relative">

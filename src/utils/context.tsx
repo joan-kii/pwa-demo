@@ -10,6 +10,8 @@ type defaultValueType = {
   interventions: Intervention[]
   activeUser: Teammate | Manager
   setActiveUser: React.Dispatch<React.SetStateAction<Teammate | Manager>>
+  clipboard: string
+  setClipboard: React.Dispatch<React.SetStateAction<string>>
 }
 
 const defaultValue: defaultValueType = {
@@ -17,7 +19,9 @@ const defaultValue: defaultValueType = {
   setLayout: function() {},
   interventions: interventions,
   activeUser: teammate,
-  setActiveUser: function () {}
+  setActiveUser: function () {},
+  clipboard: '',
+  setClipboard: function () {}
 }
 
 const Context = createContext(defaultValue)
@@ -25,9 +29,10 @@ const Context = createContext(defaultValue)
 function ContextProvider({ children }: { children: ReactNode }) {
   const [layout, setLayout] = useState<Layout>('recent')
   const [activeUser, setActiveUser] = useState<Teammate | Manager>(teammate)
+  const [clipboard, setClipboard] = useState<string>('')
   const value = {
     layout, setLayout, interventions,
-    activeUser, setActiveUser
+    activeUser, setActiveUser, clipboard, setClipboard
   }
   
   return (
