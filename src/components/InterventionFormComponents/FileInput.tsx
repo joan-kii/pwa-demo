@@ -1,6 +1,6 @@
 import BulbSuggestion from './BulbSuggestion'
 
-function FileInput() {
+function FileInput({ setFiles }: { setFiles: React.Dispatch<React.SetStateAction<string>> }) {
   return (
     <div className="mt-6 pt-5 w-full flex flex-col border-t-2 border-gray-300">
       <div className="mx-2 mt-4 flex justify-between">
@@ -18,7 +18,15 @@ function FileInput() {
               className="relative cursor-pointer rounded-md bg-white font-semibold text-blue-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-blue-600 focus-within:ring-offset-2 hover:text-blue-500"
             >
               <span>Sube un archivo</span>
-              <input id="file-upload" name="file-upload" type="file" className="sr-only" />
+              <input
+                id="file-upload"
+                name="file-upload"
+                type="file"
+                className="sr-only"
+                multiple
+                accept="image/*, video/*, audio/*, .pdf, .doc"
+                onChange={(event) => setFiles(event.target.value)}
+              />
             </label>
             <p className="pl-1">o arrástralo aquí</p>
           </div>

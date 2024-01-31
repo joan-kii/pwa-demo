@@ -1,11 +1,11 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 
 import Quote from '../InterventionFormComponents/Quote'
 import KeywordsInput from '../InterventionFormComponents/KeywordsInput'
 import Progress from '../InterventionFormComponents/Progress'
 import TextInput from '../InterventionFormComponents/TextInput'
 import FileInput from '../InterventionFormComponents/FileInput'
-import PendingSwitch from '../InterventionFormComponents/PendingSwitch'
+import PendingCheckbox from '../InterventionFormComponents/PendingCheckbox'
 import ButtonsGroup from '../InterventionFormComponents/ButtonsGroup'
 import BulbSuggestion from '../InterventionFormComponents/BulbSuggestion'
 import { Intervention } from '../../utils/types'
@@ -16,7 +16,25 @@ function InterventionForm() {
   const [keywordsList, setKeywordsList] = useState<string[]>([])
   const [description, setDescription] = useState<string>('')
   const [text, setText] = useState<string>('')
-  const [isPending, setIsPending] = useState(true)
+  const [files, setFiles] = useState<string>('')
+  const [isPending, setIsPending] = useState(false)
+  const [isFinished, setIsFinished] = useState(false)
+  const [progress, setProgress] = useState<number>(0)
+
+  useEffect(() => {
+    if (keywordsList.length > 2) {
+      setProgress(progress + 20)
+    } else if (description.split(' ').length > 3) {
+      setProgress(progress + 20)
+    } else if (text.split(' ').length > 9) {
+      setProgress(progress + 20)
+    } else if (files.split('').length > 0) {
+      setProgress(progress + 20)
+    } else if (isPending || isFinished) {
+      setProgress(progress + 20)
+    }
+
+  }, [keywordsList, description, text, files])
 
   const newIntervention: Intervention = {
     _id: interventions.length + 1,
@@ -78,15 +96,20 @@ function InterventionForm() {
               >
                 <BulbSuggestion isSuggesting={false} text="Relata lo ocurrido de forma secuencial. Da tantos detalles como puedas" />
               </TextInput>
-              <FileInput />
-              <PendingSwitch isPending={isPending} setIsPending={setIsPending} />
+              <FileInput setFiles={setFiles} />
+              <PendingCheckbox
+                isPending={isPending}
+                setIsPending={setIsPending}
+                isFinished={isFinished}
+                setIsFinished={setIsFinished}
+              />
             </div>
           </div>
         </div>
         <ButtonsGroup handleSubmit={submitForm} handleCancel={cancelForm} handleSaveDraft={saveDraft} />
       </form>
       <div className="fixed bottom-10 right-20">
-        <Progress />
+        <Progress progress={progress} />
       </div>
     </div>
   )
