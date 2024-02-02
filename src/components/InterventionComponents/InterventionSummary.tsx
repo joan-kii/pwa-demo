@@ -30,7 +30,7 @@ function InterventionSummary(intervention: Intervention) {
           to={`/team/intervention/${intervention._id}`}
           className="text-sky-600"
         >
-          {`@${intervention._id}`}
+          {`#${intervention._id}`}
         </Link>
         <div className="group relative">
           <button className="ml-3" onClick={() => setClipboard(`<a href="http://localhost:5173/team/intervention/${intervention._id})">@${intervention._id}</a>`)}>

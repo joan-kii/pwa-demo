@@ -23,7 +23,7 @@ function InterventionItem() {
       {intervention &&
         <div className="flex flex-col">
           <div className="container flex mx-auto mt-5 p-2 w-2/3 bg-gray-50 border-solid border-x-2 border-t-2 border-gray rounded-t-lg shadow">
-            <h3>{`@${intervention._id}`}</h3>
+            <h3>{`#${intervention._id}`}</h3>
             <div className="group relative">
               <button className="ml-3" onClick={() => setClipboard(`<a href="http://localhost:5173/team/intervention/${intervention._id})">@${intervention._id}</a>`)}>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-gray-500">

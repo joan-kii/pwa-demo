@@ -30,10 +30,7 @@ function InterventionForm() {
       setProgress(progress + 20)
     } else if (files.split('').length > 0) {
       setProgress(progress + 20)
-    } else if (isPending || isFinished) {
-      setProgress(progress + 20)
     }
-
   }, [keywordsList, description, text, files])
 
   const newIntervention: Intervention = {
@@ -61,7 +58,8 @@ function InterventionForm() {
     setKeywordsList([])
     setDescription('')
     setText('')
-    setIsPending(true)
+    setIsPending(false)
+    setIsFinished(false)
   }
 
   const saveDraft = () => {
@@ -102,6 +100,8 @@ function InterventionForm() {
                 setIsPending={setIsPending}
                 isFinished={isFinished}
                 setIsFinished={setIsFinished}
+                progress={progress}
+                setProgress={setProgress}
               />
             </div>
           </div>
