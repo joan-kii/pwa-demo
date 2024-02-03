@@ -16,7 +16,7 @@ function TextInput({
       <div className="mt-2">
         <textarea
           id={label}
-          name="description"
+          name={label}
           value={content}
           onChange={(event) => setContent(event.target.value)}
           rows={rows}

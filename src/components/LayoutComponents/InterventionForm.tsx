@@ -12,7 +12,7 @@ import { Intervention } from '../../utils/types'
 import { Context} from '../../utils/context'
 
 function InterventionForm() {
-  const { interventions, activeUser, setLayout, clipboard } = useContext(Context)
+  const { interventions, activeUser, setLayout } = useContext(Context)
   const [keywordsList, setKeywordsList] = useState<string[]>([])
   const [description, setDescription] = useState<string>('')
   const [text, setText] = useState<string>('')
@@ -66,7 +66,10 @@ function InterventionForm() {
     console.log('draft saved');
   }
 
-  document.addEventListener('paste', () => {console.log(clipboard)})
+  document.addEventListener('paste', () => {
+    
+
+  })
 
   return (
     <div className="relative">
@@ -86,7 +89,7 @@ function InterventionForm() {
                 <BulbSuggestion isSuggesting={false} text="Trata de escribir una descripción concisa." />
               </TextInput>  
               <TextInput
-                label="Intervención"
+                label="Intervencion"
                 text="Cuéntanos qué ha pasado."
                 rows={4}
                 content={text}
