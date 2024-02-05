@@ -9,7 +9,7 @@ export const interventions: Intervention[] = [
     text: 'Nos comunica el operador de producción que no puede iniciar la secuencia de trabajo.\
       Se observa que la columna no alcanza la posicion de trabajo.\
       Según el operador esto ha ocurrido otras veces, y se solucionó ajustando el final de carrera,\
-      tal y como hemos leído aquí y aquí //// BACKLINKS ////.\
+      tal y como hemos leído aquí #2 y aquí #3.\
       El final de carrera no tiene signos de haberse desplazado accidentalmente, por lo que decidimos buscar otras explicaciones.\
       Se observa que el tubo de salida choca con la tubería de agua que pasa justo por encima tal y como se observa en la imagen.\
       //// IMAGEN ////\

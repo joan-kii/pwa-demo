@@ -66,11 +66,6 @@ function InterventionForm() {
     console.log('draft saved');
   }
 
-  document.addEventListener('paste', () => {
-    
-
-  })
-
   return (
     <div className="relative">
       <form className="container flex flex-col mx-auto mt-5 mb-20 w-2/3 bg-gray-50 border-solid border-2 border-gray rounded-lg shadow">
@@ -89,7 +84,7 @@ function InterventionForm() {
                 <BulbSuggestion isSuggesting={false} text="Trata de escribir una descripción concisa." />
               </TextInput>  
               <TextInput
-                label="Intervencion"
+                label="Intervención"
                 text="Cuéntanos qué ha pasado."
                 rows={4}
                 content={text}

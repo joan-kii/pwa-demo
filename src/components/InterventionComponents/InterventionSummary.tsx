@@ -1,18 +1,13 @@
 import { useNavigate, Link } from 'react-router-dom'
 
 import { Comment, Intervention } from '../../utils/types'
+import { copyToClipboard } from '../../utils/helpers'
 import InterventionHeader from './InterventionHeader'
 import InterventionKeywords from './InterventionKeywords'
 import InterventionPending from './InterventionPending'
 
 function InterventionSummary(intervention: Intervention) {
   const navigate = useNavigate()
-  const copyToClipboard = async (link: string) => {
-    const type = 'text/plain';
-    const blob = new Blob([link], { type });
-    const data = [new ClipboardItem({ [type]: blob })];
-    await navigator.clipboard.write(data);
-  }
 
   const countComments = (comments: Comment[], count: number): number => {
     if (count > 0) {

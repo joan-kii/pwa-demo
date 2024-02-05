@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 import InterventionHeader from './InterventionHeader'
 import InterventionKeywords from './InterventionKeywords'
@@ -9,14 +9,21 @@ import VotesItem from '../UtilsComponents/VotesItem'
 import CommentForm from '../CommentComponents/CommentForm'
 import CommentsList from '../LayoutComponents/CommentsList'
 import { Context } from '../../utils/context'
+import { copyToClipboard } from '../../utils/helpers'
 import GenericButton from '../UtilsComponents/GenericButton'
 
 function InterventionItem() {
-  const { setLayout, interventions, setClipboard } = useContext(Context)
+  const { setLayout, interventions } = useContext(Context)
   const { interventionId } = useParams()
+  const navigate = useNavigate()
   const intervention = interventions.find((intervention) => intervention._id === Number(interventionId))
 
   useEffect(() => {setLayout('intervention')}, [setLayout])
+
+  const text = document.getElementById('intervention-text')
+  const newText = text?.textContent?.replace(/#2/g, "<span class='text-blue-500 cursor-pointer' onclick='navigate(\/team/intervention/2\); return' >#2</span>")
+  if (text && newText) text.innerHTML = newText
+  console.log('lol');
   
   return (
     <>
@@ -25,7 +32,7 @@ function InterventionItem() {
           <div className="container flex mx-auto mt-5 p-2 w-2/3 bg-gray-50 border-solid border-x-2 border-t-2 border-gray rounded-t-lg shadow">
             <h3>{`#${intervention._id}`}</h3>
             <div className="group relative">
-              <button className="ml-3" onClick={() => setClipboard(`<a href="http://localhost:5173/team/intervention/${intervention._id})">@${intervention._id}</a>`)}>
+              <button className="ml-3" onClick={() => copyToClipboard(`#${intervention._id}`)}>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-gray-500">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75" />
                 </svg>
@@ -41,8 +48,10 @@ function InterventionItem() {
                 <InterventionKeywords {...intervention} />
               </div>
               <div className="m-3 text-slate-800">
-                <h3 className="py-2 text-lg text-center font-semibold ">{intervention.description}</h3>
-                <p className="w-full py-3 px-5 text-justify">{intervention.text}</p>
+                <h3 className="py-2 text-lg text-center font-semibold">{intervention.description}</h3>
+                <p id="intervention-text" className="w-full py-3 px-5 text-justify">
+                  {intervention.text}
+                </p>
               </div>
               <div className="flex justify-around">
                 {intervention.managerApprove &&
