@@ -1,4 +1,4 @@
-import TopBar from './TopBar'
+import TopBar from '../HeaderComponents/TopBar'
 import SideBarTeam from './SideBarTeam'
 import MainLayout from './MainLayout'
 
