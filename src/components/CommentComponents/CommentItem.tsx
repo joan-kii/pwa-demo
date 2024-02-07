@@ -4,6 +4,7 @@ import CommentForm from '../CommentComponents/CommentForm'
 import ManagerApprove from '../UtilsComponents/ManagerApprove'
 import InterventionHeader from '../InterventionComponents/InterventionHeader'
 import CommentsList from '../LayoutComponents/CommentsList'
+import TextParsed from '../UtilsComponents/TextParsed'
 
 function CommentItem(comment: Comment) {
   return (
@@ -12,7 +13,9 @@ function CommentItem(comment: Comment) {
       <div className="flex flex-col p-3 w-full">
         <InterventionHeader {...comment} />
         <div className="m-3 text-slate-800">
-          <p className="w-full py-3 px-5 text-justify">{comment.text}</p>
+          <div className="w-full py-3 px-5 text-justify">
+            <TextParsed text={comment.text} />
+          </div>
         </div>
         <CommentsList {...comment} />
         <div className="flex justify-around">

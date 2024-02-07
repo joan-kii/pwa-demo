@@ -11,6 +11,7 @@ function TabsHeader() {
   function handleNavigation(name: Layout) {
     setLayout(name)
     navigate('/team/intervention/recent')
+    window.scrollTo(0, 0)
   }
   
   return (
@@ -27,7 +28,10 @@ function TabsHeader() {
         </li>
         <li
           className={`flex items-center w-1/3 justify-center rounded-t-lg hover:text-gray-600 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 border-b-2 hover:cursor-pointer ${layout === 'new' ? 'border-gray-700' : 'border-white'}`}
-          onClick={() => setLayout('new')}
+          onClick={() => {
+            setLayout('new')
+            window.scrollTo(0, 0)
+          }}
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-gray-500">
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />

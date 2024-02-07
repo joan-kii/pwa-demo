@@ -12,10 +12,12 @@ function SideBar() {
       case 'pending':
         setLayout(name)
         navigate('/team/intervention/pending')
+        window.scrollTo(0, 0)
         break
       case 'recent':
         setLayout(name)
         navigate('/team/intervention/recent')
+        window.scrollTo(0, 0)
         break
       default:
         setLayout('none')
