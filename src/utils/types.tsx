@@ -79,3 +79,5 @@ export interface Manager {
 }
 
 export type Layout = 'recent' | 'pending' | 'new' | 'team' | 'chats' | 'intervention' | 'none'
+
+export type Keyword = string

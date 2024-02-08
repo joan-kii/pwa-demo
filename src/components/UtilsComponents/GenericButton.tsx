@@ -8,7 +8,7 @@ function GenericButton({
   return (
     <button
       type={type}
-      className="p-2 ms-2 text-sm font-medium text-white bg-gray-800 rounded-lg border border-gray-800 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+      className={`py-2 px-3 ms-2 text-sm font-medium text-white ${type === 'reset' ? 'bg-red-600 border-red-800 hover:bg-red-500 focus:ring-red-300' : 'bg-gray-800 border-gray-800 hover:bg-gray-600 focus:ring-gray-300'} rounded-lg border   focus:ring-4 focus:outline-none`}
       onClick={handleClick}
       >
       <span>{text}</span>
