@@ -130,7 +130,7 @@ export const interventions: Intervention[] = [
   {
     _id: 5,
     author: 'Santiago Sánchez',
-    keywords: ['trafo 2', 'refrigeración', 'válvula', 'posicionador', 'trafo 1', 'trafo 2'],
+    keywords: ['trafo 2', 'refrigeración', 'válvula', 'posicionador', 'trafo 1', 'trafo 3'],
     description: 'Ajuste posicionador de la válvula de refrigeración del transformador.',
     text: 'Ante las dudas expresadas por algunos compañeros sobre el ajuste del posicionador de la válvula de refrigeración del trafo, se decide grabar un video en el que se explica cómo hacerlo. Si alguien necesita alguna aclaración más, por favor hacédmelo saber. $1',
     pending: false,
