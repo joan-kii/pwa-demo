@@ -24,6 +24,13 @@ export interface Comment {
   comments: Comment[]
 }
 
+export interface Message {
+  _id: number,
+  author: string,
+  text: string,
+  date: string
+}
+
 export interface User {
   _id: number,
   name: string,
@@ -60,6 +67,7 @@ export interface Company {
 export interface Teammate {
   _id: number,
   user: User,
+  image: string,
   companyStartDate: string,
   companyInterventions: number,
   companyComments: number,
@@ -72,6 +80,7 @@ export interface Teammate {
 export interface Manager {
   _id: number,
   user: User,
+  image: string,
   companyStartDate: string,
   companyComments: number,
   companyInterventionsApproved: number

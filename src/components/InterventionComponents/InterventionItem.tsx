@@ -6,12 +6,11 @@ import InterventionKeywords from './InterventionKeywords'
 import InterventionPending from './InterventionPending'
 import InterventionApprove from '../UtilsComponents/ManagerApprove'
 import TextParsed from '../UtilsComponents/TextParsed'
-import VotesItem from '../UtilsComponents/VotesItem'
 import CommentForm from '../CommentComponents/CommentForm'
 import CommentsList from '../LayoutComponents/CommentsList'
 import { Context } from '../../utils/context'
 import GenericButton from '../UtilsComponents/GenericButton'
-import CopyLink from '../UtilsComponents/CopyLink'
+import ItemHeader from '../LayoutComponents/ItemHeader'
 
 function InterventionItem() {
   const { setLayout, interventions } = useContext(Context)
@@ -30,12 +29,10 @@ function InterventionItem() {
     <>
       {intervention &&
         <div className="flex flex-col">
-          <div className="container flex mx-auto mt-5 p-2 w-2/3 bg-gray-50 border-solid border-x-2 border-t-2 border-gray rounded-t-lg shadow">
-            <h3>{`#${intervention._id}`}</h3>
-            <CopyLink link={`#${intervention._id}`} />
+          <div className="mx-auto w-2/3">
+            <ItemHeader content={intervention} />
           </div>
           <div className="container flex mx-auto mb-5 py-2 w-2/3 border-solid border-2 border-gray rounded-b shadow">
-            <VotesItem votes={intervention.votes} />
             <div className="flex flex-col p-3 w-full">
               <InterventionHeader {...intervention} />
               <div className="mx-auto">

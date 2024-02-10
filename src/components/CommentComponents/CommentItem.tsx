@@ -1,16 +1,16 @@
 import { Comment } from '../../utils/types'
-import VotesItem from '../UtilsComponents/VotesItem'
 import CommentForm from '../CommentComponents/CommentForm'
 import ManagerApprove from '../UtilsComponents/ManagerApprove'
 import InterventionHeader from '../InterventionComponents/InterventionHeader'
 import CommentsList from '../LayoutComponents/CommentsList'
 import TextParsed from '../UtilsComponents/TextParsed'
+import ItemHeader from '../LayoutComponents/ItemHeader'
 
 function CommentItem(comment: Comment) {
   return (
-    <div className="container flex mx-auto mb-5 py-2 w-11/12 border-solid border-2 border-gray">
-      <VotesItem votes={comment.votes} />
-      <div className="flex flex-col p-3 w-full">
+    <div className="container flex flex-col mx-auto mb-1 py-2 w-11/12">
+      <ItemHeader content={comment} />
+      <div className="flex flex-col p-3 w-full border">
         <InterventionHeader {...comment} />
         <div className="m-3 text-slate-800">
           <div className="w-full py-3 px-5 text-justify">

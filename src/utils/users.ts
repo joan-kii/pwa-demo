@@ -46,6 +46,7 @@ export const managerUser: User = {
 export const teammate: Teammate = {
   _id: 0,
   user: teamUser,
+  image: '/src/assets/teammate.jpg',
   companyStartDate: '5/9/2022',
   companyInterventions: 1,
   companyComments: 1,
@@ -58,6 +59,7 @@ export const teammate: Teammate = {
 export const manager: Manager = {
   _id: 0,
   user: managerUser,
+  image: '/src/assets/manager.jpg',
   companyStartDate: '26/12/2020',
   companyComments: 6,
   companyInterventionsApproved: 3,

@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import { BellIcon } from '@heroicons/react/24/outline'
 
 import { Context } from '../../utils/context'
+import UserPic from '../UtilsComponents/UserPic'
 
 function TopSettings() {
   const { activeUser } = useContext(Context)
@@ -16,13 +17,7 @@ function TopSettings() {
         <span className="sr-only">Notificaciones</span>
         <BellIcon className="h-6 w-6" aria-hidden="true" />
       </button>
-      <div className="border-gray-700 pb-3 pt-4">
-        <div className="flex items-center px-5">
-          <div className="flex-shrink-0">
-            <img className="h-10 w-10 rounded-full" src={activeUser.user.image} alt="" />
-          </div>
-        </div>
-      </div>
+      <UserPic userPic={activeUser.image} />
     </div>
   )
 }
