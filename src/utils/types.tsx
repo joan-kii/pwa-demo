@@ -87,6 +87,12 @@ export interface Manager {
   companyCommentsApproved: number
 }
 
+export interface Chatbot {
+  _id: number,
+  user:  { name: string, lastName: string },
+  image: string
+}
+
 export type Layout = 'recent' | 'pending' | 'new' | 'team' | 'chats' | 'intervention' | 'none'
 
 export type Keyword = string

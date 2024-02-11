@@ -1,15 +1,15 @@
-import { Teammate, Manager } from '../../utils/types'
+import { Teammate, Manager, Chatbot } from '../../utils/types'
 import UserPic from '../UtilsComponents/UserPic'
 
 function ChatSummary({ user, setChatUser }:
-  { user: Teammate | Manager,
-    setChatUser: React.Dispatch<React.SetStateAction<boolean>>
+  { user: Teammate | Manager | Chatbot,
+    setChatUser: React.Dispatch<React.SetStateAction<Teammate | Manager | Chatbot | null>>
   }) {
 
   return (
     <div
       className="flex bg-white my-2 rounded-md border-solid border-2 cursor-pointer hover:opacity-70"
-      onClick={() => setChatUser(true)}
+      onClick={() => setChatUser(user)}
     >
       <UserPic userPic={user.image} />
       <div className="flex flex-col justify-center">

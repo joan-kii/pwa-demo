@@ -1,4 +1,4 @@
-import { Manager, Teammate, User } from './types'
+import { Manager, Teammate, User, Chatbot } from './types'
 import { company } from './company'
 
 export const teamUser: User = {
@@ -64,4 +64,10 @@ export const manager: Manager = {
   companyComments: 6,
   companyInterventionsApproved: 3,
   companyCommentsApproved: 3
+}
+
+export const chatbot: Chatbot = {
+  _id: 0,
+  user: { name: 'ATIA', lastName: '' },
+  image: '/src/assets/chatbot.jpg'
 }
