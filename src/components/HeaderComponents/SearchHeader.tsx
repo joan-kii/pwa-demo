@@ -28,7 +28,7 @@ function SearchHeader() {
     <div className="flex mx-auto px-4 pt-6 justify-between items-center sm:px-6 lg:px-8">
       <TopLogo />
       <div className="flex w-full items-center justify-center">
-        <div className="flex w-1/6 pr-2 justify-end">
+        <div className="flex w-1/6 pr-5 justify-end">
           <GenericButton text="Realizar Búsqueda" type="button" handleClick={() => {
             setShowModal(true)
             setKeywords([])

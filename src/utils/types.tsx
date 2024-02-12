@@ -28,7 +28,8 @@ export interface Message {
   _id: number,
   author: string,
   text: string,
-  date: string
+  date: string,
+  hour: string
 }
 
 export interface User {

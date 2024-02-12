@@ -4,6 +4,7 @@ import { useContext } from 'react'
 import NavigationButton from '../UtilsComponents/NavigationButton'
 import { Context } from '../../utils/context'
 import ChatsLayout from './ChatsLayout'
+import TeamLayout from './TeamLayout'
 import InterventionForm from './InterventionForm'
 
 function MainLayout() {
@@ -15,6 +16,7 @@ function MainLayout() {
         {(layout === 'recent' || layout === 'pending' || layout === 'intervention') && <NavigationButton />}
         {layout === 'chats' && <ChatsLayout />}
         {layout === 'new' && <InterventionForm />}
+        {layout === 'team' && <TeamLayout />}
         {(layout !== 'new' && layout !== 'chats') && <Outlet />}
       </div>
     </>

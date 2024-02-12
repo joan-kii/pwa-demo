@@ -1,5 +1,5 @@
 import { Teammate, Manager, Chatbot  } from '../../utils/types'
-import { managerMessages } from '../../utils/messages'
+import { atiaMessages, managerMessages } from '../../utils/messages'
 import ChatHeader from './ChatHeader'
 import ChatDialog from './ChatDialog'
 
@@ -10,7 +10,11 @@ function Chat({ user, setChatUser }:
   return (
     <>
       <ChatHeader user={user} setChatUser={setChatUser} />
-      <ChatDialog messages={managerMessages} />
+      <ChatDialog
+        user={user}
+        managerMessages={managerMessages}
+        atiaMessages={atiaMessages}
+      />
     </>
   )
 }
