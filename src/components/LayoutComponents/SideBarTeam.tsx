@@ -11,17 +11,17 @@ function SideBar() {
     switch(name) {
       case 'pending':
         setLayout(name)
-        navigate('/team/intervention/pending')
+        navigate('/teammate/intervention/pending')
         window.scrollTo(0, 0)
         break
       case 'recent':
         setLayout(name)
-        navigate('/team/intervention/recent')
+        navigate('/teammate/intervention/recent')
         window.scrollTo(0, 0)
         break
       case 'team':
         setLayout(name)
-        navigate('/team')
+        navigate('/teammate/team')
         window.scrollTo(0, 0)
         break
       default:
