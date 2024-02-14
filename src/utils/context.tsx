@@ -2,7 +2,7 @@ import React, { createContext, useState, ReactNode } from 'react'
 
 import { Intervention, Layout, Teammate, Manager, Keyword } from './types'
 import { interventions } from './interventions'
-import { teammate } from './users'
+import { ssamperTeammate } from './users'
 
 type defaultValueType = {
   layout: Layout
@@ -20,7 +20,7 @@ const defaultValue: defaultValueType = {
   keywords: [],
   setKeywords: function() {},
   interventions: interventions,
-  activeUser: teammate,
+  activeUser: ssamperTeammate,
   setActiveUser: function () {}
 }
 
@@ -28,7 +28,7 @@ const Context = createContext(defaultValue)
 
 function ContextProvider({ children }: { children: ReactNode }) {
   const [layout, setLayout] = useState<Layout>('recent')
-  const [activeUser, setActiveUser] = useState<Teammate | Manager>(teammate)
+  const [activeUser, setActiveUser] = useState<Teammate | Manager>(ssamperTeammate)
   const [keywords, setKeywords] = useState<Keyword[]>([])
   const value = {
     layout, setLayout, interventions,

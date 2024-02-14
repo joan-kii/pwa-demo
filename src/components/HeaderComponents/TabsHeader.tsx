@@ -10,7 +10,7 @@ function TabsHeader() {
 
   function handleNavigation(name: Layout) {
     setLayout(name)
-    navigate('/teammate/intervention/recent')
+    navigate('/team/intervention/recent')
     window.scrollTo(0, 0)
   }
   

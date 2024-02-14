@@ -46,11 +46,14 @@ export interface User {
   inactiveCompanies: Company[], 
   hasBeenTeammate: boolean,
   hasBeenManager: boolean,
-  interventions: number,
-  comments: number,
-  interventionsVotes: number,
-  commentsVotes: number,
-  votesGiven: number,
+  totalInterventions: number,
+  totalComments: number,
+  totalInterventionVotesReceived: number,
+  totalCommentVotesReceived: number,
+  totalInterventionVotesGiven: number,
+  totalCommentVotesGiven: number,
+  totalInterventionApproveReceived: number,
+  totalCommentApproveReceived: number,
 }
 
 export interface Company {
@@ -72,10 +75,12 @@ export interface Teammate {
   companyStartDate: string,
   companyInterventions: number,
   companyComments: number,
-  votesReceived: number,
-  votesGiven: number,
-  interventionsApproved: number,
-  commentsApproved: number,
+  companyInterventionsVotesReceived: number,
+  companyCommentsVotesReceived: number,
+  companyInterventionVotesGiven: number,
+  companyCommentsVotesGiven: number,
+  companyInterventionsApproveReceived: number,
+  companyCommentsApproveReceived: number,
 }
 
 export interface Manager {
@@ -84,8 +89,8 @@ export interface Manager {
   image: string,
   companyStartDate: string,
   companyComments: number,
-  companyInterventionsApproved: number
-  companyCommentsApproved: number
+  companyInterventionsApproveGiven: number,
+  companyCommentsApproveGiven: number,
 }
 
 export interface Chatbot {

@@ -14,10 +14,10 @@ function MainLayout() {
     <>
       <div className="container pl-64">
         {(layout === 'recent' || layout === 'pending' || layout === 'intervention') && <NavigationButton />}
+        {(layout === 'recent' || layout === 'pending' || layout === 'intervention') && <Outlet />}
         {layout === 'chats' && <ChatsLayout />}
         {layout === 'new' && <InterventionForm />}
         {layout === 'team' && <TeamLayout />}
-        {(layout !== 'new' && layout !== 'chats') && <Outlet />}
       </div>
     </>
   )

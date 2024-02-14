@@ -1,7 +1,7 @@
 import { Manager, Teammate, User, Chatbot } from './types'
 import { company } from './company'
 
-export const teamUser: User = {
+const ssamperUser: User = {
   _id: 0,
   name: 'Sergio',
   lastName: 'Samper',
@@ -9,20 +9,143 @@ export const teamUser: User = {
   password: 'password1234',
   startDate: '10/5/2020',
   email: 'ssamper@fixloud.com',
-  image: '/src/assets/teammate.jpg',
+  image: '/src/assets/ssamper.jpg',
   rol: 'Teammate',
   activeCompanies: [company],
   inactiveCompanies: [], 
   hasBeenTeammate: true,
   hasBeenManager: false,
-  interventions: 26,
-  comments: 12,
-  interventionsVotes: 15,
-  commentsVotes: 3,
-  votesGiven: 16
+  totalInterventions: 26,
+  totalComments: 12,
+  totalInterventionVotesReceived: 15,
+  totalInterventionVotesGiven: 12,
+  totalCommentVotesReceived: 16,
+  totalCommentVotesGiven: 11,
+  totalInterventionApproveReceived: 12,
+  totalCommentApproveReceived: 14,
 }
 
-export const managerUser: User = {
+const jjuarezUser: User = {
+  _id: 1,
+  name: 'Juan',
+  lastName: 'Juarez',
+  username: 'jjuarez',
+  password: 'password1234',
+  startDate: '9/2/2020',
+  email: 'jjuarez@fixloud.com',
+  image: '/src/assets/jjuarez.jpg',
+  rol: 'Teammate',
+  activeCompanies: [company],
+  inactiveCompanies: [], 
+  hasBeenTeammate: true,
+  hasBeenManager: false,
+  totalInterventions: 32,
+  totalComments: 36,
+  totalInterventionVotesReceived: 21,
+  totalInterventionVotesGiven: 12,
+  totalCommentVotesReceived: 13,
+  totalCommentVotesGiven: 8,
+  totalInterventionApproveReceived: 6,
+  totalCommentApproveReceived: 11,
+}
+
+const rramosUser: User = {
+  _id: 2,
+  name: 'Rafael',
+  lastName: 'Ramos',
+  username: 'rramos',
+  password: 'password1234',
+  startDate: '5/6/2019',
+  email: 'rramos@fixloud.com',
+  image: '/src/assets/rramos.jpg',
+  rol: 'Teammate',
+  activeCompanies: [company],
+  inactiveCompanies: [], 
+  hasBeenTeammate: true,
+  hasBeenManager: false,
+  totalInterventions: 42,
+  totalComments: 32,
+  totalInterventionVotesReceived: 18,
+  totalInterventionVotesGiven: 8,
+  totalCommentVotesReceived: 16,
+  totalCommentVotesGiven: 5,
+  totalInterventionApproveReceived: 6,
+  totalCommentApproveReceived: 4,
+}
+
+const aantunezUser: User = {
+  _id: 3,
+  name: 'Antonio',
+  lastName: 'Antúnez',
+  username: 'aantunez',
+  password: 'password1234',
+  startDate: '1/11/2018',
+  email: 'aantunez@fixloud.com',
+  image: '/src/assets/aantunez.jpg',
+  rol: 'Teammate',
+  activeCompanies: [company],
+  inactiveCompanies: [], 
+  hasBeenTeammate: true,
+  hasBeenManager: false,
+  totalInterventions: 47,
+  totalComments: 56,
+  totalInterventionVotesReceived: 24,
+  totalInterventionVotesGiven: 23,
+  totalCommentVotesReceived: 41,
+  totalCommentVotesGiven: 41,
+  totalInterventionApproveReceived: 20,
+  totalCommentApproveReceived: 19,
+}
+
+const ssanchezUser: User = {
+  _id: 4,
+  name: 'Santiago',
+  lastName: 'Sánchez',
+  username: 'ssanchez',
+  password: 'password1234',
+  startDate: '2/1/2020',
+  email: 'ssanchez@fixloud.com',
+  image: '/src/assets/ssanchez.jpg',
+  rol: 'Teammate',
+  activeCompanies: [company],
+  inactiveCompanies: [], 
+  hasBeenTeammate: true,
+  hasBeenManager: false,
+  totalInterventions: 21,
+  totalComments: 19,
+  totalInterventionVotesReceived: 20,
+  totalInterventionVotesGiven: 20,
+  totalCommentVotesReceived: 8,
+  totalCommentVotesGiven: 9,
+  totalInterventionApproveReceived: 9,
+  totalCommentApproveReceived: 5,
+}
+
+const ddanteUser: User = {
+  _id: 5,
+  name: 'Daniel',
+  lastName: 'Dante',
+  username: 'ddante',
+  password: 'password1234',
+  startDate: '15/8/2018',
+  email: 'ddante@fixloud.com',
+  image: '/src/assets/ddante.jpg',
+  rol: 'Teammate',
+  activeCompanies: [company],
+  inactiveCompanies: [],
+  hasBeenTeammate: true,
+  hasBeenManager: false,
+  totalInterventions: 49,
+  totalComments: 46,
+  totalInterventionVotesReceived: 30,
+  totalInterventionVotesGiven: 27,
+  totalCommentVotesReceived: 10,
+  totalCommentVotesGiven: 16,
+  totalInterventionApproveReceived: 8,
+  totalCommentApproveReceived: 6,
+}
+
+const managerUser: User = {
   _id: 1,
   name: 'Fernando',
   lastName: 'Fernández',
@@ -36,34 +159,119 @@ export const managerUser: User = {
   inactiveCompanies: [], 
   hasBeenTeammate: true,
   hasBeenManager: true,
-  interventions: 26,
-  comments: 12,
-  interventionsVotes: 15,
-  commentsVotes: 3,
-  votesGiven: 16
+  totalInterventions: 86,
+  totalComments: 110,
+  totalInterventionVotesReceived: 54,
+  totalCommentVotesReceived: 50,
+  totalInterventionVotesGiven: 62,
+  totalCommentVotesGiven: 60,
+  totalInterventionApproveReceived: 36,
+  totalCommentApproveReceived: 40,
 }
 
-export const teammate: Teammate = {
+export const ssamperTeammate: Teammate = {
   _id: 0,
-  user: teamUser,
-  image: '/src/assets/teammate.jpg',
+  user: ssamperUser,
+  image: '/src/assets/ssamper.jpg',
   companyStartDate: '5/9/2022',
-  companyInterventions: 1,
-  companyComments: 1,
-  votesReceived: 6,
-  votesGiven: 3,
-  interventionsApproved: 1,
-  commentsApproved: 0,
+  companyInterventions: 12,
+  companyComments: 8,
+  companyInterventionsVotesReceived: 2,
+  companyCommentsVotesReceived: 8,
+  companyInterventionVotesGiven: 6,
+  companyCommentsVotesGiven: 5,
+  companyInterventionsApproveReceived: 2,
+  companyCommentsApproveReceived: 0,
 }
+
+const jjuarezTeammate: Teammate = {
+  _id: 1,
+  user: jjuarezUser,
+  image: '/src/assets/jjuarez.jpg',
+  companyStartDate: '15/4/2020',
+  companyInterventions: 8,
+  companyComments: 6,
+  companyInterventionsVotesReceived: 3,
+  companyCommentsVotesReceived: 2,
+  companyInterventionVotesGiven: 4,
+  companyCommentsVotesGiven: 3,
+  companyInterventionsApproveReceived: 0,
+  companyCommentsApproveReceived: 0,
+}
+
+const rramosTeammate: Teammate = {
+  _id: 2,
+  user: rramosUser,
+  image: '/src/assets/rramos.jpg',
+  companyStartDate: '12/1/2022',
+  companyInterventions: 18,
+  companyComments: 18,
+  companyInterventionsVotesReceived: 6,
+  companyCommentsVotesReceived: 10,
+  companyInterventionVotesGiven: 12,
+  companyCommentsVotesGiven: 15,
+  companyInterventionsApproveReceived: 5,
+  companyCommentsApproveReceived: 3,
+}
+
+const aantunezTeammate: Teammate = {
+  _id: 3,
+  user: aantunezUser,
+  image: '/src/assets/aantunez.jpg',
+  companyStartDate: '23/2/2023',
+  companyInterventions: 10,
+  companyComments: 9,
+  companyInterventionsVotesReceived: 4,
+  companyCommentsVotesReceived: 6,
+  companyInterventionVotesGiven: 6,
+  companyCommentsVotesGiven: 3,
+  companyInterventionsApproveReceived: 3,
+  companyCommentsApproveReceived: 1,
+}
+
+const ssanchezTeammate: Teammate = {
+  _id: 4,
+  user: ssanchezUser,
+  image: '/src/assets/ssanchez.jpg',
+  companyStartDate: '22/10/2021',
+  companyInterventions: 20,
+  companyComments: 21,
+  companyInterventionsVotesReceived: 6,
+  companyCommentsVotesReceived: 4,
+  companyInterventionVotesGiven: 8,
+  companyCommentsVotesGiven: 6,
+  companyInterventionsApproveReceived: 1,
+  companyCommentsApproveReceived: 0,
+}
+
+const ddanteTeammate: Teammate = {
+  _id: 5,
+  user: ddanteUser,
+  image: '/src/assets/ddante.jpg',
+  companyStartDate: '4/21/2021',
+  companyInterventions: 21,
+  companyComments: 24,
+  companyInterventionsVotesReceived: 5,
+  companyCommentsVotesReceived: 4,
+  companyInterventionVotesGiven: 2,
+  companyCommentsVotesGiven: 6,
+  companyInterventionsApproveReceived: 3,
+  companyCommentsApproveReceived: 1,
+}
+
+export const team = [
+  ssamperTeammate, rramosTeammate, jjuarezTeammate,
+  ssanchezTeammate, aantunezTeammate, ddanteTeammate
+]
 
 export const manager: Manager = {
   _id: 0,
   user: managerUser,
   image: '/src/assets/manager.jpg',
   companyStartDate: '26/12/2020',
-  companyComments: 6,
-  companyInterventionsApproved: 3,
-  companyCommentsApproved: 3
+  companyComments: 36,
+  companyInterventionsApproveGiven: 21,
+  companyCommentsApproveGiven: 19,
 }
 
 export const chatbot: Chatbot = {

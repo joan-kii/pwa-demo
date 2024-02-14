@@ -3,7 +3,8 @@ import { chatbot } from '../../utils/users'
 import ChatSummary from './ChatSummary'
 
 function ChatsList({ team, setChatUser }:
-  { team: (Teammate | Manager)[],
+  { 
+    team: (Teammate | Manager)[],
     setChatUser: React.Dispatch<React.SetStateAction<Teammate | Manager | Chatbot | null>>
   }) {
   return (

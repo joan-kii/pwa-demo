@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { teammate, manager } from '../../utils/users'
+import { team, manager } from '../../utils/users'
 import ChatsList from '../ChatsComponents/ChatsList'
 import Chat from '../ChatsComponents/Chat'
 import { Teammate, Manager, Chatbot } from '../../utils/types'
@@ -13,7 +13,7 @@ function ChatsLayout() {
         <div className="mx-auto px-20 w-full">
           <div className="border-b border-gray-900/10">
             {!chatUser ?
-              <ChatsList team={[teammate, manager]} setChatUser={setChatUser} /> :
+              <ChatsList team={[manager, ...team]} setChatUser={setChatUser} /> :
               <Chat user={chatUser} setChatUser={setChatUser} />
             }
           </div>

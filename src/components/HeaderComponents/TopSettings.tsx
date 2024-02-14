@@ -17,7 +17,9 @@ function TopSettings() {
         <span className="sr-only">Notificaciones</span>
         <BellIcon className="h-6 w-6" aria-hidden="true" />
       </button>
-      <UserPic userPic={activeUser.image} />
+      <div className="cursor-pointer">
+        <UserPic userPic={activeUser.image} />
+      </div>
     </div>
   )
 }

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 import logo from '../../assets/fixloud-removebg.png'
 import { Context } from '../../utils/context'
-import { teammate, manager } from '../../utils/users'
+import { ssamperTeammate, manager } from '../../utils/users'
 
 function Login() {
   const [username, setUsername] = useState('')
@@ -13,8 +13,8 @@ function Login() {
 
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault()
-    if (password === teammate.user.password && username === teammate.user.username) {
-      setActiveUser(teammate)
+    if (password === ssamperTeammate.user.password && username === ssamperTeammate.user.username) {
+      setActiveUser(ssamperTeammate)
       navigate('/team/intervention/recent', { replace: true })
     } else if (password === manager.user.password && username === manager.user.username) {
       setActiveUser(manager)
