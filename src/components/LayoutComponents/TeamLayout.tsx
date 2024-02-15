@@ -19,9 +19,9 @@ function TeamLayout() {
             </div>
           }
           {user && <TeamGrid user={user} setUser={setUser} />}
-        </div>
-      </div>
-    </div>
+       </div>
+     </div>
+   </div>
   )
 }
 

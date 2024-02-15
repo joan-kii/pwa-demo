@@ -1,6 +1,6 @@
 import { Teammate, Manager } from '../../utils/types'
 
-function UserCards({ user, setUser }:
+function UserSummary({ user, setUser }:
   { 
     user: Teammate | Manager,
     setUser: React.Dispatch<React.SetStateAction<Teammate | Manager | null>>
@@ -25,4 +25,4 @@ function UserCards({ user, setUser }:
   )
 }
 
-export default UserCards
+export default UserSummary
