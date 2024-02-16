@@ -1,16 +1,23 @@
-import { useState } from 'react'
-
 import { Teammate, Manager } from '../../utils/types'
-import UserCard from './UserCard'
-import UserFieldsProfile from './UserFieldsProfile'
+import FieldHeader from './FieldHeader'
+import InterventionFields from './InterventionFields'
+import CommentFields from './CommentFields'
+import GeneralFields from './GeneralFields'
 
-function SingleProfile({ activeUser }: { activeUser: Teammate | Manager }) {
-  const [isGlobal, setIsGlobal] = useState<boolean>(false)
+function SingleProfile({ activeUser, isGlobal }:
+  {
+    activeUser: Teammate | Manager,
+    isGlobal: boolean
+  }) {
 
   return (
-    <div className="w-full">
-      <UserFieldsProfile isGlobal={isGlobal} setIsGlobal={setIsGlobal} />
-      <UserCard user={activeUser} />
+    <div className="flex flex-col">
+      <FieldHeader text="Intervenciones" />
+      <InterventionFields user={activeUser} isGlobal={isGlobal} />
+      <FieldHeader text="Comentarios" />
+      <CommentFields user={activeUser} isGlobal={isGlobal} />
+      <FieldHeader text="General" />
+      <GeneralFields user={activeUser} isGlobal={isGlobal} />
     </div>
   )
 }

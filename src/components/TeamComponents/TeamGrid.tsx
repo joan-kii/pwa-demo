@@ -1,9 +1,10 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 
 import { Teammate, Manager } from '../../utils/types'
 import { Context } from '../../utils/context'
 import SingleProfile from './SingleProfile'
 import ComparisonProfile from './ComparisonProfile'
+import ProfileHeader from './ProfileHeader'
 
 function TeamGrid({ user, setUser }:
   {
@@ -11,17 +12,18 @@ function TeamGrid({ user, setUser }:
     setUser: React.Dispatch<React.SetStateAction<Teammate | Manager | null>>
   }) {
   const { activeUser } = useContext(Context)
+  const [isGlobal, setIsGlobal] = useState<boolean>(false)
   
   return (
-    <>
-      <div className="cursor-pointer" onClick={() => setUser(null)}>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-gray-500">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
-        </svg>
-      </div>
-      {activeUser.user._id === user.user._id && <SingleProfile activeUser={activeUser} />}
-      {activeUser.user._id !== user.user._id && <ComparisonProfile activeUser={activeUser} user={user} />}
-    </>  
+    <div className="w-full my-4 border-r-md">
+      <ProfileHeader isGlobal={isGlobal} setIsGlobal={setIsGlobal} setUser={setUser} />
+      {activeUser.user._id === user.user._id &&
+        <SingleProfile activeUser={activeUser} isGlobal={isGlobal} />
+      }
+      {activeUser.user._id !== user.user._id &&
+        <ComparisonProfile activeUser={activeUser} user={user} isGlobal={isGlobal} />
+      }
+    </div>  
   )
 }
 

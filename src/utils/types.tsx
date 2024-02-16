@@ -89,8 +89,13 @@ export interface Manager {
   image: string,
   companyStartDate: string,
   companyComments: number,
+  companyInterventions: number,
+  companyInterventionsVotesReceived: number,
+  companyCommentsVotesReceived: number,
   companyInterventionsApproveGiven: number,
   companyCommentsApproveGiven: number,
+  companyInterventionsApproveReceived: number,
+  companyCommentsApproveReceived: number,
 }
 
 export interface Chatbot {

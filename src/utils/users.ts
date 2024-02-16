@@ -270,8 +270,13 @@ export const manager: Manager = {
   image: '/src/assets/manager.jpg',
   companyStartDate: '26/12/2020',
   companyComments: 36,
+  companyInterventions: 21,
+  companyInterventionsVotesReceived: 5,
+  companyCommentsVotesReceived: 4,
   companyInterventionsApproveGiven: 21,
   companyCommentsApproveGiven: 19,
+  companyInterventionsApproveReceived: 3,
+  companyCommentsApproveReceived: 1,
 }
 
 export const chatbot: Chatbot = {
