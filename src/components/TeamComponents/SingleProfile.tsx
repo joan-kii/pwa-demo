@@ -3,6 +3,7 @@ import FieldHeader from './FieldHeader'
 import InterventionFields from './InterventionFields'
 import CommentFields from './CommentFields'
 import GeneralFields from './GeneralFields'
+import UserData from './UserData'
 
 function SingleProfile({ activeUser, isGlobal }:
   {
@@ -12,8 +13,9 @@ function SingleProfile({ activeUser, isGlobal }:
 
   return (
     <div className="flex flex-col">
+      <UserData user={activeUser} />
       <FieldHeader text="Intervenciones" />
-      <InterventionFields user={activeUser} isGlobal={isGlobal} />
+      <InterventionFields user={activeUser} userToCompare={null} isGlobal={isGlobal} />
       <FieldHeader text="Comentarios" />
       <CommentFields user={activeUser} isGlobal={isGlobal} />
       <FieldHeader text="General" />

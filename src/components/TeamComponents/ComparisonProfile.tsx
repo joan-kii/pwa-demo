@@ -1,5 +1,9 @@
 import { Teammate, Manager } from '../../utils/types'
-import UserCard from './UserCard'
+import FieldHeader from './FieldHeader'
+import InterventionFields from './InterventionFields'
+import CommentFields from './CommentFields'
+import GeneralFields from './GeneralFields'
+import UserData from './UserData'
 
 function ComparisonProfile({ activeUser, user, isGlobal }:
   {
@@ -8,9 +12,20 @@ function ComparisonProfile({ activeUser, user, isGlobal }:
     isGlobal: boolean
   }) {
   return (
-    <div>
-      <UserCard user={activeUser} isGlobal={isGlobal} />
-      <UserCard user={user} isGlobal={isGlobal} />
+    <div className="flex flex-col">
+      <div className="w-full flex bg-white">
+        <div className="w-1/3"></div>
+        <UserData user={activeUser} />
+        <UserData user={user} />
+      </div>
+      <FieldHeader text="Intervenciones" />
+      <InterventionFields user={activeUser} userToCompare={user} isGlobal={isGlobal} />
+      <FieldHeader text="Comentarios" />
+      <CommentFields user={activeUser} isGlobal={isGlobal} />
+      <CommentFields user={user} isGlobal={isGlobal} />
+      <FieldHeader text="General" />
+      <GeneralFields user={activeUser} isGlobal={isGlobal} />
+      <GeneralFields user={user} isGlobal={isGlobal} />
     </div>
   )
 }

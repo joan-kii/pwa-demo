@@ -1,15 +1,37 @@
-import FieldItem from './FieldItem'
+import InterventionsCreated from './InterventionsCreated'
+import InterventionsApproveReceived from './InterventionsApproveReceived'
+import InterventionsVotesReceived from './InterventionsVotesReceived'
+import InterventionsVotesGiven from './InterventionsVotesGiven'
 import { Teammate, Manager } from '../../utils/types'
 
-function InterventionFields({ user, isGlobal }: { user: Teammate | Manager, isGlobal: boolean }) {
-  console.log(isGlobal);
-  console.log(user);
-  
+function InterventionFields({user, userToCompare, isGlobal }:
+  {
+    user: Teammate | Manager,
+    userToCompare: Teammate | Manager | null,
+    isGlobal: boolean
+  }) {
   return (
     <>
-      <FieldItem text="Intervenciones Creadas" data={user.companyInterventions.toString()} />
-      <FieldItem text="Aprobaciones Recibidas" data={user.companyInterventionsApproveReceived.toString()} />
-      <FieldItem text="Votos Recibidos" data={user.companyInterventionsVotesReceived.toString()} />
+      <InterventionsCreated
+        user={user}
+        userToCompare={userToCompare}
+        isGlobal={isGlobal}
+      />
+      <InterventionsApproveReceived
+        user={user}
+        userToCompare={userToCompare}
+        isGlobal={isGlobal}
+      />
+      <InterventionsVotesReceived
+        user={user}
+        userToCompare={userToCompare}
+        isGlobal={isGlobal}
+      />
+      <InterventionsVotesGiven
+        user={user}
+        userToCompare={userToCompare}
+        isGlobal={isGlobal}
+      />
     </>
   )
 }
