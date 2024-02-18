@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 import InterventionHeader from './InterventionHeader'
@@ -13,9 +13,11 @@ import GenericButton from '../UtilsComponents/GenericButton'
 import ItemHeader from '../LayoutComponents/ItemHeader'
 
 function InterventionItem() {
-  const { setLayout, interventions } = useContext(Context)
+  const { setLayout, interventions, activeUser } = useContext(Context)
   const { interventionId } = useParams()
   const intervention = interventions.find((intervention) => intervention._id === Number(interventionId))
+  const author = activeUser.user.name + ' ' + activeUser.user.lastName
+  const [approved, setApproved] = useState(intervention?.managerApprove)
   
   useEffect(() => {
     setLayout('intervention')
@@ -45,14 +47,24 @@ function InterventionItem() {
                 </div>
               </div>
               <div className="flex justify-around">
-                {intervention.managerApprove &&
+                {approved &&
                   <InterventionApprove />
                 }
                 {intervention.pending &&
                   <InterventionPending />
                 }
               </div>
-              {intervention.author === 'Sergio Samper' &&
+              {activeUser.user.rol === 'Manager' && !approved && !intervention.pending &&
+                <div className="mr-6 flex justify-end">
+                  <GenericButton text="Aprobar" type="button" handleClick={() => {setApproved(!approved)}}/>
+                </div>
+              }
+              {activeUser.user.rol === 'Manager' && approved && !intervention.pending &&
+                <div className="mr-6 flex justify-end">
+                  <GenericButton text="Retirar Aprobación" type="button" handleClick={() => {setApproved(!approved)}}/>
+                </div>
+              }
+              {intervention.author === author &&
                 <div className="mr-6 flex justify-end">
                   <GenericButton text="Editar Intervención" type="button" handleClick={() => {}}/>
                 </div>

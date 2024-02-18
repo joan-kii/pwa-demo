@@ -15,7 +15,8 @@ function ChatSummary({ user, setChatUser }:
         <UserPic userPic={user.image} />
         <div className="flex flex-col justify-center">
           <h4 className="text-gray-700 font-semibold">{user.user.name} {user.user.lastName}</h4>
-          {user.user.name === 'Fernando' && <p className="text-gray-500">ya me cuentas</p>}
+          {user.user.name === 'Fernando' && <p className="text-gray-500">lo cambio</p>}
+          {user.user.name === 'Sergio' && <p className="text-gray-500">lo cambio</p>}
           {user.user.name === 'Santiago' && <p className="text-gray-500">lo sé, lo sé</p>}
           {user.user.name === 'Rafael' && <p className="text-gray-500">cuando lo vea me lo creeré</p>}
           {user.user.name === 'Juan' && <p className="text-gray-500">OK</p>}

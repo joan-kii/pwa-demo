@@ -1,17 +1,19 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { parseText } from '../../utils/helpers'
 import { Context } from '../../utils/context'
 import CopyLink from './CopyLink'
+import FileModal from './FileModal'
 
 function TextParsed({ text }: { text: string}) {
   const navigate = useNavigate()
+  const [showModal, setShowModal] = useState<boolean>(false)
   const { setLayout } = useContext(Context)
   const textParsed = parseText(text)
 
   return (
-    <p>
+    <>
       {textParsed.map((chunk, idx) => {
         return (
           <span key={idx}>
@@ -50,15 +52,12 @@ function TextParsed({ text }: { text: string}) {
               <>
                 <span
                   className="text-blue-500 cursor-pointer"
-                  onClick={() => {
-                    navigate(`/team/files/${chunk.linkId}`)
-                    setLayout('recent')
-                    window.scrollTo(0, 0)
-                  }}
+                  onClick={() => setShowModal(true)}
                 >
                   {chunk.link}
                 </span>
                 <CopyLink link={chunk.link} />
+                {showModal && <FileModal fileId={`/src/assets/pictures/${chunk.link}.webp`} setShowModal={setShowModal} />}
               </>
             }
             {chunk.token === '&' &&
@@ -80,7 +79,7 @@ function TextParsed({ text }: { text: string}) {
           </span>
         )
       })}
-    </p>
+    </>
   )
 }
 

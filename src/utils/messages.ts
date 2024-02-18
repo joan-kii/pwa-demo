@@ -2,43 +2,43 @@ import { Message } from './types'
 
 export const managerMessages: Message[] = [
   { _id: 0,
-    author: 'Sergio Samper',
+    author: 'Sergio',
     text: 'OK. Esta tarde lo miro',
     date: '12/01/24',
     hour: '12:54'
   },
   { _id: 1,
-    author: 'Fernando Fernández',
+    author: 'Fernando',
     text: 'ya me cuentas',
     date: '12/01/24',
     hour: '13:03'
   },
   { _id: 2,
-    author: 'Sergio Samper',
+    author: 'Sergio',
     text: 'pues sigue igual...',
     date: '12/01/24',
     hour: '18:01'
   },
   { _id: 3,
-    author: 'Fernando Fernández',
+    author: 'Fernando',
     text: 'vale',
     date: '12/01/24',
     hour: '18:22'
   },
   { _id: 4,
-    author: 'Fernando Fernández',
+    author: 'Fernando',
     text: 'esto lo solucionó Santi aquí #5',
     date: '12/01/24',
     hour: '18:22'
   },
   { _id: 5,
-    author: 'Sergio Samper',
+    author: 'Sergio',
     text: 'OK',
     date: '12/01/24',
     hour: '18:23'
   },
   { _id: 6,
-    author: 'Sergio Samper',
+    author: 'Sergio',
     text: 'lo cambio',
     date: '12/01/24',
     hour: '18:24'
