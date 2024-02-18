@@ -1,40 +1,36 @@
-import FieldItem from './FieldItem'
+import CommentsCreated from './CommentsCreated'
+import CommentsApproveReceived from './CommentsApproveReceived'
+import CommentsVoteReceived from './CommentsVoteReceived'
+import CommentsVoteGiven from './CommentsVoteGiven'
 import { Teammate, Manager } from '../../utils/types'
 
-function CommentFields({ user, isGlobal }: { user: Teammate | Manager, isGlobal: boolean }) {
+function CommentFields({ user, userToCompare, isGlobal }:
+  {
+    user: Teammate | Manager,
+    userToCompare: Teammate | Manager | null,
+    isGlobal: boolean
+  }) {
   return (
     <>
-      <FieldItem
-        text="Comentarions Creados"
-        isHighlighted
-        data={isGlobal ?
-          user.user.totalComments.toString() :
-          user.companyComments.toString()
-        }
+      <CommentsCreated
+        user={user}
+        userToCompare={userToCompare}
+        isGlobal={isGlobal}
       />
-      <FieldItem
-        text="Aprobaciones Recibidas"
-        isHighlighted
-        data={isGlobal ?
-          user.user.totalCommentApproveReceived.toString() :
-          user.companyCommentsApproveReceived.toString()
-        }
+      <CommentsApproveReceived
+        user={user}
+        userToCompare={userToCompare}
+        isGlobal={isGlobal}
       />
-      <FieldItem
-        text="Votos Recibidos"
-        isHighlighted
-        data={isGlobal ?
-          user.user.totalCommentVotesReceived.toString() :
-          user.companyCommentsVotesReceived.toString()
-        }
+      <CommentsVoteReceived
+        user={user}
+        userToCompare={userToCompare}
+        isGlobal={isGlobal}
       />
-      <FieldItem
-        text="Votos Otorgados"
-        isHighlighted
-        data={isGlobal ?
-          user.user.totalCommentVotesGiven.toString() :
-          user.companyCommentsVotesGiven.toString()
-        }
+      <CommentsVoteGiven
+        user={user}
+        userToCompare={userToCompare}
+        isGlobal={isGlobal}
       />
     </>
   )

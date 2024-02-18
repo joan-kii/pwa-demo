@@ -1,23 +1,29 @@
-import FieldItem from './FieldItem'
 import { Teammate, Manager } from '../../utils/types'
+import GeneralStartDate from './GeneralStartDate'
+import GeneralAntiquity from './GeneralAntiquity'
+import GeneralRol from './GeneralRol'
 
-function InterventionFields({ user, isGlobal }: { user: Teammate | Manager, isGlobal: boolean }) {
+function InterventionFields({ user, userToCompare, isGlobal }:
+  {
+    user: Teammate | Manager,
+    userToCompare: Teammate | Manager | null,
+    isGlobal: boolean
+  }) {
   return (
     <>
-      <FieldItem
-        text="Fecha Inicio"
-        isHighlighted
-        data={isGlobal ? user.user.startDate : user.companyStartDate}
+      <GeneralStartDate
+        user={user}
+        userToCompare={userToCompare}
+        isGlobal={isGlobal}
       />
-      <FieldItem
-        text="Antigüedad"
-        isHighlighted
-        data={isGlobal ? "4 años" : "2 años"}
+      <GeneralAntiquity
+        user={user}
+        userToCompare={userToCompare}
+        isGlobal={isGlobal}
       />
-      <FieldItem
-        text="Rol"
-        isHighlighted
-        data={user.user.rol}
+      <GeneralRol
+        user={user}
+        userToCompare={userToCompare}
       />
     </>
   )

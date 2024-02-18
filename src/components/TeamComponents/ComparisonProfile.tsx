@@ -21,11 +21,9 @@ function ComparisonProfile({ activeUser, user, isGlobal }:
       <FieldHeader text="Intervenciones" />
       <InterventionFields user={activeUser} userToCompare={user} isGlobal={isGlobal} />
       <FieldHeader text="Comentarios" />
-      <CommentFields user={activeUser} isGlobal={isGlobal} />
-      <CommentFields user={user} isGlobal={isGlobal} />
+      <CommentFields user={activeUser} userToCompare={user} isGlobal={isGlobal} />
       <FieldHeader text="General" />
-      <GeneralFields user={activeUser} isGlobal={isGlobal} />
-      <GeneralFields user={user} isGlobal={isGlobal} />
+      <GeneralFields user={activeUser} userToCompare={user} isGlobal={isGlobal} />
     </div>
   )
 }

@@ -18,7 +18,7 @@ function Login() {
       navigate('/team/intervention/recent', { replace: true })
     } else if (password === manager.user.password && username === manager.user.username) {
       setActiveUser(manager)
-      navigate('/manager')
+      navigate('/manager/intervention/recent')
     }
 
     setUsername('')

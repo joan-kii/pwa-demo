@@ -12,14 +12,14 @@ function SingleProfile({ activeUser, isGlobal }:
   }) {
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col bg-white">
       <UserData user={activeUser} />
       <FieldHeader text="Intervenciones" />
       <InterventionFields user={activeUser} userToCompare={null} isGlobal={isGlobal} />
       <FieldHeader text="Comentarios" />
-      <CommentFields user={activeUser} isGlobal={isGlobal} />
+      <CommentFields user={activeUser} userToCompare={null} isGlobal={isGlobal} />
       <FieldHeader text="General" />
-      <GeneralFields user={activeUser} isGlobal={isGlobal} />
+      <GeneralFields user={activeUser} userToCompare={null} isGlobal={isGlobal} />
     </div>
   )
 }
