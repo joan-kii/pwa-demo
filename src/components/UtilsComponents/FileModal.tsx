@@ -6,7 +6,6 @@ function FileModal({ fileId, setShowModal }:
     setShowModal: React.Dispatch<React.SetStateAction<boolean>>
   }
   ) {
-    console.log(fileId);
     
   return (
     <>
@@ -26,7 +25,12 @@ function FileModal({ fileId, setShowModal }:
                 </span>
               </button>
             </div>
-            <img className="mx-auto object-cover h-96 w-96" src={fileId} />
+            {fileId === '$0' && 
+              <img className="mx-auto object-cover h-96 w-96" src={`/src/assets/pictures/${fileId}.webp`} />
+            }
+            {fileId === '$1' && 
+              <video src={`/src/assets/pictures/${fileId}.mp4`} autoPlay />
+            }
             <div className="flex items-center justify-around p-6 border-t border-solid border-blueGray-200 rounded-b">
               <GenericButton text="Cancelar" type="reset" handleClick={() => setShowModal(false)} />
             </div>

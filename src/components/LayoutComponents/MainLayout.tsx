@@ -5,6 +5,7 @@ import NavigationButton from '../UtilsComponents/NavigationButton'
 import { Context } from '../../utils/context'
 import ChatsLayout from './ChatsLayout'
 import TeamLayout from './TeamLayout'
+import CreateReport from './CreateReport'
 import InterventionForm from './InterventionForm'
 
 function MainLayout() {
@@ -18,6 +19,7 @@ function MainLayout() {
         {layout === 'chats' && <ChatsLayout />}
         {layout === 'new' && <InterventionForm />}
         {layout === 'team' && <TeamLayout />}
+        {layout === 'createReport' && <CreateReport />}
       </div>
     </>
   )

@@ -48,16 +48,54 @@ function TextParsed({ text }: { text: string}) {
                 <CopyLink link={chunk.link} />
               </>
             }
-            {chunk.token === '$' &&
+            {chunk.link === '$0' &&
               <>
                 <span
                   className="text-blue-500 cursor-pointer"
-                  onClick={() => setShowModal(true)}
+                  onClick={() => setShowModal(true)
+                  }
                 >
                   {chunk.link}
                 </span>
                 <CopyLink link={chunk.link} />
-                {showModal && <FileModal fileId={`/src/assets/pictures/${chunk.link}.webp`} setShowModal={setShowModal} />}
+                {showModal && <FileModal fileId={chunk.link} setShowModal={setShowModal} />}
+              </>
+            }
+            {chunk.link === '$1' &&
+              <>
+                <span
+                  className="text-blue-500 cursor-pointer"
+                  onClick={() => setShowModal(true)
+                  }
+                >
+                  {chunk.link}
+                </span>
+                <CopyLink link={chunk.link} />
+                {showModal && <FileModal fileId={chunk.link} setShowModal={setShowModal} />}
+              </>
+            }
+            {chunk.link === '$3' &&
+              <>
+                <span
+                  className="text-blue-500 cursor-pointer"
+                  onClick={() => window.open(`/src/assets/pictures/${chunk.link}.pdf`)
+                  }
+                >
+                  {chunk.link}
+                </span>
+                <CopyLink link={chunk.link} />
+              </>
+            }
+            {chunk.link === '$2' &&
+              <>
+                <span
+                  className="text-blue-500 cursor-pointer"
+                  onClick={() => window.open('https://www.google.com.sa/maps/search/@36.3562246,-5.2313558,18z?entry=ttu')
+                  }
+                >
+                  {chunk.link}
+                </span>
+                <CopyLink link={chunk.link} />
               </>
             }
             {chunk.token === '&' &&

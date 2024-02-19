@@ -109,6 +109,6 @@ export interface Chatbot {
   image: string
 }
 
-export type Layout = 'recent' | 'pending' | 'new' | 'team' | 'chats' | 'intervention' | 'none'
+export type Layout = 'recent' | 'pending' | 'new' | 'team' | 'chats' | 'intervention' | 'createReport' | 'none'
 
 export type Keyword = string

@@ -23,6 +23,10 @@ function SideBar() {
         setLayout(name)
         window.scrollTo(0, 0)
         break
+      case 'createReport':
+        setLayout(name)
+        window.scrollTo(0, 0)
+        break
       default:
         setLayout('none')
     }
@@ -56,13 +60,13 @@ function SideBar() {
                 <span className="flex-start ms-3 whitespace-nowrap">Pendientes</span>
               </button>
             </li>
-            <li>
-              <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <li className={`border-b-2 ${layout === 'createReport' ? 'border-gray-700' : 'border-white'}`}>
+              <button onClick={() => handleNavigation('createReport')} className="flex w-full items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-gray-500">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25M9 16.5v.75m3-3v3M15 12v5.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
                 </svg>
-                <span className="ms-3">Crear Reporte</span>
-              </a>
+                <span className="flex-start ms-3 whitespace-nowrap">Crear Reporte</span>
+              </button>
             </li>
             <li>
               <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
