@@ -2,13 +2,11 @@ import logo from '../../assets/android-chrome-512x512.png'
 
 function TopLogo() {
   return (
-    <div className="flex-shrink-0">
-      <img
-        className="h-16 w-16"
-        src={logo}
-        alt="Fixloud"
-      />
-    </div>
+    <img
+      className="flex-none h-10 w-10 sm:h-16 sm:w-16"
+      src={logo}
+      alt="Fixloud"
+    />
   )
 }
 

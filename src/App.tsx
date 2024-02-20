@@ -18,7 +18,7 @@ function App() {
         </Route>
       </Route>
       <Route path="/manager/*" element={<ManagerApp />}>
-      <Route path="intervention/*">
+        <Route path="intervention/*">
           <Route path="recent" element={<InterventionsList />} />
           <Route path="pending" element={<InterventionsList />} />
           <Route path=":interventionId" element={<InterventionItem />} />

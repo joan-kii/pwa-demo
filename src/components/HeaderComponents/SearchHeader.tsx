@@ -25,15 +25,13 @@ function SearchHeader() {
   }
   
   return (
-    <div className="flex mx-auto px-4 pt-6 justify-between items-center sm:px-6 lg:px-8">
+    <div className="flex mx-auto px-3 pt-3 w-full justify-between items-center sm:px-4 sm:pt-6 lg:px-8">
       <TopLogo />
-      <div className="flex w-full items-center justify-center">
-        <div className="flex w-1/6 pr-5 justify-end">
-          <GenericButton text="Realizar Búsqueda" type="button" handleClick={() => {
-            setShowModal(true)
-            setKeywords([])
-          }} />
-        </div>
+      <div className="flex shrink w-full items-center justify-center">
+        <GenericButton text="Realizar Búsqueda" type="button" handleClick={() => {
+          setShowModal(true)
+          setKeywords([])
+        }} />
         {showModal ? (
           <>
             <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">

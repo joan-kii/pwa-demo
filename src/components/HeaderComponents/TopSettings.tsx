@@ -8,7 +8,7 @@ function TopSettings() {
   const { activeUser } = useContext(Context)
 
   return (
-    <div className="ml-4 flex justify-end items-center md:ml-6">
+    <div className="flex-none sm:ml-4 flex items-center md:ml-6">
       <button
         type="button"
         className="relative rounded-full bg-white-800 p-1 text-gray-800 hover:ring-2 hover:ring-gray-800 focus:outline-none focus:ring-gray-800"
