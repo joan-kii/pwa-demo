@@ -30,23 +30,23 @@ function InterventionItem() {
   return (
     <>
       {intervention &&
-        <div className="flex flex-col">
-          <div className="mx-auto w-2/3">
+        <div className="mt-8 sm:mt-0 flex flex-col">
+          <div className="mx-auto w-4/5 sm:w-2/3">
             <ItemHeader content={intervention} />
           </div>
-          <div className="container flex mx-auto mb-5 py-2 w-2/3 border-solid border-2 border-gray rounded-b shadow">
-            <div className="flex flex-col p-3 w-full">
+          <div className="container flex mx-auto mb-5 py-2 w-4/5 sm:w-2/3 border-solid border-2 border-gray rounded-b shadow">
+            <div className="flex flex-col sm:p-3 w-full">
               <InterventionHeader {...intervention} />
-              <div className="mx-auto">
+              <div className="mx-auto mt-1">
                 <InterventionKeywords {...intervention} />
               </div>
-              <div className="m-3 text-slate-800">
-                <h3 className="py-2 text-lg text-center font-semibold">{intervention.description}</h3>
-                <div className="w-full py-3 px-5 text-justify">
+              <div className="m-1 sm:m-3 text-slate-800">
+                <h3 className="sm:py-2 text-lg text-center font-semibold">{intervention.description}</h3>
+                <div className="w-full sm:py-3 px-5 sm:text-justify">
                   <TextParsed text={intervention.text} />
                 </div>
               </div>
-              <div className="flex justify-around">
+              <div className="mb-2 sm:mb-0 flex justify-around">
                 {approved &&
                   <InterventionApprove />
                 }
@@ -55,17 +55,17 @@ function InterventionItem() {
                 }
               </div>
               {activeUser.user.rol === 'Manager' && !approved && !intervention.pending &&
-                <div className="mr-6 flex justify-end">
+                <div className="mr-6 mt-2 sm:mt-0 flex justify-center sm:justify-end">
                   <GenericButton text="Aprobar" type="button" handleClick={() => {setApproved(!approved)}}/>
                 </div>
               }
               {activeUser.user.rol === 'Manager' && approved && !intervention.pending &&
-                <div className="mr-6 flex justify-end">
+                <div className="mr-6 mt-2 sm:mt-0 flex justify-center sm:justify-end">
                   <GenericButton text="Retirar Aprobación" type="button" handleClick={() => {setApproved(!approved)}}/>
                 </div>
               }
               {intervention.author === author &&
-                <div className="mr-6 flex justify-end">
+                <div className="mr-6 mt-2 sm:mt-0 flex justify-center sm:justify-end">
                   <GenericButton text="Editar Intervención" type="button" handleClick={() => {}}/>
                 </div>
               }

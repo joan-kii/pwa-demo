@@ -15,10 +15,10 @@ function TabsHeader() {
   }
   
   return (
-    <div className="font-medium text-center">
+    <div className="mt-1 font-medium text-center">
       <ul className="flex flex-wrap justify-around text-gray-900 text-sm sm:text-base">
         <li
-          className={`flex items-center w-1/3 justify-center border-b-2 rounded-t-lg hover:text-gray-600 hover:bg-gray-100 hover:cursor-pointer ${layout === 'recent' || layout === 'pending' ? 'border-gray-700' : 'border-white'}`}
+          className={`flex items-center w-1/2 sm:w-1/3 justify-center border-b-2 rounded-t-lg hover:text-gray-600 hover:bg-gray-100 hover:cursor-pointer ${layout === 'recent' || layout === 'pending' ? 'border-gray-700' : 'border-white'}`}
           onClick={() => handleNavigation('recent')}
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 sm:w-6 h-5 sm:h-6 text-gray-500">
@@ -27,7 +27,7 @@ function TabsHeader() {
           <p className="inline-block p-2 sm:p-4">Intervenciones</p>
         </li>
         <li
-          className={`flex items-center w-1/3 justify-center rounded-t-lg hover:text-gray-600 hover:bg-gray-100 border-b-2 hover:cursor-pointer ${layout === 'new' ? 'border-gray-700' : 'border-white'}`}
+          className={`hidden sm:flex items-center w-1/3 justify-center rounded-t-lg hover:text-gray-600 hover:bg-gray-100 border-b-2 hover:cursor-pointer ${layout === 'new' ? 'border-gray-700' : 'border-white'}`}
           onClick={() => {
             setLayout('new')
             window.scrollTo(0, 0)
@@ -36,10 +36,10 @@ function TabsHeader() {
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 sm:w-6 h-5 sm:h-6 text-gray-500">
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
           </svg>
-          <p className="inline-block p-2 sm:p-4">Crear Intervención</p>
+          <p className="inline-block p-2 sm:p-4">Nueva Intervención</p>
         </li>
         <li
-          className={`flex items-center w-1/3 justify-center rounded-t-lg hover:text-gray-600 hover:bg-gray-100 border-b-2 hover:cursor-pointer ${layout === 'chats' ? 'border-gray-700' : 'border-white'}`}
+          className={`flex items-center w-1/2 sm:w-1/3 justify-center rounded-t-lg hover:text-gray-600 hover:bg-gray-100 border-b-2 hover:cursor-pointer ${layout === 'chats' ? 'border-gray-700' : 'border-white'}`}
           onClick={() => setLayout('chats')}
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 sm:w-6 h-5 sm:h-6 text-gray-500">

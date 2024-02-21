@@ -20,7 +20,7 @@ function InterventionsList() {
   orderByKeywords(interventionsToRender, keywords)
   
   return (
-    <div className="mb-5">
+    <div className="mt-14 sm:mt-0 mb-5">
       {interventionsToRender.map((intervention) => <InterventionSummary {...intervention} key={intervention._id} />)}
     </div>
   )
