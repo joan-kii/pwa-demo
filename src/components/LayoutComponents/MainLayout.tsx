@@ -7,19 +7,12 @@ import ChatsLayout from './ChatsLayout'
 import TeamLayout from './TeamLayout'
 import InterventionForm from './InterventionForm'
 
-function MainLayout({ setShowMenu }:
-  {
-    setShowMenu: React.Dispatch<React.SetStateAction<boolean>>
-  }
-  ) {
-  const { layout } = useContext(Context)
+function MainLayout() {
+  const { layout, showMenu } = useContext(Context)
 
   return (
     <>
-      <div
-        className="container sm:pl-64"
-        onClick={() => setShowMenu(false)}
-      >
+      <div className={`container sm:pl-64 ${showMenu ? "z-0" : "z-10"}`}>
         {(layout === 'recent' || layout === 'pending' || layout === 'intervention') && <NavigationButton />}
         {(layout === 'recent' || layout === 'pending' || layout === 'intervention') && <Outlet />}
         {layout === 'chats' && <ChatsLayout />}

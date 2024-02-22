@@ -12,6 +12,8 @@ type defaultValueType = {
   interventions: Intervention[]
   activeUser: Teammate | Manager
   setActiveUser: React.Dispatch<React.SetStateAction<Teammate | Manager>>
+  showMenu: boolean
+  setShowMenu: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const defaultValue: defaultValueType = {
@@ -21,7 +23,9 @@ const defaultValue: defaultValueType = {
   setKeywords: function() {},
   interventions: interventions,
   activeUser: ssamperTeammate,
-  setActiveUser: function () {}
+  setActiveUser: function () {},
+  showMenu: false,
+  setShowMenu: function () {}
 }
 
 const Context = createContext(defaultValue)
@@ -30,10 +34,12 @@ function ContextProvider({ children }: { children: ReactNode }) {
   const [layout, setLayout] = useState<Layout>('recent')
   const [activeUser, setActiveUser] = useState<Teammate | Manager>(ssamperTeammate)
   const [keywords, setKeywords] = useState<Keyword[]>([])
+  const [showMenu, setShowMenu] = useState<boolean>(false)
   const value = {
     layout, setLayout, interventions,
     keywords, setKeywords,
-    activeUser, setActiveUser
+    activeUser, setActiveUser,
+    showMenu, setShowMenu
   }
   
   return (

@@ -17,10 +17,10 @@ function CommentItem(comment: Comment) {
   return (
     <div className="container flex flex-col mx-auto mb-1 py-2 w-11/12">
       <ItemHeader content={comment} />
-      <div className="flex flex-col p-3 w-full border">
+      <div className="flex flex-col px-2 sm:p-3 w-full border">
         <InterventionHeader {...comment} />
-        <div className="m-3 text-slate-800">
-          <div className="w-full py-3 px-5 text-justify">
+        <div className="sm:m-3 text-slate-800">
+          <div className="w-full py-3 sm:px-5 text-justify">
             <TextParsed text={comment.text} />
           </div>
         </div>

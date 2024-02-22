@@ -6,7 +6,7 @@ import { orderByKeywords } from '../../utils/helpers'
 import { Intervention } from '../../utils/types'
 
 function InterventionsList() {
-  const { layout, interventions, keywords }= useContext(Context)
+  const { layout, interventions, keywords, setShowMenu }= useContext(Context)
   const [interventionsToRender, setInterventionsToRender] = useState<Intervention[]>(interventions.sort((a, b) => b.fakeDate - a.fakeDate))
 
   useEffect(() => {
@@ -20,7 +20,7 @@ function InterventionsList() {
   orderByKeywords(interventionsToRender, keywords)
   
   return (
-    <div className="mt-14 sm:mt-0 mb-5">
+    <div className="mt-14 sm:mt-0 mb-5" onClick={() => setShowMenu(false)}>
       {interventionsToRender.map((intervention) => <InterventionSummary {...intervention} key={intervention._id} />)}
     </div>
   )
