@@ -15,7 +15,7 @@ function TeamGrid({ user, setUser }:
   const [isGlobal, setIsGlobal] = useState<boolean>(false)
   
   return (
-    <div className="w-full my-4 border-r-md">
+    <div className="w-full my-4 p-2 border-r-md">
       <ProfileHeader isGlobal={isGlobal} setIsGlobal={setIsGlobal} setUser={setUser} />
       {activeUser.user._id === user.user._id &&
         <SingleProfile activeUser={activeUser} isGlobal={isGlobal} />

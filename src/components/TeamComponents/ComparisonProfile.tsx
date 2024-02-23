@@ -14,15 +14,21 @@ function ComparisonProfile({ activeUser, user, isGlobal }:
   return (
     <div className="flex flex-col">
       <div className="w-full flex bg-white">
-        <div className="w-1/3"></div>
+        <div className="sm:w-1/3"></div>
         <UserData user={activeUser} />
         <UserData user={user} />
       </div>
-      <FieldHeader text="Intervenciones" />
+      <div className="mx-auto">
+        <FieldHeader text="Intervenciones" />
+      </div>
       <InterventionFields user={activeUser} userToCompare={user} isGlobal={isGlobal} />
-      <FieldHeader text="Comentarios" />
+      <div className="mx-auto">
+        <FieldHeader text="Comentarios" />
+        </div>
       <CommentFields user={activeUser} userToCompare={user} isGlobal={isGlobal} />
-      <FieldHeader text="General" />
+      <div className="mx-auto">
+        <FieldHeader text="General" />
+      </div>
       <GeneralFields user={activeUser} userToCompare={user} isGlobal={isGlobal} />
     </div>
   )

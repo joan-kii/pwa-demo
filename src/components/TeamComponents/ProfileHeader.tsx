@@ -9,8 +9,8 @@ function ProfileHeader({ setUser, isGlobal, setIsGlobal }:
     setIsGlobal: React.Dispatch<React.SetStateAction<boolean>>
   }) {
   return (
-    <div className="relative bg-white dark:bg-slate-900 px-6 pt-6 flex flex-col justify-end rounded-t-lg">
-      <div className="pb-2 flex justify-between md:border-b border-slate-200 dark:border-slate-700">
+    <div className="relative bg-white dark:bg-slate-900 px-2 sm:px-6 pt-2 sm:pt-6 flex flex-col justify-end rounded-t-lg">
+      <div className="pb-2 flex justify-around sm:justify-between md:border-b border-slate-200 dark:border-slate-700">
         <BackButton setUser={setUser} />
         <SwitchInput
           option1="Tu empresa actual"

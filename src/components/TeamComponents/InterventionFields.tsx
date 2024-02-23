@@ -12,26 +12,56 @@ function InterventionFields({user, userToCompare, isGlobal }:
   }) {
   return (
     <>
-      <InterventionsCreated
-        user={user}
-        userToCompare={userToCompare}
-        isGlobal={isGlobal}
-      />
-      <InterventionsApproveReceived
-        user={user}
-        userToCompare={userToCompare}
-        isGlobal={isGlobal}
-      />
-      <InterventionsVotesReceived
-        user={user}
-        userToCompare={userToCompare}
-        isGlobal={isGlobal}
-      />
-      <InterventionsVotesGiven
-        user={user}
-        userToCompare={userToCompare}
-        isGlobal={isGlobal}
-      />
+      {userToCompare &&
+        <>
+          <div className="mx-auto">
+            <InterventionsCreated
+              user={user}
+              userToCompare={userToCompare}
+              isGlobal={isGlobal}
+            />
+          </div>
+          <InterventionsApproveReceived
+            user={user}
+            userToCompare={userToCompare}
+            isGlobal={isGlobal}
+          />
+          <InterventionsVotesReceived
+            user={user}
+            userToCompare={userToCompare}
+            isGlobal={isGlobal}
+          />
+          <InterventionsVotesGiven
+            user={user}
+            userToCompare={userToCompare}
+            isGlobal={isGlobal}
+          />
+        </>
+      }
+      {!userToCompare &&
+        <>
+          <InterventionsCreated
+            user={user}
+            userToCompare={userToCompare}
+            isGlobal={isGlobal}
+          />
+          <InterventionsApproveReceived
+            user={user}
+            userToCompare={userToCompare}
+            isGlobal={isGlobal}
+          />
+          <InterventionsVotesReceived
+            user={user}
+            userToCompare={userToCompare}
+            isGlobal={isGlobal}
+          />
+          <InterventionsVotesGiven
+            user={user}
+            userToCompare={userToCompare}
+            isGlobal={isGlobal}
+          />
+        </>
+      }
     </>
   )
 }
