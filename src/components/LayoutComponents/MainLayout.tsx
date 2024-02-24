@@ -5,6 +5,7 @@ import NavigationButton from '../UtilsComponents/NavigationButton'
 import { Context } from '../../utils/context'
 import ChatsLayout from './ChatsLayout'
 import TeamLayout from './TeamLayout'
+import DraftsLayout from './DraftsLayout'
 import InterventionForm from './InterventionForm'
 
 function MainLayout() {
@@ -12,12 +13,13 @@ function MainLayout() {
 
   return (
     <>
-      <div className={`container sm:pl-64 ${showMenu ? "z-0" : "z-10"}`}>
+      <div className={`container sm:ml-64 ${showMenu ? "z-0" : "z-10"}`}>
         {(layout === 'recent' || layout === 'pending' || layout === 'intervention') && <NavigationButton />}
         {(layout === 'recent' || layout === 'pending' || layout === 'intervention') && <Outlet />}
         {layout === 'chats' && <ChatsLayout />}
         {layout === 'new' && <InterventionForm />}
         {layout === 'team' && <TeamLayout />}
+        {layout === 'drafts' && <DraftsLayout />}
       </div>
     </>
   )

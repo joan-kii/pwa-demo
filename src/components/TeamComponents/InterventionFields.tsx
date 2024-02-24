@@ -14,28 +14,34 @@ function InterventionFields({user, userToCompare, isGlobal }:
     <>
       {userToCompare &&
         <>
-          <div className="mx-auto">
+          <div className="w-full">
             <InterventionsCreated
               user={user}
               userToCompare={userToCompare}
               isGlobal={isGlobal}
             />
           </div>
-          <InterventionsApproveReceived
-            user={user}
-            userToCompare={userToCompare}
-            isGlobal={isGlobal}
-          />
-          <InterventionsVotesReceived
-            user={user}
-            userToCompare={userToCompare}
-            isGlobal={isGlobal}
-          />
-          <InterventionsVotesGiven
-            user={user}
-            userToCompare={userToCompare}
-            isGlobal={isGlobal}
-          />
+          <div className="w-full">
+            <InterventionsApproveReceived
+              user={user}
+              userToCompare={userToCompare}
+              isGlobal={isGlobal}
+            />
+          </div>
+          <div className="w-full">
+            <InterventionsVotesReceived
+              user={user}
+              userToCompare={userToCompare}
+              isGlobal={isGlobal}
+            />
+          </div>
+          <div className="w-full">
+            <InterventionsVotesGiven
+              user={user}
+              userToCompare={userToCompare}
+              isGlobal={isGlobal}
+            />
+          </div>
         </>
       }
       {!userToCompare &&

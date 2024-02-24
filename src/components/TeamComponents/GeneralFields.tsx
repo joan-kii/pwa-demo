@@ -11,20 +11,48 @@ function InterventionFields({ user, userToCompare, isGlobal }:
   }) {
   return (
     <>
-      <GeneralStartDate
-        user={user}
-        userToCompare={userToCompare}
-        isGlobal={isGlobal}
-      />
-      <GeneralAntiquity
-        user={user}
-        userToCompare={userToCompare}
-        isGlobal={isGlobal}
-      />
-      <GeneralRol
-        user={user}
-        userToCompare={userToCompare}
-      />
+      {userToCompare &&
+        <>
+          <div className="w-full">
+            <GeneralStartDate
+              user={user}
+              userToCompare={userToCompare}
+              isGlobal={isGlobal}
+            />
+          </div>
+          <div className="w-full">
+            <GeneralAntiquity
+              user={user}
+              userToCompare={userToCompare}
+              isGlobal={isGlobal}
+            />
+          </div>
+          <div className="w-full">
+            <GeneralRol
+              user={user}
+              userToCompare={userToCompare}
+            />
+          </div>
+        </>
+      }
+      {!userToCompare &&
+        <>
+          <GeneralStartDate
+            user={user}
+            userToCompare={userToCompare}
+            isGlobal={isGlobal}
+          />
+          <GeneralAntiquity
+            user={user}
+            userToCompare={userToCompare}
+            isGlobal={isGlobal}
+          />
+          <GeneralRol
+            user={user}
+            userToCompare={userToCompare}
+          />
+        </>
+      }
     </>
   )
 }

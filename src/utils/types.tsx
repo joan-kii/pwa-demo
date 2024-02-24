@@ -32,6 +32,15 @@ export interface Message {
   hour: string
 }
 
+export interface Draft {
+  _id: number,
+  author: string,
+  description: string,
+  text: string,
+  date: string,
+  hour: string
+}
+
 export interface User {
   _id: number,
   name: string,
@@ -109,6 +118,6 @@ export interface Chatbot {
   image: string
 }
 
-export type Layout = 'recent' | 'pending' | 'new' | 'team' | 'chats' | 'intervention' | 'createReport' | 'none'
+export type Layout = 'recent' | 'pending' | 'new' | 'team' | 'chats' | 'intervention' | 'drafts' | 'none'
 
 export type Keyword = string

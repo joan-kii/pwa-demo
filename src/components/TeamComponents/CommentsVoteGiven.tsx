@@ -11,39 +11,41 @@ function CommentsVoteGiven({ user, userToCompare, isGlobal }:
     }
   
   return (
-    <div className="bg-white dark:bg-slate-900 px-6 flex" aria-hidden="true">
-      <div className="w-full flex justify-between py-1 sm:py-2 text-slate-600 dark:text-slate-400 border-b border-slate-200 dark:border-slate-700">
-        <p className="sm:w-1/3 text-sm sm:text-base">Votos Otorgados</p>
+    <div className="bg-white w-full px-6 flex" aria-hidden="true">
+      <div className={`w-full flex ${userToCompare ? 'flex-col sm:flex-row' : ''} justify-between py-1 sm:py-2 text-slate-600 border-b border-slate-200`}>
+        <p className={`sm:w-1/3 text-sm sm:text-base ${userToCompare ? 'text-center pt-1 sm:text-left sm:pt-0' : ''}`}>Votos Otorgados</p>
+        <div className="w-full flex justify-around">
           {!userToCompare && isGlobal &&
-            <p className="w-1/3 text-end font-bold">
+            <p className="w-full text-center font-bold">
               {user.user.totalCommentVotesGiven}
             </p>
           }
           {!userToCompare && !isGlobal &&
-            <p className="w-1/3 text-end font-bold">
+            <p className="w-full text-center font-bold">
               {user.companyCommentsVotesGiven}
             </p>
           }
           {userToCompare && isGlobal &&
             <>
-              <p className={`w-1/3 text-end ${userTotalIsBest ? "font-bold" : "font-light"}`}>
+              <p className={`w-full text-center ${userTotalIsBest ? "font-bold" : "font-light"}`}>
                 {user.user.totalCommentVotesGiven}
               </p>
-              <p className={`w-1/3 text-end ${!userTotalIsBest ? "font-bold" : "font-light"}`}>
+              <p className={`w-full text-center ${!userTotalIsBest ? "font-bold" : "font-light"}`}>
                 {userToCompare.user.totalCommentVotesGiven}
               </p>
             </>
           }
           {userToCompare && !isGlobal &&
             <>
-              <p className={`w-1/3 text-end ${userCompanyIsBest ? "font-bold" : "font-light"}`}>
+              <p className={`w-full text-center ${userCompanyIsBest ? "font-bold" : "font-light"}`}>
                 {user.companyCommentsVotesGiven}
               </p>
-              <p className={`w-1/3 text-end ${!userCompanyIsBest ? "font-bold" : "font-light"}`}>
+              <p className={`w-full text-center ${!userCompanyIsBest ? "font-bold" : "font-light"}`}>
                 {userToCompare.companyCommentsVotesGiven}
               </p>
             </>
           }
+        </div>
       </div>
     </div>
   )

@@ -12,26 +12,62 @@ function CommentFields({ user, userToCompare, isGlobal }:
   }) {
   return (
     <>
-      <CommentsCreated
-        user={user}
-        userToCompare={userToCompare}
-        isGlobal={isGlobal}
-      />
-      <CommentsApproveReceived
-        user={user}
-        userToCompare={userToCompare}
-        isGlobal={isGlobal}
-      />
-      <CommentsVoteReceived
-        user={user}
-        userToCompare={userToCompare}
-        isGlobal={isGlobal}
-      />
-      <CommentsVoteGiven
-        user={user}
-        userToCompare={userToCompare}
-        isGlobal={isGlobal}
-      />
+      {userToCompare &&
+        <>
+          <div className="w-full">
+            <CommentsCreated
+              user={user}
+              userToCompare={userToCompare}
+              isGlobal={isGlobal}
+            />
+          </div>
+          <div className="w-full">
+            <CommentsApproveReceived
+              user={user}
+              userToCompare={userToCompare}
+              isGlobal={isGlobal}
+            />
+          </div>
+          <div className="w-full">
+            <CommentsVoteReceived
+              user={user}
+              userToCompare={userToCompare}
+              isGlobal={isGlobal}
+            />
+          </div>
+          <div className="w-full">
+            <CommentsVoteGiven
+              user={user}
+              userToCompare={userToCompare}
+              isGlobal={isGlobal}
+          />
+          </div>
+        </>
+      }
+      {!userToCompare &&
+        <>
+          <CommentsCreated
+            user={user}
+            userToCompare={userToCompare}
+            isGlobal={isGlobal}
+          />
+          <CommentsApproveReceived
+            user={user}
+            userToCompare={userToCompare}
+            isGlobal={isGlobal}
+          />
+          <CommentsVoteReceived
+            user={user}
+            userToCompare={userToCompare}
+            isGlobal={isGlobal}
+          />
+          <CommentsVoteGiven
+            user={user}
+            userToCompare={userToCompare}
+            isGlobal={isGlobal}
+          />
+        </>
+      }
     </>
   )
 }
