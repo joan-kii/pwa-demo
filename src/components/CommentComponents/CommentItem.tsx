@@ -30,12 +30,22 @@ function CommentItem(comment: Comment) {
         </div>
         {activeUser.user.rol === 'Manager' && !approved &&
                 <div className="mr-6 flex justify-end">
-                  <GenericButton text="Aprobar" type="button" handleClick={() => {setApproved(!approved)}}/>
+                  <GenericButton
+                    text="Aprobar"
+                    type="button"
+                    disabled={false}
+                    handleClick={() => {setApproved(!approved)}}
+                  />
                 </div>
               }
               {activeUser.user.rol === 'Manager' && approved &&
                 <div className="mr-6 flex justify-end">
-                  <GenericButton text="Retirar Aprobación" type="button" handleClick={() => {setApproved(!approved)}}/>
+                  <GenericButton
+                    text="Retirar Aprobación"
+                    type="button"
+                    disabled={false}
+                    handleClick={() => {setApproved(!approved)}}
+                  />
                 </div>
               }
         <div className="my-4 divide-y-2">

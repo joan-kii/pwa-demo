@@ -9,15 +9,16 @@ import { Context } from '../../utils/context'
 function SearchHeader() {
   const [showModal, setShowModal] = useState(false);
   const [keyword, setKeyword] = useState<string>('')
-  const { keywords, setKeywords } = useContext(Context)
+  const { keywords, setKeywords, setLayout } = useContext(Context)
   
   const handleKeywordSubmit = () => {
     setKeywords(keywords.concat(keyword))
     setKeyword('')
   }
-
+  
   const handleKeywordListSubmit = () => {
     setShowModal(false)
+    setLayout('recent')
   }
 
   const removeKeyword = (text: string) => {
@@ -28,7 +29,10 @@ function SearchHeader() {
     <div className="flex mx-auto px-3 pt-3 w-full justify-between items-center sm:px-4 sm:pt-6 lg:px-8">
       <TopLogo />
       <div className="flex shrink w-full ps-6 items-center justify-center">
-        <GenericButton text="Realizar Búsqueda" type="button" handleClick={() => {
+        <GenericButton
+          text="Realizar Búsqueda"
+          disabled={false}
+          type="button" handleClick={() => {
           setShowModal(true)
           setKeywords([])
         }} />
@@ -70,12 +74,27 @@ function SearchHeader() {
                       }
                     </div>
                     <div className="mt-1 flex justify-center">
-                      <GenericButton text="Añadir" type="button" handleClick={handleKeywordSubmit}/>
+                      <GenericButton
+                        text="Añadir"
+                        type="button"
+                        disabled={false}
+                        handleClick={handleKeywordSubmit}
+                      />
                     </div>
                   </div>
                   <div className="flex items-center justify-around p-6 border-t border-solid border-blueGray-200 rounded-b">
-                    <GenericButton text="Cancelar" type="reset" handleClick={() => setShowModal(false)} />
-                    <GenericButton text="Buscar" type="button" handleClick={() => handleKeywordListSubmit()} />
+                    <GenericButton
+                      text="Cancelar"
+                      type="reset"
+                      disabled={false}
+                      handleClick={() => setShowModal(false)}
+                    />
+                    <GenericButton
+                      text="Buscar"
+                      type="button"
+                      disabled={!(keywords.length > 0)}
+                      handleClick={() => handleKeywordListSubmit()}
+                    />
                   </div>
                 </div>
               </div>

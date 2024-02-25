@@ -6,7 +6,7 @@ import { Context } from '../../utils/context'
 import CopyLink from './CopyLink'
 import FileModal from './FileModal'
 
-function TextParsed({ text }: { text: string}) {
+function TextParsed({ text }: { text: string }) {
   const navigate = useNavigate()
   const [showModal, setShowModal] = useState<boolean>(false)
   const { setLayout } = useContext(Context)

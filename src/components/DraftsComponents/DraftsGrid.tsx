@@ -3,8 +3,14 @@ import { useState } from 'react'
 import { Draft } from '../../utils/types'
 import GenericButton from '../UtilsComponents/GenericButton'
 import DraftSummary from './DraftSummary'
+import SingleDraft from './SingleDraft'
 
-function DraftsGrid({ drafts }: { drafts: Draft[] }) {
+function DraftsGrid({ drafts, draftId, setDraftId }:
+  {
+    drafts: Draft[],
+    draftId: number | null,
+    setDraftId: React.Dispatch<React.SetStateAction<number | null>>
+  }) {
   const [showModal, setShowModal] = useState<boolean>(false)
   const [description, setDescription] = useState<string>('')
   const [text, setText] = useState<string>('')
@@ -17,10 +23,20 @@ function DraftsGrid({ drafts }: { drafts: Draft[] }) {
 
   return (
     <>
-      {drafts.map((draft) => <DraftSummary key={draft._id} draft={draft} />)}
-      <div className="flex justify-center mb-2">
-        <GenericButton text="Nuevo Borrador" type="button" handleClick={() => setShowModal(!showModal)} />
-      </div>
+      {
+        draftId !== null ? <SingleDraft draft={drafts[draftId]} setDraftId={setDraftId} /> :
+        <>
+          {drafts.map((draft) => <DraftSummary key={draft._id} draft={draft} setDraftId={setDraftId} />)}
+          <div className="flex justify-center mb-2">
+            <GenericButton
+              text="Nuevo Borrador"
+              type="button"
+              disabled={false}
+              handleClick={() => setShowModal(!showModal)}
+            />
+          </div>
+        </>
+      }
       {showModal ? (
         <>
           <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
@@ -68,8 +84,18 @@ function DraftsGrid({ drafts }: { drafts: Draft[] }) {
                   />
                 </div>
                 <div className="flex items-center justify-around p-6 border-t border-solid border-blueGray-200 rounded-b">
-                  <GenericButton text="Cancelar" type="reset" handleClick={() => setShowModal(false)} />
-                  <GenericButton text="Guardar" type="button" handleClick={() => handleDraftSubmit()} />
+                  <GenericButton
+                    text="Cancelar"
+                    type="reset"
+                    disabled={false}
+                    handleClick={() => setShowModal(false)}
+                  />
+                  <GenericButton
+                    text="Guardar"
+                    type="button"
+                    disabled={false}
+                    handleClick={() => handleDraftSubmit()}
+                  />
                 </div>
               </div>
             </div>

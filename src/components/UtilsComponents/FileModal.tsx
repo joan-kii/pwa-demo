@@ -32,7 +32,12 @@ function FileModal({ fileId, setShowModal }:
               <video src={`/src/assets/pictures/${fileId}.mp4`} autoPlay />
             }
             <div className="flex items-center justify-around p-6 border-t border-solid border-blueGray-200 rounded-b">
-              <GenericButton text="Cancelar" type="reset" handleClick={() => setShowModal(false)} />
+              <GenericButton
+                text="Cancelar"
+                type="reset"
+                disabled={false}
+                handleClick={() => setShowModal(false)}
+              />
             </div>
           </div>
         </div>

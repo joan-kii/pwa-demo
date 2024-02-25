@@ -20,7 +20,12 @@ function CommentForm() {
             <textarea id="comment" rows={3} className="w-full py-2 text-sm text-gray-900 bg-white dark:bg-gray-800 !outline-none dark:text-white dark:placeholder-gray-400" placeholder="Escribir comentario..." required></textarea>
           </div>
           <div className="flex items-center justify-end px-3 py-2 border-t dark:border-gray-600">
-            <GenericButton text="Añadir comentario" type="button" handleClick={() => {}}/>
+            <GenericButton
+              text="Añadir comentario"
+              type="button"
+              disabled={false}
+              handleClick={() => {}}
+            />
           </div>
         </div>
       </form>

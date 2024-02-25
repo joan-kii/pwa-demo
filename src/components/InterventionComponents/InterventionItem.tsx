@@ -56,17 +56,32 @@ function InterventionItem() {
               </div>
               {activeUser.user.rol === 'Manager' && !approved && !intervention.pending &&
                 <div className="mr-6 mt-2 sm:mt-0 flex justify-center sm:justify-end">
-                  <GenericButton text="Aprobar" type="button" handleClick={() => {setApproved(!approved)}}/>
+                  <GenericButton
+                    text="Aprobar"
+                    type="button"
+                    disabled={false}
+                    handleClick={() => {setApproved(!approved)}}
+                  />
                 </div>
               }
               {activeUser.user.rol === 'Manager' && approved && !intervention.pending &&
                 <div className="mr-6 mt-2 sm:mt-0 flex justify-center sm:justify-end">
-                  <GenericButton text="Retirar Aprobación" type="button" handleClick={() => {setApproved(!approved)}}/>
+                  <GenericButton
+                    text="Retirar Aprobación" 
+                    type="button"
+                    disabled={false}
+                    handleClick={() => {setApproved(!approved)}}
+                  />
                 </div>
               }
               {intervention.author === author &&
                 <div className="mr-6 mt-2 sm:mt-0 flex justify-center sm:justify-end">
-                  <GenericButton text="Editar Intervención" type="button" handleClick={() => {}}/>
+                  <GenericButton
+                    text="Editar Itervención" 
+                    type="button"
+                    disabled={false}
+                    handleClick={() => {}}
+                  />
                 </div>
               }
               <div className="my-4 divide-y-2">

@@ -1,10 +1,14 @@
 import { Draft } from '../../utils/types'
 
-function DraftSummary({ draft }: { draft: Draft }) {
+function DraftSummary({ draft, setDraftId }:
+  {
+    draft: Draft,
+    setDraftId: React.Dispatch<React.SetStateAction<number | null>>
+  }) {
   return (
     <div
       className="mx-auto my-2 w-11/12 sm:w-2/3 flex items-center justify-center cursor-pointer"
-      onClick={() => console.log((draft))}
+      onClick={() => setDraftId((draft._id))}
     >
       <div className="w-full bg-gray-200 relative shadow overflow-hidden hover:shadow-lg group rounded-xl p-1 sm:p-5 border-2 border-gray-300">
         <div className="flex items-center gap-4">

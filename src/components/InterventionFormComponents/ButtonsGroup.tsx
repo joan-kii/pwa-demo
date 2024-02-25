@@ -6,9 +6,24 @@ function ButtonsGroup({ handleSubmit, handleCancel, handleSaveDraft }: {
 
   return (
     <div className="my-10 mx-auto">
-      <GenericButton type="button" text="Cancelar" handleClick={handleCancel} />
-      <GenericButton type="button" text="Guardar Borrador" handleClick={handleSaveDraft} />
-      <GenericButton type="button" text="Publicar" handleClick={handleSubmit} />
+      <GenericButton
+        type="button"
+        text="Cancelar"
+        disabled={false}
+        handleClick={handleCancel}
+      />
+      <GenericButton
+        type="button"
+        text="Guardar Borrador"
+        disabled={false}
+        handleClick={handleSaveDraft}
+      />
+      <GenericButton
+        type="button"
+        text="Publicar"
+        disabled={false}
+        handleClick={handleSubmit}
+      />
     </div>
   )
 }

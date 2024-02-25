@@ -52,7 +52,12 @@ function KeywordsInput({ keywordsList, setKeywordsList }:
         }
       </div>
       <div className="mt-4 flex justify-end">
-        <GenericButton text="Añadir" type="button" handleClick={handleKeywords}/>
+        <GenericButton
+          text="Añadir"
+          type="button"
+          disabled={false}
+          handleClick={handleKeywords}
+      />
       </div>
     </div>
   )
