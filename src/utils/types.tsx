@@ -38,7 +38,11 @@ export interface Draft {
   description: string,
   text: string,
   date: string,
-  hour: string
+  hour: string,
+  files: {
+    type: string,
+    name: string
+  }
 }
 
 export interface User {
