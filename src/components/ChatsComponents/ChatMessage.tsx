@@ -6,6 +6,7 @@ import TextParsed from '../UtilsComponents/TextParsed'
 
 function ChatMessage({ message }: { message: Message }) {
   const { activeUser } = useContext(Context)
+  
   return (
     <div
       className={`my-2 flex items-end text-gray-700 ${message.author === activeUser.user.name ? 'justify-end' : ''}`}
