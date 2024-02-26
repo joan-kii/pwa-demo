@@ -1,5 +1,13 @@
 import { Manager, Teammate, User, Chatbot } from './types'
 import { company } from './company'
+import ssamperPic from '../assets/ssamper.jpg'
+import jjuarezPic from '../assets/jjuarez.jpg'
+import rramosPic from '../assets/rramos.jpg'
+import aantunezPic from '../assets/aantunez.jpg'
+import ssanchezPic from '../assets/ssanchez.jpg'
+import ddantePic from '../assets/ddante.jpg'
+import managerPic from '../assets/manager.jpg'
+import chatbotPic from '../assets/chatbot.jpg'
 
 const ssamperUser: User = {
   _id: 0,
@@ -10,7 +18,7 @@ const ssamperUser: User = {
   startDate: '10/5/2020',
   antiquity: '4 años',
   email: 'ssamper@fixloud.com',
-  image: '/src/assets/ssamper.jpg',
+  image: ssamperPic,
   rol: 'Teammate',
   activeCompanies: [company],
   inactiveCompanies: [], 
@@ -35,7 +43,7 @@ const jjuarezUser: User = {
   startDate: '9/2/2020',
   antiquity: '4 años',
   email: 'jjuarez@fixloud.com',
-  image: '/src/assets/jjuarez.jpg',
+  image: jjuarezPic,
   rol: 'Teammate',
   activeCompanies: [company],
   inactiveCompanies: [], 
@@ -60,7 +68,7 @@ const rramosUser: User = {
   startDate: '5/6/2019',
   antiquity: '5 años',
   email: 'rramos@fixloud.com',
-  image: '/src/assets/rramos.jpg',
+  image: rramosPic,
   rol: 'Teammate',
   activeCompanies: [company],
   inactiveCompanies: [], 
@@ -85,7 +93,7 @@ const aantunezUser: User = {
   startDate: '1/11/2018',
   antiquity: '6 años',
   email: 'aantunez@fixloud.com',
-  image: '/src/assets/aantunez.jpg',
+  image: aantunezPic,
   rol: 'Teammate',
   activeCompanies: [company],
   inactiveCompanies: [], 
@@ -110,7 +118,7 @@ const ssanchezUser: User = {
   startDate: '2/1/2020',
   antiquity: '4 años',
   email: 'ssanchez@fixloud.com',
-  image: '/src/assets/ssanchez.jpg',
+  image: ssanchezPic,
   rol: 'Teammate',
   activeCompanies: [company],
   inactiveCompanies: [], 
@@ -135,7 +143,7 @@ const ddanteUser: User = {
   startDate: '15/8/2018',
   antiquity: '6 años',
   email: 'ddante@fixloud.com',
-  image: '/src/assets/ddante.jpg',
+  image: ddantePic,
   rol: 'Teammate',
   activeCompanies: [company],
   inactiveCompanies: [],
@@ -160,7 +168,7 @@ const managerUser: User = {
   startDate: '1/9/2016',
   antiquity: '8 años',
   email: 'ffernandez@fixloud.com',
-  image: '/src/assets/manager.jpg',
+  image: managerPic,
   rol: 'Manager',
   activeCompanies: [company],
   inactiveCompanies: [], 
@@ -179,7 +187,7 @@ const managerUser: User = {
 export const ssamperTeammate: Teammate = {
   _id: 0,
   user: ssamperUser,
-  image: '/src/assets/ssamper.jpg',
+  image: ssamperPic,
   companyStartDate: '5/9/2022',
   companyAntiquity: '2 años',
   companyInterventions: 12,
@@ -195,7 +203,7 @@ export const ssamperTeammate: Teammate = {
 const jjuarezTeammate: Teammate = {
   _id: 1,
   user: jjuarezUser,
-  image: '/src/assets/jjuarez.jpg',
+  image: jjuarezPic,
   companyStartDate: '15/4/2020',
   companyAntiquity: '4 años',
   companyInterventions: 8,
@@ -211,7 +219,7 @@ const jjuarezTeammate: Teammate = {
 const rramosTeammate: Teammate = {
   _id: 2,
   user: rramosUser,
-  image: '/src/assets/rramos.jpg',
+  image: rramosPic,
   companyStartDate: '12/1/2022',
   companyAntiquity: '2 años',
   companyInterventions: 18,
@@ -227,7 +235,7 @@ const rramosTeammate: Teammate = {
 const aantunezTeammate: Teammate = {
   _id: 3,
   user: aantunezUser,
-  image: '/src/assets/aantunez.jpg',
+  image: aantunezPic,
   companyStartDate: '23/2/2023',
   companyAntiquity: '1 años',
   companyInterventions: 10,
@@ -243,7 +251,7 @@ const aantunezTeammate: Teammate = {
 const ssanchezTeammate: Teammate = {
   _id: 4,
   user: ssanchezUser,
-  image: '/src/assets/ssanchez.jpg',
+  image: ssanchezPic,
   companyStartDate: '22/10/2021',
   companyAntiquity: '3 años',
   companyInterventions: 20,
@@ -259,7 +267,7 @@ const ssanchezTeammate: Teammate = {
 const ddanteTeammate: Teammate = {
   _id: 5,
   user: ddanteUser,
-  image: '/src/assets/ddante.jpg',
+  image: ddantePic,
   companyStartDate: '4/21/2021',
   companyAntiquity: '3 años',
   companyInterventions: 21,
@@ -280,7 +288,7 @@ export const team = [
 export const manager: Manager = {
   _id: 0,
   user: managerUser,
-  image: '/src/assets/manager.jpg',
+  image: managerPic,
   companyStartDate: '26/12/2020',
   companyAntiquity: '4 años',
   companyComments: 36,
@@ -298,5 +306,5 @@ export const manager: Manager = {
 export const chatbot: Chatbot = {
   _id: 0,
   user: { name: 'ATIA', lastName: '' },
-  image: '/src/assets/chatbot.jpg'
+  image: chatbotPic
 }

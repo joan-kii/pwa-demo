@@ -5,13 +5,14 @@ import { parseText } from '../../utils/helpers'
 import { Context } from '../../utils/context'
 import CopyLink from './CopyLink'
 import FileModal from './FileModal'
+import filePdf from '../../assets/$3.pdf'
 
 function TextParsed({ text }: { text: string }) {
   const navigate = useNavigate()
   const [showModal, setShowModal] = useState<boolean>(false)
   const { setLayout } = useContext(Context)
   const textParsed = parseText(text)
-
+  
   return (
     <>
       {textParsed.map((chunk, idx) => {
@@ -78,8 +79,7 @@ function TextParsed({ text }: { text: string }) {
               <>
                 <span
                   className="text-blue-500 cursor-pointer"
-                  onClick={() => window.open(`/src/assets/pictures/${chunk.link}.pdf`)
-                  }
+                  onClick={() => window.open(filePdf)}
                 >
                   {chunk.link}
                 </span>

@@ -1,4 +1,6 @@
 import GenericButton from './GenericButton'
+import imageFile from '../../assets/$0.webp'
+import videoFile from '../../assets/$1.mp4'
 
 function FileModal({ fileId, setShowModal }:
   {
@@ -26,10 +28,10 @@ function FileModal({ fileId, setShowModal }:
               </button>
             </div>
             {fileId === '$0' && 
-              <img className="mx-auto object-cover h-96 w-96" src={`/src/assets/pictures/${fileId}.webp`} />
+              <img className="mx-auto object-cover h-96 w-96" src={imageFile} />
             }
             {fileId === '$1' && 
-              <video src={`/src/assets/pictures/${fileId}.mp4`} autoPlay />
+              <video src={videoFile} autoPlay />
             }
             <div className="flex items-center justify-around p-6 border-t border-solid border-blueGray-200 rounded-b">
               <GenericButton
