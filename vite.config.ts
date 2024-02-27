@@ -4,6 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  assetsInclude: ['**/*.pdf'],
   plugins: [
     react(),
     VitePWA({
@@ -20,24 +21,24 @@ export default defineConfig({
         entryFileNames: 'assets/js/[name]-[hash].js',
         assetFileNames: ({name}) => {
           if (/\.(gif|jpg|png|svg|webp|ico)$/.test(name ?? '')){
-            return 'assets/images/[name]-[hash][extname]';
+            return `assets/images/${name.split('.')[0]}-[hash][extname]`;
           }
 
           if (/\.(mp4)$/.test(name ?? '')){
-            return 'assets/videos/[name]-[hash][extname]';
+            return `assets/videos/${name.split('.')[0]}-[hash][extname]`;
           }
 
           if (/\.(pdf)$/.test(name ?? '')){
-            return 'assets/files/[name]-[hash][extname]';
+            return `assets/files/${name.split('.')[0]}-[hash][extname]`;
           }
           
           if (/\.css$/.test(name ?? '')) {
-            return 'assets/css/[name]-[hash][extname]';   
+            return `assets/css/${name.split('.')[0]}-[hash][extname]`;   
           }
  
           // default value
           // ref: https://rollupjs.org/guide/en/#outputassetfilenames
-          return 'assets/[name]-[hash][extname]';
+          return `assets/${name.split('.')[0]}-[hash][extname]`;
         },
       },
     }
