@@ -9,7 +9,7 @@ function ChatsLayout() {
   const [chatUser, setChatUser] = useState<Teammate | Manager | Chatbot | null>(null)
   return ( 
     <div className="relative">
-      <div className="flex flex-col mx-auto mt-5 mb-20 w-5/6 sm:w-2/3 bg-gray-50 border-solid border-2 border-gray rounded-lg shadow">
+      <div className="container flex flex-col mx-auto mt-5 mb-20 w-5/6 sm:w-2/3 bg-gray-50 border-solid border-2 border-gray rounded-lg shadow">
         <div className="mx-auto px-2 sm:px-20 w-full">
           <div className="border-b border-gray-900/10">
             {!chatUser ?
