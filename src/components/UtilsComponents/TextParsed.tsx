@@ -79,7 +79,7 @@ function TextParsed({ text }: { text: string }) {
               <>
                 <span
                   className="text-blue-500 cursor-pointer"
-                  onClick={() => window.open(`https://joan-kii.github.io/pwa-demo${filePdf}`, '_blank')}
+                  onClick={() => window.open(`https://joan-kii.github.io/${filePdf}`, '_blank', 'noreferrer')}
                 >
                   {chunk.link}
                 </span>
