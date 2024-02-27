@@ -11,7 +11,7 @@ import { ContextProvider } from './utils/context'
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ContextProvider>
-      <Router basename={'/'}>
+      <Router basename={'/pwa-demo/'}>
         <App />
       </Router>
     </ContextProvider>
